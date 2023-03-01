@@ -2,7 +2,7 @@
 - Esse repositório contém o código fonte completo do nosso Software.
 
 # Objetivo do Projeto
-- ...
+- App para desburocratizar, agilizar e tornar mais eficiente o acesso à “Cantina” da CESAR School BRUM. Nele, os alunos poderiam realizar seus pedidos, assim como realizar o pagamento dos mesmos, de forma antecipada, apenas se dirigindo ao espaço físico para realizar a retirada.
 
 # Linguagens e Frameworks utilizados
 - Back-end: Python (Django)
