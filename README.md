@@ -1,4 +1,4 @@
-# Projeto_FDS
+# C.L.E.O.
 - Esse repositório contém o código fonte completo do nosso Software.
 
 # Objetivo do Projeto
