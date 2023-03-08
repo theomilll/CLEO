@@ -2,7 +2,7 @@
 - Esse repositório contém o código fonte completo do nosso Software.
 
 # Objetivo do Projeto
-- App para desburocratizar, agilizar e tornar mais eficiente o acesso à “Cantina” da CESAR School BRUM. Nele, os alunos poderiam realizar seus pedidos, assim como realizar o pagamento dos mesmos, de forma antecipada, apenas se dirigindo ao espaço físico para realizar a retirada.
+- CLEO é uma aplicação web para desburocratizar, agilizar e tornar mais eficiente o acesso aos produtos da Cantina da CESAR School BRUM. A solução busca reduzir o desconforto das filas de espera sob o calor do sol e trazer mais comodidade aos clientes da cantina. Junto à CLEO, a cantina irá registrar seus produtos para que os alunos e funcionários da CESAR possam fazer seus pedidos, assim como realizar o pagamento dos mesmos, de forma antecipada, por meio da aplicação web. Quando o pedido estiver pronto ou separado o cliente apenas terá que se locomover ao balcão para realizar a retirada.
 
 # Linguagens e Frameworks utilizados
 - Back-end: Python (Django)
