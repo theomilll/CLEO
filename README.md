@@ -12,7 +12,7 @@
 - ...
 
 # Link do Jira
-- ...
+- <a href="https://mffbm.atlassian.net/jira/software/projects/FDS/boards/1">C.L.E.O. Jira Board</a>
 
 # Integrantes da Equipe
 - <a href="mailto:abxa@cesar.school">Ana Beatriz Alves</a>
