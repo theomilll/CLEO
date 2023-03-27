@@ -1,23 +1,23 @@
-# C.L.E.O.
+# CLEO — Central Listing for Easy Ordering
 - Esse repositório contém o código fonte completo do nosso Software.
 
-# Objetivo do Projeto
+## Objetivo do Projeto
 - CLEO é uma aplicação web para desburocratizar, agilizar e tornar mais eficiente o acesso aos produtos da Cantina da CESAR School BRUM. A solução busca reduzir o desconforto das filas de espera sob o calor do sol e trazer mais comodidade aos clientes da cantina. Junto à CLEO, a cantina irá registrar seus produtos para que os alunos e funcionários da CESAR possam fazer seus pedidos, assim como realizar o pagamento dos mesmos, de forma antecipada, por meio da aplicação web. Quando o pedido estiver pronto ou separado o cliente apenas terá que se locomover ao balcão para realizar a retirada.
 
-# Linguagens e Frameworks utilizados
+## Linguagens e Frameworks utilizados
 - Back-end: Python (Django)
 - Front-end: HTML, CSS e Javascript
 
-# Instalação
+## Instalação
 - ...
 
-# Link do Jira
-- <a href="https://mffbm.atlassian.net/jira/software/projects/FDS/boards/1">C.L.E.O. Jira Board</a>
+## Link do Jira
+- <a href="https://mffbm.atlassian.net/jira/software/projects/FDS/boards/1">CLEO Jira Board</a>
 
-# Link do Figma
-- <a href="">Placeholder</a>
+## Link do Figma
+- <a href="https://www.figma.com/file/gsZa5WDhVrfWIilATY4K0P/LO-FI-CLEO?node-id=0%3A1&t=VpvNaYuTkpGkrmfp-1">Protótipo Lo-Fi CLEO</a>
 
-# Integrantes da Equipe
+## Integrantes da Equipe
 - <a href="mailto:abxa@cesar.school">Ana Beatriz Alves</a>
 - <a href="mailto:cba2@cesar.school">Caio Barreto</a>
 - <a href="mailto:cm2@cesar.school">Cristina Matsunaga</a>
