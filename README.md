@@ -9,7 +9,7 @@
 - Front-end: HTML, CSS e Javascript
 
 ## Instalação
-- ...
+- pip install -r requirements.txt
 
 ## Link do Jira
 - <a href="https://mffbm.atlassian.net/jira/software/projects/FDS/boards/1">CLEO Jira Board</a>
