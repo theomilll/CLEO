@@ -1,6 +1,7 @@
 from django.contrib.auth import authenticate, login as auth_login
 from django.shortcuts import render, redirect
 from .forms import SignUpForm
+from .models import FoodProduct
 
 def login(request):
     error_message = None
@@ -36,3 +37,7 @@ def login(request):
 
     form = SignUpForm()
     return render(request, 'login.html', {'form': form, 'error_message': error_message})
+
+def catalog(request):
+    food_products = FoodProduct.objects.all()
+    return render(request, 'catalog.html', {'food_products': food_products})
