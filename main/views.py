@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login as auth_login
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import SignUpForm
-from .models import FoodProduct
+from .models import FoodProduct, Cart, Favorite
 
 def login(request):
     error_message = None
@@ -41,3 +41,11 @@ def login(request):
 def catalog(request):
     food_products = FoodProduct.objects.all()
     return render(request, 'catalog.html', {'food_products': food_products})
+
+def add_to_cart(request, product_id):
+    product = get_object_or_404(FoodProduct, id=product_id)
+    cart, created = Cart.objects.get_or_create(user=request.user, product=product)
+    if not created:
+        cart.quantity += 1
+        cart.save()
+    return redirect('home')
