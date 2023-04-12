@@ -52,3 +52,9 @@ def add_to_cart(request, product_id):
         cart.quantity += 1
         cart.save()
     return redirect('home')
+
+@login_required(login_url = 'login')
+def remove_from_cart(request, product_id):
+    product = get_object_or_404(FoodProduct, id = product_id)
+    product.delete()
+    return redirect('home')
