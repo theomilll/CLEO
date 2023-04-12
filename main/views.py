@@ -52,3 +52,10 @@ def add_to_cart(request, product_id):
         cart.quantity += 1
         cart.save()
     return redirect('home')
+
+@login_required(login_url='login')
+def product_detail_view(request, product_id):
+    product = get_object_or_404(FoodProduct, id=product_id)
+    #detail_name = product.objects.name
+    
+    return render(request, 'product_detail.html', {})

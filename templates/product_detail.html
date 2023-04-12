@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Catalog</title>
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/catalog.css' %}">
+</head>
+<body>
+    <nav>
+        <p>CENTRAL<br>LISTING<br>for<br>EASY<br>ORDERING</p>
+    </nav>
+    <div class="container">
+        {% for product in food_products %}
+            <h1 class="text-center my-5">{{ product.name }}</h1>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -17,7 +17,9 @@
                     <div class="card h-100">
                         {% comment %} <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}"> {% endcomment %}
                         <div class="card-body">
-                            <h5 class="card-title">{{ product.name }}</h5>
+                            <a href="{% url 'product_detail' product_id=product.id %}">
+                                <h5 class="card-title">{{ product.name }}</h5>
+                            </a>
                             <p class="card-text">R${{ product.price }}</p>
                         </div>
                         <div class="card-footer">
