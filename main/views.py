@@ -59,3 +59,8 @@ def product_detail_view(request, product_id):
     #detail_name = product.objects.name
     
     return render(request, 'product_detail.html', {})
+@login_required(login_url = 'login')
+def remove_from_cart(request, product_id):
+    product = get_object_or_404(FoodProduct, id = product_id)
+    product.delete()
+    return redirect('home')
