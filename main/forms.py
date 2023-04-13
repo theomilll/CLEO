@@ -19,7 +19,7 @@ class SignUpForm(UserCreationForm):
             self.fields[field_name].label = ''
 
 class CartForm(forms.ModelForm):
-    observations = forms.CharField(widget=forms.TextInput(attrs={'rows': 4, 'placeholder': 'Observações'}), required=False)
+    text_box_obs = forms.CharField(widget = forms.TextInput(attrs = {'rows': 4, 'placeholder': 'Observações'}), required = False)
 
     class Meta:
         model = Cart
