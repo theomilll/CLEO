@@ -86,3 +86,21 @@ def decrement_quantity(request, product_id):
 def clear_cart(request):
     Cart.objects.filter(user=request.user).delete()
     return redirect('cart')
+
+@login_required(login_url='login')
+def cart(request):
+    cart_items = Cart.objects.filter(user=request.user)
+    cart_items_total = []
+    
+    for item in cart_items:
+        total = item.product.price * item.quantity
+        cart_items_total.append((item, total))
+    
+    cart_total = sum([total for _, total in cart_items_total])
+    
+    context = {
+        'cart_items_total': cart_items_total,
+        'cart_total': cart_total,
+    }
+
+    return render(request, 'cart.html', context)

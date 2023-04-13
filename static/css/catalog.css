@@ -121,3 +121,18 @@ h1 {
     color: #082E31;
     border: 1px solid #082E31;
 }
+
+.cart-icon {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-size: 40px;
+}
+
+.cart-link {
+    color: #fff;
+}
+
+.product-link {
+    color: black;
+}

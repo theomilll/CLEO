@@ -4,10 +4,14 @@
 <head>
     <title>Food Catalog</title>
     <link rel="stylesheet" type="text/css" href="{% static './css/catalog.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <nav>
         <p>CENTRAL<br>LISTING<br>for<br>EASY<br>ORDERING</p>
+        <div class="cart-icon">
+            <a class="fas fa-shopping-cart cart-link" href="{% url 'cart' %}" style="text-decoration:none"></a>
+        </div>
     </nav>
     <div class="container">
         <h1 class="text-center my-5">Food Catalog</h1>
@@ -17,8 +21,8 @@
                     <div class="card h-100">
                         {% comment %} <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}"> {% endcomment %}
                         <div class="card-body">
-                            <a href="{% url 'product_detail' product_id=product.id %}">
-                                <h5 class="card-title">{{ product.name }}</h5>
+                            <a href="{% url 'product_detail' product_id=product.id %}" style="text-decoration:none">
+                                <h5 class="card-title product-link">{{ product.name }}</h5>
                             </a>
                             <p class="card-text">R${{ product.price }}</p>
                         </div>
