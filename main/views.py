@@ -81,3 +81,8 @@ def decrement_quantity(request, product_id):
         product.quantity -= 1
         product.save()
     return redirect('cart')
+
+@login_required(login_url='login')
+def clear_cart(request):
+    Cart.objects.filter(user=request.user).delete()
+    return redirect('cart')
