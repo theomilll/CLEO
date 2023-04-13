@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-
+from .models import Cart
 
 class SignUpForm(UserCreationForm):
     username = forms.CharField(max_length=30, required=True, widget=forms.TextInput(attrs={'placeholder': 'Username'}))
@@ -17,3 +17,10 @@ class SignUpForm(UserCreationForm):
         super().__init__(*args, **kwargs)
         for field_name in self.fields:
             self.fields[field_name].label = ''
+
+class CartForm(forms.ModelForm):
+    observations = forms.CharField(widget=forms.TextInput(attrs={'rows': 4, 'placeholder': 'Observações'}), required=False)
+
+    class Meta:
+        model = Cart
+        fields = ['observations']

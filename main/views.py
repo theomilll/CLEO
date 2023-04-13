@@ -64,3 +64,20 @@ def remove_from_cart(request, product_id):
     product = get_object_or_404(FoodProduct, id = product_id)
     product.delete()
     return redirect('home')
+
+@login_required(login_url='login')
+def increment_quantity(request, product_id):
+    product = get_object_or_404(FoodProduct, id=product_id)
+    product = Cart.objects.get(user=request.user, product=product)
+    product.quantity += 1
+    product.save()
+    return redirect('cart')
+
+@login_required(login_url='login')
+def decrement_quantity(request, product_id):
+    product = get_object_or_404(FoodProduct, id=product_id)
+    product = Cart.objects.get(user=request.user, product=product)
+    if product.quantity > 1:
+        product.quantity -= 1
+        product.save()
+    return redirect('cart')
