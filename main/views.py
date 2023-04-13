@@ -59,11 +59,13 @@ def product_detail_view(request, product_id):
     #detail_name = product.objects.name
     
     return render(request, 'product_detail.html', {})
-@login_required(login_url = 'login')
+
+@login_required(login_url='login')
 def remove_from_cart(request, product_id):
-    product = get_object_or_404(FoodProduct, user=request.user, id = product_id)
-    product.delete()
-    return redirect('home')
+    product = get_object_or_404(FoodProduct, id=product_id)
+    cart_item = get_object_or_404(Cart, user=request.user, product=product)
+    cart_item.delete()
+    return redirect('cart')
 
 @login_required(login_url='login')
 def increment_quantity(request, product_id):

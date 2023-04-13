@@ -20,7 +20,3 @@ class SignUpForm(UserCreationForm):
 
 class CartForm(forms.ModelForm):
     text_box_obs = forms.CharField(widget = forms.TextInput(attrs = {'rows': 4, 'placeholder': 'Observações'}), required = False)
-
-    class Meta:
-        model = Cart
-        fields = ['observations']
