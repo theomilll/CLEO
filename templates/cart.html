@@ -35,7 +35,10 @@
                         <tr>
                             <td>{{ item.product.name }}</td>
                             <td>{{ item.product.price }}</td>
-                            <td>{{ item.quantity }}</td>
+                            <td><a href="{% url 'decrement_quantity' item.product.id %}" class="fa-sharp fa-solid fa-minus btn-sm minus-link" style="text-decoration: none"></a>
+                                {{ item.quantity }}
+                                <a href="{% url 'increment_quantity' item.product.id %}" class="fa-light fa-plus fa-2xs btn-sm plus-link" style="text-decoration: none"></a>
+                            </td>
                             <td>{{ total }}</td>
                             <td>
                                 <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-danger btn-sm">Remove</a>
