@@ -19,14 +19,14 @@
                         <p class="card-text">Preço: R$ {{ product.price }}</p>
                         <p class="card-text">Descrição: {{ product.description }}</p>
                         <p>
-                        
-                        {% if product.ingredients.name %}
                         <p class="card-text">Ingredientes:</p>
+                        {% if product.ingredients.name %}
+                        
                         <p>
                             <ul>
-                                {% for item in product.ingredients.name %}
-                                    <li>{{ item }}</li>
-                                {% endfor %}
+                                
+                                <li>{{ product.ingredients.name }}</li>
+                            
                             </ul>
                         </p>
                         {% else %}
