@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Food Catalog</title>
+    <title>Product Detail</title>
     <link rel="stylesheet" type="text/css" href="{% static '../static/css/catalog.css' %}">
 </head>
 <body>
@@ -18,9 +18,13 @@
                         <p class="card-text">Preço: R$ {{ product.price }}</p>
                         <p class="card-text">Descrição: {{ product.description }}</p>
                         <p>
-                            {% for ingredient in list_ingredient %}
-                            ingredient = ingredients.split(',') - ingredient
-                            <ls class="text-center my-5">Ingredient: {{ ingredient }}</ls>
+                            {% for product in food_products %} 
+                            <p>
+                                {% for ingredient in list_ingredients %}
+                                ingredient = list_ingredients.split(',') - ingredient
+                                <ls class="text-center my-5">Ingredient: {{ ingredient }}</ls>
+                                {% endfor %}
+                            </p>
                             {% endfor %}
                         </p>
                     </div>
