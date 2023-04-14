@@ -20,16 +20,17 @@
                         <p class="card-text">Descrição: {{ product.description }}</p>
                         <p>
                         
-                        {% if ingredients in food_products.ingredients.all == null %}
-                        {% else %}
+                        {% if product.ingredients.name %}
                         <p class="card-text">Ingredientes:</p>
                         <p>
                             <ul>
-                                {% for item in ingredients %}
-                                    <li>{{ ingredients.name }}</li>
+                                {% for item in product.ingredients.name %}
+                                    <li>{{ item }}</li>
                                 {% endfor %}
                             </ul>
                         </p>
+                        {% else %}
+                        
 
                         {% endif %}
                         {% for product in food_products %} 
