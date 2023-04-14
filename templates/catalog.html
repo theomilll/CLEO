@@ -20,16 +20,16 @@
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
                         {% comment %} <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}"> {% endcomment %}
-                        <div class="card-body">
-                            <a href="{% url 'product_detail' product_id=product.id %}" style="text-decoration:none">
+                        <a href="{% url 'product_detail' product_id=product.id %}" style="text-decoration:none">
+                            <div class="card-body">
                                 <h5 class="card-title product-link">{{ product.name }}</h5>
-                            </a>
-                            <p class="card-text">R${{ product.price }}</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary" style="text-decoration:none">Add to Cart</a>
-                            <a class="btn btn-outline-secondary">Favorite</a>
-                        </div>
+                                <p class="card-text">R${{ product.price }}</p>
+                            </div>
+                        </a>
+                            <div class="card-footer">
+                                <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary" style="text-decoration:none">Add to Cart</a>
+                                <a class="btn btn-outline-secondary">Favorite</a>
+                            </div>
                     </div>
                 </div>
             {% endfor %}
