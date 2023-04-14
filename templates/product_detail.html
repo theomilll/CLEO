@@ -9,10 +9,26 @@
     <nav>
         <p>CENTRAL<br>LISTING<br>for<br>EASY<br>ORDERING</p>
     </nav>
-    <div class="container">
-        {% for product in food_products %}
-            <h1 class="text-center my-5">{{ product.name }}</h1>
-        {% endfor %}
+    <div class="container"><h1 class="text-center my-5">{{ product.name }}</h1>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    {% comment %} <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}"> {% endcomment %}
+                    <div class="card-body">
+                        <p class="card-text">Preço: R$ {{ product.price }}</p>
+                        <p class="card-text">Descrição: {{ product.description }}</p>
+                        <p>
+                            {% for ingredient in list_ingredient %}
+                            ingredient = ingredients.split(',') - ingredient
+                            <ls class="text-center my-5">Ingredient: {{ ingredient }}</ls>
+                            {% endfor %}
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
