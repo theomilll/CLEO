@@ -18,13 +18,20 @@
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
                     {% comment %} <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}"> {% endcomment %}
+                    <div class="top-bar">
+                        <a href="{% url 'home' %}" class="back-to-home">
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                        <h1 class="text-center my-5">{{ product.name }} </h1>
+                        <a href="{% url 'cart' %}" style="text-decoration:none">
+                            <i class="fa fa-star"></i>
+                        </a>
+                    </div>
                     <div class="card-body">
-                        <h1 class="text-center my-5">{{ product.name }} <a class="fa fa-star href="{% url 'cart' %}" style="text-decoration:none"><a></h1>
                         <p class="card-text">Preço: R$ {{ product.price }}</p>
                         <p class="card-text">Descrição: {{ product.description }}</p>
                         <p class="card-text">Ingredientes:</p>
                         {% if product.ingredients.name %}
-                        
                         <p class="card-text">
                             <ul>
                                 <li>{{ product.ingredients.name }}</li>
@@ -35,8 +42,7 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary" style="text-decoration:none">Add to Cart</a>
-                        <a class="btn btn-outline-secondary">Favorite</a>
+                        <a href="{% url 'cart' %}" class="btn btn-primary" style="text-decoration:none">Add to Cart</a>
                     </div>
                     </div>
                 </div>
