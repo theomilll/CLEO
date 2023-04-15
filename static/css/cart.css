@@ -83,14 +83,14 @@ td {
 }
 
 .btn-danger {
-    background-color: #dc3545;
+    background-color:#082E31;
     color: #fff;
-    border: 1px solid #dc3545;
+    border: 1px solid #082E31;
 }
 
 .btn-danger:hover {
-    background-color: #c82333;
-    border-color: #bd2130;
+    background-color: #082E31;
+    border-color: #082E31;
 }
 
 .btn-sm {
@@ -111,13 +111,91 @@ td {
 }
 
 .plus-link {
-    color:#082E31;
-    top: 60px;
-    font-size: 50px;
+    padding: 5px 5px;
+    display: inline-block;
+    background-color: #f6f5f7;
+    color: #082E31;
+    font-size: 24px
+}
+.minus-link { 
+    padding: 5px 5px;
+    display: inline-block;
+    background-color: #f6f5f7;
+    color: #082E31;
+    font-size: 12px
 }
 
-.minus-link {
-    color:#082E31;
-    top: 50px;
-    font-size: 16px;
+.quantity-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #082E31;
+    border-radius: 10px;
+    box-sizing: 1px;
+}
+
+.quantity-number {
+    display: inline-block;
+    padding: 5px 5px;
+    border-left: 1px solid #082E31;
+    border-right: 1px solid #082E31;
+
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #dfdfdf;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.top-bar-title {
+    flex-grow: 1;
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.back-to-home {
+    color: #082E31;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.clear-cart-btn {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.total-box {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+}
+
+.total-text {
+    margin: 0;
+    font-weight: bold;
+}
+
+.empty-cart-message {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+.empty-cart-message p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: black;
+    text-decoration: underline;
 }

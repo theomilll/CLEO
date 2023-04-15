@@ -18,5 +18,5 @@ class SignUpForm(UserCreationForm):
         for field_name in self.fields:
             self.fields[field_name].label = ''
 
-class CartForm(forms.ModelForm):
-    text_box_obs = forms.CharField(widget = forms.TextInput(attrs = {'rows': 4, 'placeholder': 'Observações'}), required = False)
+class CartForm(forms.Form):
+    text_box_obs = forms.CharField(widget=forms.Textarea(attrs={'rows': 4, 'placeholder': 'Observações'}), required=False)

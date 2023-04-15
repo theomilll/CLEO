@@ -10,15 +10,19 @@
 <body>
     <nav>
         <p>CENTRAL<br>LISTING<br>for<br>EASY<br>ORDERING</p>
-        <div class="cart-icon">
-            <a class="fas fa-shopping-cart cart-link" href="{% url 'cart' %}" style="text-decoration:none"></a>
         </div>
     </nav>
     {% block content %}
+    <div class="top-bar">
+        <a href="{% url 'home' %}" class="back-to-home">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <h1 class="top-bar-title">Shopping Cart</h1>
+    </div>
+    <a href="{% url 'clear_cart' %}" class="btn btn-danger clear-cart-btn">Limpar carrinho</a>
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="my-4">Shopping Cart</h1>
                 {% if cart_items_total %}
                 <table class="table table-bordered">
                     <thead>
@@ -35,9 +39,12 @@
                         <tr>
                             <td>{{ item.product.name }}</td>
                             <td>{{ item.product.price }}</td>
-                            <td><a href="{% url 'decrement_quantity' item.product.id %}" class="fa-sharp fa-solid fa-minus btn-sm minus-link" style="text-decoration: none"></a>
-                                {{ item.quantity }}
-                                <a href="{% url 'increment_quantity' item.product.id %}" class="fa-light fa-plus fa-2xs btn-sm plus-link" style="text-decoration: none"></a>
+                            <td>
+                                <div class="quantity-box">
+                                    <a href="{% url 'decrement_quantity' item.product.id %}" class="fa-sharp fa-solid fa-minus btn-sm minus-link" style="text-decoration: none"></a>
+                                    <span class="quantity-number">{{ item.quantity }}</span>
+                                    <a href="{% url 'increment_quantity' item.product.id %}" class="fa-light fa-plus btn-sm plus-link" style="text-decoration: none"></a>
+                                </div>
                             </td>
                             <td>{{ total }}</td>
                             <td>
@@ -46,17 +53,22 @@
                         </tr>
                         {% endfor %}
                     </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="3" class="text-end">Total</td>
-                            <td>{{ cart_total }}</td>
-                            <td></td>
-                        </tr>
-                    </tfoot>
                 </table>
+                {% if cart_items_total %}
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.text_box_obs }}
+                    <button type="submit" class="btn btn-primary">Adicionar observação</button>
+                </form>
+            {% endif %}
+                <div class="total-box">
+                    <p class="total-text">Total: {{ cart_total }}</p>
+                </div>                
                 {% comment %} <a href="{% url 'checkout' %}" class="btn btn-success">Proceed to Checkout</a> {% endcomment %}
                 {% else %}
-                <p>Your cart is empty. <a href="{% url 'home' %}">Continue shopping</a>.</p>
+                <div class="empty-cart-message">
+                    <p>Seu carrinho está vazio. <a href="{% url 'home' %}">Continue comprando</a>.</p>
+                </div>
                 {% endif %}
             </div>
         </div>

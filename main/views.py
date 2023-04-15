@@ -1,6 +1,6 @@
 from django.contrib.auth import authenticate, login as auth_login
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import SignUpForm
+from .forms import SignUpForm, CartForm
 from .models import FoodProduct, Cart, Favorite
 from django.contrib.auth.decorators import login_required
 
@@ -103,9 +103,19 @@ def cart(request):
     
     cart_total = sum([total for _, total in cart_items_total])
     
+    if request.method == "POST":
+        form = CartForm(request.POST)
+        if form.is_valid():
+            obs = form.cleaned_data["text_box_obs"]
+            request.session["cart_obs"] = obs
+            return redirect('cart')
+    else:
+        form = CartForm()
+
     context = {
         'cart_items_total': cart_items_total,
         'cart_total': cart_total,
+        'form': form,
     }
 
     return render(request, 'cart.html', context)
