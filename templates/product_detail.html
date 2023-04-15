@@ -30,14 +30,15 @@
                     <div class="card-body">
                         <p class="card-text">Preço: R$ {{ product.price }}</p>
                         <p class="card-text">Descrição: {{ product.description }}</p>
-                        <p class="card-text">Ingredientes:</p>
                         <p class="card-text">
-                            {% if product.ingredients.name %}
-                            <ul>
-                                <li>{{ product.ingredients.name }}</li>
-                            </ul>
+                        {% if product.ingredients_id != NULL %}
+                        <p class="card-text">Ingredientes:</p>
+                            <p class="card-text">
+                                <ul>
+                                    <li>{{ product.ingredients.name }}</li>
+                                </ul>
+                            </p>
                         </p>
-                        {% else %}
                         {% endif %}
                         {% for product in food_products %} 
                         {% endfor %}
