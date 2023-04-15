@@ -3,11 +3,15 @@
 <html>
 <head>
     <title>Product Detail</title>
-    <link rel="stylesheet" type="text/css" href="{% static '../static/css/catalog.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/product_detail.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <nav>
         <p>CENTRAL<br>LISTING<br>for<br>EASY<br>ORDERING</p>
+        <div class="cart-icon">
+            <a class="fas fa-shopping-cart cart-link" href="{% url 'cart' %}" style="text-decoration:none"></a>
+        </div>
     </nav>
     <div class="container">
         <div class="row">
@@ -15,29 +19,25 @@
                 <div class="card h-100">
                     {% comment %} <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}"> {% endcomment %}
                     <div class="card-body">
-                        <h1 class="text-center my-5">{{ product.name }}</h1>
+                        <h1 class="text-center my-5">{{ product.name }} <a class="fa fa-star href="{% url 'cart' %}" style="text-decoration:none"><a></h1>
                         <p class="card-text">Preço: R$ {{ product.price }}</p>
                         <p class="card-text">Descrição: {{ product.description }}</p>
-                        <p>
                         <p class="card-text">Ingredientes:</p>
                         {% if product.ingredients.name %}
                         
-                        <p>
+                        <p class="card-text">
                             <ul>
-                                
                                 <li>{{ product.ingredients.name }}</li>
-                            
                             </ul>
                         </p>
                         {% else %}
-                        
-
                         {% endif %}
-                        {% for product in food_products %} 
-                        {% endfor %}
                         </p>
                     </div>
                     <div class="card-footer">
+                        <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary" style="text-decoration:none">Add to Cart</a>
+                        <a class="btn btn-outline-secondary">Favorite</a>
+                    </div>
                     </div>
                 </div>
             </div>

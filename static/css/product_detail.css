@@ -143,3 +143,9 @@ h1 {
     right: 50px;
     font-size: 40px;
 }
+
+ul {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
