@@ -41,14 +41,12 @@
                             </p>
                         </p>
                         {% endif %}
-                        {% for product in food_products %} 
-                        {% endfor %}
                     </div>
                     <div class="card-footer">
                         <div class="quantity-box">
-                            <a href="{% url 'decrement_quantity_prod_detail' product %}" class="fa-sharp fa-solid fa-minus btn-sm minus-link" style="text-decoration: none"></a>
+                            <a href="{% url 'decrement_quantity_prod_detail' product.id %}" class="fa-sharp fa-solid fa-minus btn-sm minus-link" style="text-decoration: none"></a>
                             <span class="quantity-number">{{ item.quantity }}</span>
-                            <a href="{% url 'increment_quantity_prod_detail' product %}" class="fa-light fa-plus btn-sm plus-link" style="text-decoration: none"></a>
+                            <a href="{% url 'increment_quantity_prod_detail' product.id %}" class="fa-light fa-plus btn-sm plus-link" style="text-decoration: none"></a>
                             
                         </div>
                         <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary" style="text-decoration:none">Add to Cart</a>
