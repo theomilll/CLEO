@@ -19,20 +19,20 @@
                 <div class="card h-100">
                     {% comment %} <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}"> {% endcomment %}
                     <div class="card-body">
-                        <h1 class="text-center my-5">{{ product.name }} <a class="fa fa-star href="{% url 'cart' %}" style="text-decoration:none"><a></h1>
+                        <h1 class="text-center my-5">{{ product.name }} <a class="fa fa-star href=" {% url 'cart' %} style="text-decoration:none"> </a></h1>
                         <p class="card-text">Preço: R$ {{ product.price }}</p>
                         <p class="card-text">Descrição: {{ product.description }}</p>
+                        {% if product.ingredients_id != NULL %}
                         <p class="card-text">Ingredientes:</p>
-                        {% if product.ingredients.name %}
-                        
-                        <p class="card-text">
-                            <ul>
-                                <li>{{ product.ingredients.name }}</li>
-                            </ul>
+                            <p class="card-text">
+                                <ul>
+                                    <li>{{ product.ingredients.name }}</li>
+                                </ul>
+                            </p>
                         </p>
-                        {% else %}
                         {% endif %}
-                        </p>
+                        {% for product in food_products %} 
+                        {% endfor %}
                     </div>
                     <div class="card-footer">
                         <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary" style="text-decoration:none">Add to Cart</a>
