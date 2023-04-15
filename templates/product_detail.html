@@ -28,17 +28,16 @@
                         </a>
                     </div>
                     <div class="card-body">
-                        <h1 class="text-center my-5">{{ product.name }} <a class="fa fa-star href=" {% url 'cart' %} style="text-decoration:none"> </a></h1>
                         <p class="card-text">Preço: R$ {{ product.price }}</p>
                         <p class="card-text">Descrição: {{ product.description }}</p>
-                        {% if product.ingredients_id != NULL %}
                         <p class="card-text">Ingredientes:</p>
-                        {% if product.ingredients.name %}
                         <p class="card-text">
+                            {% if product.ingredients.name %}
                             <ul>
                                 <li>{{ product.ingredients.name }}</li>
                             </ul>
                         </p>
+                        {% else %}
                         {% endif %}
                         {% for product in food_products %} 
                         {% endfor %}
