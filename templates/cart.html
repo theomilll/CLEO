@@ -41,9 +41,9 @@
                             <td>{{ item.product.price }}</td>
                             <td>
                                 <div class="quantity-box">
-                                    <a href="{% url 'decrement_quantity' item.product.id %}" class="fa-sharp fa-solid fa-minus btn-sm minus-link" style="text-decoration: none"></a>
+                                    <a href="{% url 'decrement_quantity' product.id %}" class="fa-sharp fa-solid fa-minus btn-sm minus-link" style="text-decoration: none"></a>
                                     <span class="quantity-number">{{ item.quantity }}</span>
-                                    <a href="{% url 'increment_quantity' item.product.id %}" class="fa-light fa-plus btn-sm plus-link" style="text-decoration: none"></a>
+                                    <a href="{% url 'increment_quantity' product.id %}" class="fa-light fa-plus btn-sm plus-link" style="text-decoration: none"></a>
                                 </div>
                             </td>
                             <td>{{ total }}</td>

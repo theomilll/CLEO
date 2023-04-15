@@ -119,3 +119,21 @@ def cart(request):
     }
 
     return render(request, 'cart.html', context)
+
+@login_required(login_url='login')
+def increment_quantity_prod_detail(request, product_id):
+    product = get_object_or_404(FoodProduct, id=product_id)
+    product = Cart.objects.get(user=request.user, product=product)
+    if product.quantity < 9:
+        product.quantity += 1
+        product.save()
+    return redirect( 'product_detail.html' )
+
+@login_required(login_url='login')
+def decrement_quantity_prod_detail(request, product_id):
+    product = get_object_or_404(FoodProduct, id=product_id)
+    product = Cart.objects.get(user=request.user, product=product)
+    if product.quantity > 1:
+        product.quantity -= 1
+        product.save()
+    return redirect( 'product_detail.html' )

@@ -4,6 +4,7 @@
 <head>
     <title>Product Detail</title>
     <link rel="stylesheet" type="text/css" href="{% static '../static/css/product_detail.css' %}">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -32,7 +33,7 @@
                         <p class="card-text">Descrição: {{ product.description }}</p>
                         <p class="card-text">
                         {% if product.ingredients_id != NULL %}
-                        <p class="card-text">Ingredientes:</p>
+                        <p class="card-text">Ingredientes:</b></p>
                             <p class="card-text">
                                 <ul>
                                     <li>{{ product.ingredients.name }}</li>
@@ -44,7 +45,13 @@
                         {% endfor %}
                     </div>
                     <div class="card-footer">
-                        <a href="{% url 'cart' %}" class="btn btn-primary" style="text-decoration:none">Add to Cart</a>
+                        <div class="quantity-box">
+                            <a href="{% url 'decrement_quantity_prod_detail' product %}" class="fa-sharp fa-solid fa-minus btn-sm minus-link" style="text-decoration: none"></a>
+                            <span class="quantity-number">{{ item.quantity }}</span>
+                            <a href="{% url 'increment_quantity_prod_detail' product %}" class="fa-light fa-plus btn-sm plus-link" style="text-decoration: none"></a>
+                            
+                        </div>
+                        <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary" style="text-decoration:none">Add to Cart</a>
                     </div>
                     </div>
                 </div>
