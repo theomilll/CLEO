@@ -45,7 +45,7 @@
                     <div class="card-footer">
                         <div class="quantity-box">
                             <a href="{% url 'decrement_quantity_prod_detail' product.id %}" class="fa-sharp fa-solid fa-minus btn-sm minus-link" style="text-decoration: none"></a>
-                            <span class="quantity-number">{{ item.quantity }}</span>
+                            <span>quantidade: {{ quant.quantity }}</span>
                             <a href="{% url 'increment_quantity_prod_detail' product.id %}" class="fa-light fa-plus btn-sm plus-link" style="text-decoration: none"></a>
                             
                         </div>
