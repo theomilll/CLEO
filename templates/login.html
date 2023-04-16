@@ -20,6 +20,16 @@
                 {{ form.username.label_tag }} {{ form.username }}
                 {{ form.email.label_tag }} {{ form.email }}
                 {{ form.password1.label_tag }} {{ form.password1 }}
+                <div id="passwordTooltip" class="tooltip">
+                    Password requirements:
+                    <ul>
+                      <li>At least 8 characters long</li>
+                      <li>Contains at least one uppercase letter</li>
+                      <li>Contains at least one lowercase letter</li>
+                      <li>Contains at least one digit</li>
+                      <li>Contains at least one special character</li>
+                    </ul>
+                  </div>
                 {{ form.password2.label_tag }} {{ form.password2 }}
                 <button>Sign Up</button>
             </form>

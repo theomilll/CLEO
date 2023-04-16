@@ -266,3 +266,32 @@ footer a {
     color: #3c97bf;
     text-decoration: none;
 }
+
+.tooltip {
+	display: none;
+	position: absolute;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 14px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	max-width: 250px;
+	color: #333;
+	
+  }
+  
+.tooltip ul {
+	list-style-type: none;
+	padding-left: 0;
+	margin-bottom: 0;
+}
+  
+.tooltip li:before {
+	content: "•";
+	color: #f05454;
+	font-weight: bold;
+	display: inline-block;
+	width: 1em;
+	margin-left: -1em;
+}
