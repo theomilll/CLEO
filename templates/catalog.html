@@ -22,14 +22,21 @@
                         {% comment %} <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}"> {% endcomment %}
                         <a href="{% url 'product_detail' product_id=product.id %}" style="text-decoration:none">
                             <div class="card-body">
-                                <h5 class="card-title product-link">{{ product.name }}</h5>
-                                <p class="card-text">R${{ product.price }}</p>
+                                <div class="card-split">
+                                    <div class="card-img">
+                                        <img src="https://placehold.co/130x100?text=Cliente+Food+Photo" alt="Imagem temporária">
+                                    </div>
+                                    <div class="card-content">
+                                        <h5 class="card-title product-link">{{ product.name }}</h5>
+                                        <p class="card-text">R${{ product.price }}</p>
+                                    </div>
+                                </div>
                             </div>
                         </a>
-                            <div class="card-footer">
-                                <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary" style="text-decoration:none">Add to Cart</a>
-                                <a class="btn btn-outline-secondary">Favorite</a>
-                            </div>
+                        <div class="card-footer">
+                            <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary" style="text-decoration:none">Add to Cart</a>
+                            <a class="btn btn-outline-secondary">Favorite</a>
+                        </div>
                     </div>
                 </div>
             {% endfor %}

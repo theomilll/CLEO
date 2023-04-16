@@ -56,10 +56,8 @@ def add_to_cart(request, product_id):
 @login_required(login_url='login')
 def product_detail_view(request, product_id):
     product = get_object_or_404(FoodProduct, id=product_id)
-
-    context = {'product': product}
-    # detail_name = product.objects.name
-
+    quant, created = Cart.objects.get_or_create(user=request.user, product=product)
+    context = {'product': product, 'quant': quant}
     return render(request, 'product_detail.html', context)
 
 @login_required(login_url='login')
@@ -119,3 +117,21 @@ def cart(request):
     }
 
     return render(request, 'cart.html', context)
+
+@login_required(login_url='login')
+def increment_quantity_prod_detail(request, product_id):
+    product = get_object_or_404(FoodProduct, id=product_id)
+    product = Cart.objects.get(user=request.user, product=product)
+    if product.quantity < 9:
+        product.quantity += 1
+        product.save()
+    return redirect( 'product_detail', product_id=product_id)
+
+@login_required(login_url='login')
+def decrement_quantity_prod_detail(request, product_id):
+    product = get_object_or_404(FoodProduct, id=product_id)
+    product = Cart.objects.get(user=request.user, product=product)
+    if product.quantity > 1:
+        product.quantity -= 1
+        product.save()
+    return redirect( 'product_detail', product_id=product_id )

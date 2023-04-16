@@ -4,6 +4,7 @@
 <head>
     <title>Product Detail</title>
     <link rel="stylesheet" type="text/css" href="{% static '../static/css/product_detail.css' %}">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -18,25 +19,44 @@
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
                     {% comment %} <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}"> {% endcomment %}
-                    <div class="card-body">
-                        <h1 class="text-center my-5">{{ product.name }} <a class="fa fa-star href=" {% url 'cart' %} style="text-decoration:none"> </a></h1>
-                        <p class="card-text">Preço: R$ {{ product.price }}</p>
-                        <p class="card-text">Descrição: {{ product.description }}</p>
-                        {% if product.ingredients_id != NULL %}
-                        <p class="card-text">Ingredientes:</p>
-                            <p class="card-text">
-                                <ul>
-                                    <li>{{ product.ingredients.name }}</li>
-                                </ul>
-                            </p>
-                        </p>
-                        {% endif %}
-                        {% for product in food_products %} 
-                        {% endfor %}
+                    <div class="top-bar">
+                        <a href="{% url 'home' %}" class="back-to-home">
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                        <h1 class="text-center my-5">{{ product.name }} </h1>
+                        <a href="{% url 'cart' %}" style="text-decoration:none">
+                            <i class="fa fa-star"></i>
+                        </a>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-body">
+                        <div class="card-colunm">
+                            <div class="card-img">
+                                <img src="https://placehold.co/450x450?text=Cliente+Food+Photo" alt="imagem temporária">
+                            </div>
+                            <div class= "card-content">
+                                <p class="card-text">Preço: R$ {{ product.price }}</p>
+                                <p class="card-text">Descrição: {{ product.description }}</p>
+                                <p class="card-text">
+                                {% if product.ingredients_id != NULL %}
+                                <p class="card-text">Ingredientes:</b></p>
+                                    <p class="card-text">
+                                        <ul>
+                                            <li>{{ product.ingredients.name }}</li>
+                                        </ul>
+                                    </p>
+                                </p>
+                                {% else %}
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="quantity-box btn-counter btn-outline-secondary">
+                                <a href="{% url 'decrement_quantity_prod_detail' product.id %}" class="fa-sharp fa-solid fa-minus btn-sm minus-link" style="text-decoration: none"></a>
+                                <span>quantidade: {{ quant.quantity }}</span>
+                                <a href="{% url 'increment_quantity_prod_detail' product.id %}" class="fa-light fa-plus btn-sm plus-link" style="text-decoration: none"></a>
+                        </div>
                         <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary" style="text-decoration:none">Add to Cart</a>
-                        <a class="btn btn-outline-secondary">Favorite</a>
                     </div>
                     </div>
                 </div>

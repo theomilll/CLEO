@@ -137,9 +137,19 @@ h1 {
     color: black;
 }
 
-.favorite-star-icon {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    font-size: 40px;
+.card-split{
+    display: flex;
+    justify-content: space-evenly;   
 }
+.card-img{
+    padding: 5px 0px 5px 5px;
+}
+
+.card-img img{
+    max-width: 130px;
+}
+.card-content{
+    padding: 10px;
+
+}
+
