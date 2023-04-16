@@ -24,6 +24,7 @@
         <div class="row">
             <div class="col-12">
                 {% if cart_items_total %}
+                <div class="table-container">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -54,6 +55,7 @@
                         {% endfor %}
                     </tbody>
                 </table>
+            </div>
                 {% if cart_items_total %}
                 <form method="post">
                     {% csrf_token %}

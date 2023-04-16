@@ -33,6 +33,7 @@ p {
 .container {
     width: 80%;
     margin: 0 auto;
+    position: relative;
 }
 
 .my-4 {
@@ -177,6 +178,9 @@ td {
     width: 100%;
     max-width: 200px;
     text-align: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .total-text {
@@ -198,4 +202,8 @@ td {
     margin-bottom: 1rem;
     color: black;
     text-decoration: underline;
+}
+
+.table-container {
+    margin-top: 25px;
 }
