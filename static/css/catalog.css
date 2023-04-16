@@ -137,3 +137,19 @@ h1 {
     color: black;
 }
 
+.card-split{
+    display: flex;
+    justify-content: space-evenly;   
+}
+.card-img{
+    padding: 5px 0px 5px 5px;
+}
+
+.card-img img{
+    max-width: 130px;
+}
+.card-content{
+    padding: 10px;
+
+}
+
