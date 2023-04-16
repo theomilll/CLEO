@@ -17,7 +17,7 @@
         <a href="{% url 'home' %}" class="back-to-home">
             <i class="fas fa-arrow-left"></i>
         </a>
-        <h1 class="top-bar-title">Shopping Cart</h1>
+        <h1 class="top-bar-title">Carrinho de compras</h1>
     </div>
     <a href="{% url 'clear_cart' %}" class="btn btn-danger clear-cart-btn">Limpar carrinho</a>
     <div class="container">
@@ -28,9 +28,9 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Product Name</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
+                            <th>Nome do Produto</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
                             <th>Total</th>
                             <th></th>
                         </tr>
@@ -49,7 +49,7 @@
                             </td>
                             <td>{{ total }}</td>
                             <td>
-                                <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-danger btn-sm">Remove</a>
+                                <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-danger btn-sm">Remover</a>
                             </td>
                         </tr>
                         {% endfor %}

@@ -14,7 +14,7 @@
         </div>
     </nav>
     <div class="container">
-        <h1 class="text-center my-5">Food Catalog</h1>
+        <h1 class="text-center my-5">Catalogo de Comidas</h1>
         <div class="row">
             {% for product in food_products %}
                 <div class="col-md-4 mb-4">
@@ -34,8 +34,8 @@
                             </div>
                         </a>
                         <div class="card-footer">
-                            <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary" style="text-decoration:none">Add to Cart</a>
-                            <a class="btn btn-outline-secondary">Favorite</a>
+                            <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary" style="text-decoration:none">Adicionar ao carrinho</a>
+                            <a class="btn btn-outline-secondary">Favorito</a>
                         </div>
                     </div>
                 </div>
