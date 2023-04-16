@@ -17,6 +17,8 @@
 ## Link do Figma
 - <a href="https://www.figma.com/file/gsZa5WDhVrfWIilATY4K0P/LO-FI-CLEO?node-id=0%3A1&t=VpvNaYuTkpGkrmfp-1">Protótipo Lo-Fi CLEO</a>
 
+## Nosso diagrama de atividades
+
 ## Integrantes da Equipe
 - <a href="mailto:abxa@cesar.school">Ana Beatriz Alves</a>
 - <a href="mailto:cba2@cesar.school">Caio Barreto</a>
