@@ -178,8 +178,6 @@ td {
     width: 100%;
     max-width: 200px;
     text-align: center;
-    position: absolute;
-    bottom: 0;
     right: 0;
 }
 
@@ -206,4 +204,61 @@ td {
 
 .table-container {
     margin-top: 25px;
+}
+
+.observation-box {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+    font-size: 14px;
+    font-family: inherit;
+    margin-bottom: 10px;
+}
+
+.observation-box:focus {
+    outline: none;
+    border-color: #777;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+    padding: 2px 4px;
+    font-size: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004095;
+}
+
+.observation-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.total-box {
+    margin-top: 20px;
+}
+
+.bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.add-observation-btn-container {
+    text-align: left;
+    margin-top: 10px;
 }

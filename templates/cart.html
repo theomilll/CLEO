@@ -56,16 +56,22 @@
                     </tbody>
                 </table>
             </div>
-                {% if cart_items_total %}
-                <form method="post">
-                    {% csrf_token %}
-                    {{ form.text_box_obs }}
-                    <button type="submit" class="btn btn-primary">Adicionar observação</button>
-                </form>
-            {% endif %}
-                <div class="total-box">
-                    <p class="total-text">Total: {{ cart_total }}</p>
-                </div>                
+            {% if cart_items_total %}
+                <div class="bottom-container">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="observation-container">
+                            <input type="text" name="{{ form.text_box_obs.name }}" class="observation-box" placeholder="Alguma observação?"/>
+                            <div class="add-observation-btn-container">
+                                <button type="submit" class="btn btn-primary">Adicionar observação</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="total-box">
+                        <p class="total-text">Total: {{ cart_total }}</p>
+                    </div>
+                </div>
+            {% endif %}                
                 {% comment %} <a href="{% url 'checkout' %}" class="btn btn-success">Proceed to Checkout</a> {% endcomment %}
                 {% else %}
                 <div class="empty-cart-message">
