@@ -19,8 +19,8 @@
 
 ## Nosso diagrama de atividades
 
-<img src="https://drive.google.com/file/d/1Y_ymU9zGcf9fox5PCZ9hh9y_nWXAbWox/view?usp=share_link" width="600" height="600" >
-- <a href "https://drive.google.com/file/d/1SBCtBuMAGLTClSOhpTIu6vJ4dyuLK0CC/view?usp=share_link"></a>
+
+- <a href "https://drive.google.com/file/d/1SBCtBuMAGLTClSOhpTIu6vJ4dyuLK0CC/view?usp=share_link">Clique aqui para visualizar o diagrama em pdf</a>
 
 ## Integrantes da Equipe
 - <a href="mailto:abxa@cesar.school">Ana Beatriz Alves</a>
