@@ -17,10 +17,11 @@
 ## Link do Figma
 - <a href="https://www.figma.com/file/gsZa5WDhVrfWIilATY4K0P/LO-FI-CLEO?node-id=0%3A1&t=VpvNaYuTkpGkrmfp-1">Protótipo Lo-Fi CLEO</a>
 
-## Nosso diagrama de atividades
+### Diagrama de atividades
+- <a href="https://drive.google.com/file/d/1SBCtBuMAGLTClSOhpTIu6vJ4dyuLK0CC/view?usp=share_link">Clique aqui para visualizar o diagrama em pdf</a>
 
-
-- <a href "https://drive.google.com/file/d/1SBCtBuMAGLTClSOhpTIu6vJ4dyuLK0CC/view?usp=share_link">Clique aqui para visualizar o diagrama em pdf</a>
+## Pogramação em pares
+- <a href="https://docs.google.com/document/d/19kMGlKWTtmS4_a0b0ogvFF-unXA4oes1-lSFioI59Ns/edit?usp=sharing">Relatos da Sprint 01</a>
 
 ## Integrantes da Equipe
 - <a href="mailto:abxa@cesar.school">Ana Beatriz Alves</a>
