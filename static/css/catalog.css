@@ -114,12 +114,17 @@ h1 {
     background-color: #082E31;
     color: #fff;
     border: 1px solid #082E31;
+    
 }
 
 .btn-outline-secondary {
     background-color: transparent;
     color: #082E31;
     border: 1px solid #082E31;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
 }
 
 .cart-icon {
@@ -175,4 +180,11 @@ h1 {
         margin-bottom: 30px;
         padding: 0 15px;
     }
+}
+
+.custom-btn {
+    width: 100%;
+    height: 40px; 
+    line-height: 13px;
+    text-align: center;
 }
