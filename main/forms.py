@@ -4,10 +4,10 @@ from django.contrib.auth.models import User
 from .models import Cart
 
 class SignUpForm(UserCreationForm):
-    username = forms.CharField(max_length=30, required=True, widget=forms.TextInput(attrs={'placeholder': 'Username'}))
-    email = forms.EmailField(max_length=254, required=True, widget=forms.TextInput(attrs={'placeholder': 'Email'}))
-    password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
-    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password'}))
+    username = forms.CharField(max_length=30, required=True, widget=forms.TextInput(attrs={'placeholder': 'Username', 'name' : 'username_r'}))
+    email = forms.EmailField(max_length=254, required=True, widget=forms.TextInput(attrs={'placeholder': 'Email', 'name' : 'email_r'}))
+    password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password', 'name' : 'password1_r'}))
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password', 'name' : 'password2_r'}))
 
     class Meta:
         model = User
