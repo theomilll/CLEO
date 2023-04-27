@@ -31,7 +31,7 @@
                     </ul>
                   </div>
                 {{ form.password2.label_tag }} {{ form.password2 }}
-                <button>Sign Up</button>
+                <button id="Sign Up">Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
@@ -39,7 +39,7 @@
                 {% csrf_token %}
                 <input type="hidden" name="form_type" value="login">
                 <h1>Log in</h1>
-                <input type="text" name="username" placeholder="Username" required />
+                <input type="text" name="Username" placeholder="Username" required />
                 <input type="password" name="password" placeholder="Password" required />
                 <button type="submit" name="login">Log In</button>
             </form>
