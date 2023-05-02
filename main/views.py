@@ -11,7 +11,7 @@ def login(request):
         form_type = request.POST.get('form_type')
 
         if form_type == 'login':
-            username = request.POST.get('username')
+            username = request.POST.get('Username')
             password = request.POST.get('password')
 
             user = authenticate(request, username=username, password=password)

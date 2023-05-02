@@ -33,7 +33,7 @@ class cleo(TestCase):
         password_login = driver.find_element(By.NAME,"password")
         password_login.send_keys("inevitavel40")
         time.sleep(1)
-        botao_login = driver.find_element(By.ID,"login")
+        botao_login = driver.find_element(By.NAME,"login")
         botao_login.click()
         adicionar_carrinho = driver.find_element(By.NAME,"Adicionar ao carrinho")
         adicionar_carrinho.click()
