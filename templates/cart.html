@@ -19,7 +19,7 @@
         </a>
         <h1 class="top-bar-title">Carrinho de compras</h1>
     </div>
-    <a href="{% url 'clear_cart' %}" class="btn btn-danger clear-cart-btn">Limpar carrinho</a>
+    <a href="{% url 'clear_cart' %}" class="btn btn-danger clear-cart-btn" name="clearCart">Limpar carrinho</a>
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -42,14 +42,14 @@
                             <td>{{ item.product.price }}</td>
                             <td>
                                 <div class="quantity-box">
-                                    <a href="{% url 'decrement_quantity' item.product.id %}" class="fa-sharp fa-solid fa-minus btn-sm minus-link" style="text-decoration: none"></a>
+                                    <a href="{% url 'decrement_quantity' item.product.id %}" class="fa-sharp fa-solid fa-minus btn-sm minus-link" style="text-decoration: none" name="decreaseCart"></a>
                                     <span class="quantity-number">{{ item.quantity }}</span>
-                                    <a href="{% url 'increment_quantity' item.product.id %}" class="fa-light fa-plus btn-sm plus-link" style="text-decoration: none"></a>
+                                    <a href="{% url 'increment_quantity' item.product.id %}" class="fa-light fa-plus btn-sm plus-link" style="text-decoration: none" name="increaseCart"></a>
                                 </div>
                             </td>
                             <td>{{ total }}</td>
                             <td>
-                                <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-danger btn-sm">Remover</a>
+                                <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-danger btn-sm" name="removeCart">Remover</a>
                             </td>
                         </tr>
                         {% endfor %}
@@ -63,7 +63,7 @@
                         <div class="observation-container">
                             <input type="text" name="{{ form.text_box_obs.name }}" class="observation-box" placeholder="Alguma observação?"/>
                             <div class="add-observation-btn-container">
-                                <button type="submit" class="btn btn-primary">Adicionar observação</button>
+                                <button type="submit" class="btn btn-primary" name="obsCartBtn">Adicionar observação</button>
                             </div>
                         </div>
                     </form>

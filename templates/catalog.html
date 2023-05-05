@@ -10,7 +10,7 @@
     <nav>
         <p>CENTRAL<br>LISTING<br>for<br>EASY<br>ORDERING</p>
         <div class="cart-icon">
-            <a class="fas fa-shopping-cart cart-link" href="{% url 'cart' %}" style="text-decoration:none"></a>
+            <a class="fas fa-shopping-cart cart-link" href="{% url 'cart' %}" style="text-decoration:none" name="cart"></a>
         </div>
     </nav>
     <div class="container">
@@ -20,7 +20,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
                         {% comment %} <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}"> {% endcomment %}
-                        <a href="{% url 'product_detail' product_id=product.id %}" style="text-decoration:none">
+                        <a href="{% url 'product_detail' product_id=product.id %}" style="text-decoration:none" name="product-link">
                             <div class="card-body">
                                 <div class="card-split">
                                     <div class="card-img">
@@ -34,7 +34,7 @@
                             </div>
                         </a>
                         <div class="card-footer">
-                            <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary custom-btn" style="text-decoration:none">Adicionar ao carrinho</a>
+                            <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary custom-btn" style="text-decoration:none" name="cartAdd">Adicionar ao carrinho</a>
                             <a class="btn btn-outline-secondary custom-btn">Favorito</a>
                         </div>
                     </div>

@@ -21,7 +21,7 @@
                     {% comment %} <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}"> {% endcomment %}
                     <div class="top-bar">
                         <a href="{% url 'home' %}" class="back-to-home">
-                            <i class="fas fa-arrow-left"></i>
+                            <i class="fas fa-arrow-left" name="go-back"></i>
                         </a>
                         <h1 class="text-center my-5">{{ product.name }} </h1>
                         <a href="{% url 'cart' %}" style="text-decoration:none">
@@ -52,11 +52,11 @@
 
                         <div class="card-footer">
                             <div class="quantity-box btn-counter btn-outline-secondary">
-                                <a href="{% url 'decrement_quantity_prod_detail' product.id %}" class="fa-sharp fa-solid fa-minus btn-sm minus-link" style="text-decoration: none"></a>
+                                <a href="{% url 'decrement_quantity_prod_detail' product.id %}" class="fa-sharp fa-solid fa-minus btn-sm minus-link" style="text-decoration: none" name="decrease"></a>
                                 <span>quantidade: {{ quant.quantity }}</span>
-                                <a href="{% url 'increment_quantity_prod_detail' product.id %}" class="fa-light fa-plus btn-sm plus-link" style="text-decoration: none"></a>
+                                <a href="{% url 'increment_quantity_prod_detail' product.id %}" class="fa-light fa-plus btn-sm plus-link" style="text-decoration: none" name="increase"></a>
                         </div>
-                        <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary" style="text-decoration:none">Adicionar ao Carrinho</a>
+                        <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary" style="text-decoration:none" name="cartAdd">Adicionar ao Carrinho</a>
                     </div>
                     </div>
                 </div>
