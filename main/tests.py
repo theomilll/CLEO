@@ -39,7 +39,7 @@ class cleo(TestCase):
         first_product = driver.find_element(By.NAME, "product-link")
         first_product.click()
         time.sleep(2)
-        for i in range(5):
+        for i in range(4):
             increase_button = driver.find_element(By.NAME, "increase")
             increase_button.click()
             time.sleep(1)
@@ -65,7 +65,7 @@ class cleo(TestCase):
             cartIncrease.click()
             time.sleep(1)
         cartObs = driver.find_element(By.NAME, "text_box_obs")
-        cartObs.send_keys("Eu sou inevitÃ¡vel. Eu finalmente vou descansar e ver o sol nascer em um universo agradecido.")
+        cartObs.send_keys("Eu sou inevitavel!")
         time.sleep(2)
         cartObsBtn = driver.find_element(By.NAME, "obsCartBtn")
         cartObsBtn.click()
