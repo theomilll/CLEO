@@ -12,12 +12,13 @@
         <p>CENTRAL<br>LISTING<br>for<br>EASY<br>ORDERING</p>
         </div>
     </nav>
-    {% block content %}
-    <div class="top-bar">
-        <a href="{% url 'home' %}" class="back-to-home">
-            <i class="fas fa-arrow-left"></i>
-        </a>
-        <h1 class="top-bar-title">Carrinho de compras</h1>
+    <div class="container">
+        <div class="top-bar">       
+            <a href="{% url 'home' %}" class="back-to-home">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <h1 class="top-bar-title">Carrinho de compras</h1>
+        </div>
     </div>
     <a href="{% url 'clear_cart' %}" class="btn btn-danger clear-cart-btn" name="clearCart">Limpar carrinho</a>
     <div class="container">
@@ -81,6 +82,5 @@
             </div>
         </div>
     </div>
-    {% endblock %}
 </body>
 </html>

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Detail</title>
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/product_detail.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav>
+        <p>CENTRAL<br>LISTING<br>for<br>EASY<br>ORDERING</p>
+        <div class="cart-icon">
+            <a class="fas fa-shopping-cart cart-link" href="{% url 'cart' %}" style="text-decoration:none"></a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    {% comment %} <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}"> {% endcomment %}
+                    <div class="top-bar">
+                        <a href="{% url 'home' %}" class="back-to-home">
+                            <i class="fas fa-arrow-left" name="go-back"></i>
+                        </a>
+                        <h1 class="text-center my-5">Order Status</h1>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="card-footer">
+                                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

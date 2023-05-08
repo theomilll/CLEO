@@ -148,13 +148,15 @@ td {
     padding: 10px 20px;
     background-color: #dfdfdf;
     border-radius: 10px;
-    margin-bottom: 20px;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
 }
 
 .top-bar-title {
     flex-grow: 1;
     margin: 0;
-    font-size: 24px;
+    font-size: 40px;
     text-align: center;
 }
 

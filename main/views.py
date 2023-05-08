@@ -136,3 +136,7 @@ def decrement_quantity_prod_detail(request, product_id):
         product.quantity -= 1
         product.save()
     return redirect( 'product_detail', product_id=product_id )
+
+@login_required(login_url='login')
+def order_status(request):
+    return render(request, 'order_status.html')
