@@ -41,8 +41,9 @@ def login(request):
 
 @login_required(login_url='login')
 def catalog(request):
-    food_products = FoodProduct.objects.all()
-    return render(request, 'catalog.html', {'food_products': food_products})
+    pesquisa = request.GET.get('search', '')
+    food_product = FoodProduct.objects.filter(name__icontains=pesquisa)
+    return render(request, 'catalog.html', {'food_products': food_product})
 
 @login_required(login_url='login')
 def add_to_cart(request, product_id):

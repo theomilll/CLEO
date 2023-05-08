@@ -17,11 +17,12 @@
         <h1 class="text-center my-5">Catálogo de Comidas</h1>
         <div class="row mb-4">
             <div class="col-md-4">
-                <form method="get" action="{% url 'catalog' %}">
-                    <input type="search" name="search" placeholder="Buscar" value="{{ request.GET.search}}">
-                    <button type="submit">Busca</button>
+                <form method="get" action="{% url 'home' %}">
+                    <input type="search" name="search" placeholder="Buscar produto" value="{{ request.GET.search }}">
+                    <button type="submit">Buscar</button>
                 </form>
             </div>
+        </div>
         <div class="row">
             {% for product in food_products %}
                 <div class="col-md-4 mb-4">
