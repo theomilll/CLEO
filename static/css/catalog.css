@@ -155,6 +155,8 @@ h1 {
 }
 .card-content{
     padding: 10px;
+    height: 100px;
+    overflow-y: auto;
 
 }
 

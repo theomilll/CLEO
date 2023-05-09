@@ -18,7 +18,6 @@
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
-                    {% comment %} <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}"> {% endcomment %}
                     <div class="top-bar">
                         <a href="{% url 'home' %}" class="back-to-home">
                             <i class="fas fa-arrow-left" name="go-back"></i>
@@ -31,7 +30,7 @@
                     <div class="card-body">
                         <div class="card-colunm">
                             <div class="card-img">
-                                <img src="https://placehold.co/450x450?text=Cliente+Food+Photo" alt="imagem temporária">
+                                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
                             </div>
                             <div class= "card-content">
                                 <p class="card-text">Preço: R$ {{ product.price }}</p>

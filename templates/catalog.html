@@ -27,13 +27,11 @@
             {% for product in food_products %}
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
-                        {% comment %} <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}"> {% endcomment %}
                         <a href="{% url 'product_detail' product_id=product.id %}" style="text-decoration:none" name="product-link">
                             <div class="card-body">
                                 <div class="card-split">
                                     <div class="card-img">
-                                        <img src="https://placehold.co/130x100?text=Cliente+Food+Photo" alt="Imagem temporária">
-                                    </div>
+                                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">                                    </div>
                                     <div class="card-content">
                                         <h5 class="card-title product-link">{{ product.name }}</h5>
                                         <p class="card-text">R${{ product.price }}</p>

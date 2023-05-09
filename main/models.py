@@ -20,7 +20,7 @@ class Ingredients(models.Model):
 class FoodProduct(models.Model):
     name = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    # image = models.ImageField(upload_to='food_products/')
+    image = models.ImageField(upload_to='static/food_products/', default="static/food_products/default")
     description = models.TextField()
     ingredients = models.ManyToManyField(Ingredients, blank=True)
 
