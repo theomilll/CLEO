@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pix QR Code</title>
+</head>
+<body>
+    <h1>Pix QR Code</h1>
+    <div>
+        <img src="{{ qr_base64 }}" alt="Pix QR code" />
+    </div>
+    <div>
+        <a href="{% url 'order_status' %}">Compra concluida</a>
+    </div>
+</body>
+</html>

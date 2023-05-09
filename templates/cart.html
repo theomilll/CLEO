@@ -79,6 +79,8 @@
                     <p>Seu carrinho está vazio. <a href="{% url 'home' %}">Continue comprando</a>.</p>
                 </div>
                 {% endif %}
+                <div>
+                    <a href="{% url 'generate_qr_code' %}" class="btn btn-primary">Finalizar Compra</a>
             </div>
         </div>
     </div>

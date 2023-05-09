@@ -15,4 +15,5 @@ urlpatterns = [
     path('increment_quantity_prod_detail/<int:product_id>/', views.increment_quantity_prod_detail, name='increment_quantity_prod_detail'),
     path('decrement_quantity_prod_detail/<int:product_id>/', views.decrement_quantity_prod_detail, name='decrement_quantity_prod_detail'),
     path('order_status/', views.order_status, name='order_status'),
+    path('generate_qr_code', views.generate_qr_code, name='generate_qr_code'),
 ]

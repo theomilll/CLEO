@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import SignUpForm, CartForm
 from .models import FoodProduct, Cart, Favorite
 from django.contrib.auth.decorators import login_required
+from pixqrcode import PixQrCode
 
 def login(request):
     error_message = None
@@ -140,3 +141,24 @@ def decrement_quantity_prod_detail(request, product_id):
 @login_required(login_url='login')
 def order_status(request):
     return render(request, 'order_status.html')
+
+@login_required(login_url='login')
+def generate_qr_code(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        mobile = request.POST.get('mobile')
+        city = request.POST.get('city')
+        amount = request.POST.get('amount', None)
+
+        if not name or not mobile or not city:
+            return render(request, 'payments/error.html', {'message': 'Please provide all required fields'})
+
+        pix = PixQrCode(name, mobile, city, amount)
+
+        if pix.is_valid():
+            qr_base64 = pix.export_base64()
+            return render(request, 'qr_code.html', {'qr_base64': qr_base64})
+        else:
+            return render(request, 'error.html', {'message': 'Invalid input fields'})
+    else:
+        return render(request, 'qr_code_form.html')

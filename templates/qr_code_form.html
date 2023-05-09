@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pix QR Code Generator</title>
+</head>
+<body>
+    <h1>Pix QR Code Generator</h1>
+    <form method="POST" action="{% url 'generate_qr_code' %}">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="mobile">Mobile (Chave PIX):</label>
+        <input type="text" id="mobile" name="mobile" required><br>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br>
+
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount"><br>
+
+        <input type="submit" value="Generate QR Code">
+    </form>
+</body>
+</html>
