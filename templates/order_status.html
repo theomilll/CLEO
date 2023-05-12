@@ -33,17 +33,12 @@
         </div>
     </div>
     <div class="container px-1 px-md-4 py-5 mx-auto">
-        <div class="card">
-          <div class="row d-flex justify-content-between px-3 top">
-            <div class="d-flex">
-              <h5>
-                PEDIDO:
-                <span class="text-primary font-weight-bold">#YWSNWDAAW</span>
-              </h5>
-            </div>
-            <div class="d-flex flex-column text-sm-right">
-            </div>
-          </div>
+      <div class="card">
+        <div class="timeline-container">
+          <h5>
+            PEDIDO:
+            <span class="text-primary font-weight-bold">#YWSNWDAAW</span>
+          </h5>
           <!-- Add class "active" to progress -->
           <ul id="progressbar" class="text-center">
             <li class="step0">
@@ -67,8 +62,27 @@
               </div>
             </li>
           </ul>
+          <br><br><br><br><br>
+          <div class="track-order">
+            <hr>
+            <div class="row d-flex justify-content-between px-3 top">
+              <div class="d-flex">
+                <img src="{{ product.image.url }}" alt="Product Image" style="width:100px;height:100px;">
+              </div>
+              <div>
+                <p>Horário de retirada: 15:00</p>
+                <p>Data do pedido: 12/05/2023</p>
+                <p>Tipo de pagamento: PIX</p>
+              </div>
+              <div class="d-flex flex-column text-sm-right">
+                <p>Detalhe do pedido:<br> Detalhes aqui</p>
+                <p><br><br><br><br><br>Valor Total: R$100.00</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>    
       <script src="{% static '../static/js/timeline.js' %}"></script>
 </body>
 </html>

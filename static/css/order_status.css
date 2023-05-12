@@ -14,7 +14,6 @@ nav {
     padding: 5px;
     text-align: center;
     font-size: 15px;
-    font-weight: bold;
     width: 100%;
     color: #fff;
     margin-bottom: 50px;
@@ -84,7 +83,7 @@ body {
   #progressbar {
     margin-bottom: 1px;
     padding-left: 0;
-    margin-top: 30px;
+    margin-top: 70px;
   }
   
   #progressbar li {
@@ -172,3 +171,47 @@ body {
     align-items: center;
     justify-content: center;
   }
+
+
+  /*track order*/
+img {
+  border-radius: 8px;
+}
+
+.container .card .row {
+  margin-bottom: 20px;
+}
+
+.container .card .row p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.container .card .row .d-flex {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.container .card .row .text-sm-right {
+  align-items: flex-end;
+}
+
+hr {
+  height: 5px;
+  color: #082E31;
+  border-style: solid;
+}
+.timeline-container {
+  border: 2px solid #082E31; /* Adiciona uma borda ao redor da timeline e do track order */
+  border-radius: 10px; /* Borda arredondada */
+  padding: 10px; /* Espaço interno entre o conteúdo e a borda */
+  margin-bottom: 20px; /* Espaço inferior para separar do próximo elemento */
+}
+
+.track-order {
+  margin-top: 20px; /* Espaço superior para separar da timeline */
+}
+h5{
+  padding-top: 20px;
+  padding-left: 10px;
+}
