@@ -206,22 +206,15 @@ h1 {
 
 }
 
-.search-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 12px;
-}
-
-.search-input{
-    border: 1px solid#ccc;
+input{
+    border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 10px 80px;
+    padding: 10px;
     font-size: 12px;
-    width: 100%;
-    max-width: 800px;
-
+    width: calc(100% - 20px);
+    box-sizing: border-box;
 }
+
 
 #btn-busca{
     position: absolute;

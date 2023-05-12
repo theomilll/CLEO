@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>Login and Register</title>
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/payment.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <nav>
+      <p>CENTRAL<br>LISTING<br>for<br>EASY<br>ORDERING</p>
+    </nav>
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="payment-method">Escolha um metodo de pagamento:</label>
+                <select id="payment-method" name="payment-method">
+                    <option value="pix">Pix</option>
+                    <option value="credit-card">Cartão de Crédito</option>
+                </select>
+            </div>
+            <p>Total: R${{ total }}</p>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
