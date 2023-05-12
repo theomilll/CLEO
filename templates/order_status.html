@@ -2,38 +2,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Product Detail</title>
-    <link rel="stylesheet" type="text/css" href="{% static '../static/css/product_detail.css' %}">
-
+    <title>Shopping Cart</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+  <!-- FontAwesome 4.7.0 CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" type="text/css" href="{% static './css/order_status.css' %}">
 </head>
 <body>
     <nav>
         <p>CENTRAL<br>LISTING<br>for<br>EASY<br>ORDERING</p>
-        <div class="cart-icon">
-            <a class="fas fa-shopping-cart cart-link" href="{% url 'cart' %}" style="text-decoration:none"></a>
-        </div>
     </nav>
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    {% comment %} <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}"> {% endcomment %}
-                    <div class="top-bar">
-                        <a href="{% url 'home' %}" class="back-to-home">
-                            <i class="fas fa-arrow-left" name="go-back"></i>
-                        </a>
-                        <h1 class="text-center my-5">Order Status</h1>
-                    </div>
-                    <div class="card-body">
-
-                        <div class="card-footer">
-                                                
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="top-bar">       
+            <a href="{% url 'home' %}" class="back-to-home">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <h1 class="top-bar-title">Status do pedido</h1>
         </div>
     </div>
+    <div class="container px-1 px-md-4 py-5 mx-auto">
+      <div class="card">
+        <div class="timeline-container">
+          <h5>
+            PEDIDO:
+            <span class="text-primary font-weight-bold">#YWSNWDAAW</span>
+          </h5>
+          <!-- Add class "active" to progress -->
+          <ul id="progressbar" class="text-center">
+            <li class="step0">
+              <div class="step-container">
+                <p class="status-text">Pedido Realizado</p>
+              </div>
+            </li>
+            <li class="step0">
+              <div class="step-container">
+                <p class="status-text">Aceito</p>
+              </div>
+            </li>
+            <li class="step0">
+              <div class="step-container">
+                <p class="status-text">Em andamento</p>
+              </div>
+            </li>
+            <li class="step0">
+              <div class="step-container">
+                <p class="status-text">Retirado</p>
+              </div>
+            </li>
+          </ul>
+          <br><br><br><br><br>
+          <div class="track-order">
+            <hr>
+            <div class="row d-flex justify-content-between px-3 top">
+              <div class="d-flex">
+                <img src="{{ product.image.url }}" alt="Product Image" style="width:100px;height:100px;">
+              </div>
+              <div>
+                <p>Horário de retirada: 15:00</p>
+                <p>Data do pedido: 12/05/2023</p>
+                <p>Tipo de pagamento: PIX</p>
+              </div>
+              <div class="d-flex flex-column text-sm-right">
+                <p>Detalhe do pedido:<br> Detalhes aqui</p>
+                <p><br><br><br><br><br>Valor Total: R$100.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+      <script src="{% static '../static/js/timeline.js' %}"></script>
 </body>
 </html>

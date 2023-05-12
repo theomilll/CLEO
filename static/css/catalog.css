@@ -218,12 +218,16 @@ input{
 
 #btn-busca{
     position: absolute;
-    color: #007bff;
-    padding: 4px 8px;
-    font-size: 12px;
+    cursor: pointer;
+    background-color: #082E31;
+    color: white;
+    border: none;
+    padding: 9px 18px;
+    font-size: 14px;
     border-radius: 5px;
     margin-left: 12px;
-    margin-top: 4px;
-    cursor: pointer;
-
+    font-weight: bold;
+}
+#btn-busca:hover {
+    background-color: #094145;
 }
