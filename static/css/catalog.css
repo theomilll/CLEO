@@ -30,6 +30,10 @@ p {
 	margin: 20px 0 30px;
 }
 
+a{
+    text-decoration: none;
+}
+
 .container {
     width: 80%;
     margin: 0 auto;
@@ -189,4 +193,15 @@ h1 {
     height: 40px; 
     line-height: 13px;
     text-align: center;
+}
+
+#sino{
+    position: relative;
+    color: white;
+    text-decoration: none;
+    right: 50px;
+    top: 5px;
+    height: 40px;
+    width: 40px;
+
 }
