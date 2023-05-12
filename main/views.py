@@ -145,8 +145,8 @@ def order_status(request):
 
 @login_required(login_url='login')
 def generate_qr_code(request):
-    name = 'Theo'
-    mobile = '(81)997430087'
+    name = 'Ana'
+    mobile = '(81)992867651'
     city = 'Recife'
 
     cart_items = Cart.objects.filter(user=request.user)
