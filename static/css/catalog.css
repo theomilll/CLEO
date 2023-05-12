@@ -205,3 +205,32 @@ h1 {
     width: 40px;
 
 }
+
+.search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.search-input{
+    border: 1px solid#ccc;
+    border-radius: 5px;
+    padding: 10px 80px;
+    font-size: 12px;
+    width: 100%;
+    max-width: 800px;
+
+}
+
+#btn-busca{
+    position: absolute;
+    color: #007bff;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 5px;
+    margin-left: 12px;
+    margin-top: 4px;
+    cursor: pointer;
+
+}
