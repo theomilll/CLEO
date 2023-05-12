@@ -1,14 +1,23 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pix QR Code</title>
+    <title>QR Code</title>
+    <link rel="stylesheet" type="text/css" href="{% static './css/qr_code.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <h1>Pix QR Code</h1>
-    <div>
-        <img src="{{ qr_base64 }}" alt="Pix QR code" />
-    </div>
-    <div>
+    <nav>
+        <p>CENTRAL<br>LISTING<br>for<br>EASY<br>ORDERING</p>           
+    </nav>
+    <div class="container">
+        <div class="top-bar">
+            <h1 class="top-bar-title">Seu QR Code</h1>
+        </div>
+        <div class="qr-code-container">
+            <img src="{{ qr_base64 }}" alt="Pix QR code" />
+        </div>
         <a href="{% url 'order_status' %}">Compra concluida</a>
     </div>
 </body>

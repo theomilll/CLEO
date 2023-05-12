@@ -4,6 +4,7 @@ from .forms import SignUpForm, CartForm
 from .models import FoodProduct, Cart, Favorite
 from django.contrib.auth.decorators import login_required
 from pixqrcode import PixQrCode
+from django.db.models import Sum, F
 
 def login(request):
     error_message = None
@@ -144,21 +145,23 @@ def order_status(request):
 
 @login_required(login_url='login')
 def generate_qr_code(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        mobile = request.POST.get('mobile')
-        city = request.POST.get('city')
-        amount = request.POST.get('amount', None)
+    name = 'Theo'
+    mobile = '(81)997430087'
+    city = 'Recife'
 
-        if not name or not mobile or not city:
-            return render(request, 'payments/error.html', {'message': 'Please provide all required fields'})
+    cart_items = Cart.objects.filter(user=request.user)
 
-        pix = PixQrCode(name, mobile, city, amount)
+    total = cart_items.aggregate(total=Sum(F('product__price') * F('quantity')))['total']
 
-        if pix.is_valid():
-            qr_base64 = pix.export_base64()
-            return render(request, 'qr_code.html', {'qr_base64': qr_base64})
-        else:
-            return render(request, 'error.html', {'message': 'Invalid input fields'})
+    if total is None:
+        return render(request, 'payments/error.html', {'message': 'Cart is empty'})
+
+    total_str = format(float(total), '.2f')
+
+    pix = PixQrCode(name, mobile, city, total_str)
+
+    if pix.is_valid():
+        qr_base64 = pix.export_base64()
+        return render(request, 'qr_code.html', {'qr_base64': qr_base64})
     else:
-        return render(request, 'qr_code_form.html')
+        return render(request, 'error.html', {'message': 'Invalid input fields'})
