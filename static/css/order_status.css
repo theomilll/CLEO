@@ -17,6 +17,7 @@ nav {
     width: 100%;
     color: #fff;
     margin-bottom: 50px;
+    font-weight: normal;
 }
 
 p {
@@ -25,6 +26,7 @@ p {
 	line-height: 20px;
 	letter-spacing: 0.5px;
 	margin: 20px 0 30px;
+
 }
 .container {
     width: 80%;
@@ -158,9 +160,7 @@ body {
     color: #fff;
   }
   
-  p{
-    font-weight: bold;
-  }
+ 
   .status-text {
     text-align: center;
     margin-top: 10px; 
@@ -197,12 +197,11 @@ img {
 }
 
 hr {
-  height: 5px;
-  color: #082E31;
-  border-style: solid;
+  background-color: #000;
+  border-width: 2px;
 }
 .timeline-container {
-  border: 2px solid #082E31; /* Adiciona uma borda ao redor da timeline e do track order */
+  border: 2px solid black; /* Adiciona uma borda ao redor da timeline e do track order */
   border-radius: 10px; /* Borda arredondada */
   padding: 10px; /* Espaço interno entre o conteúdo e a borda */
   margin-bottom: 20px; /* Espaço inferior para separar do próximo elemento */
@@ -214,4 +213,8 @@ hr {
 h5{
   padding-top: 20px;
   padding-left: 10px;
+}
+h1{
+  font-weight: bold;
+  font-weight: 800;
 }
