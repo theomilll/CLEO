@@ -165,3 +165,16 @@ def generate_qr_code(request):
         return render(request, 'qr_code.html', {'qr_base64': qr_base64})
     else:
         return render(request, 'error.html', {'message': 'Invalid input fields'})
+
+def payment(request):
+    cart_items = Cart.objects.filter(user=request.user)
+    total = cart_items.aggregate(total=Sum(F('product__price') * F('quantity')))['total']
+    total_str = format(float(total), '.2f') if total is not None else '0.00'
+
+    if request.method == 'POST':
+        payment_method = request.POST.get('payment-method')
+        
+        if payment_method == 'pix':
+            return redirect('generate_qr_code')
+
+    return render(request, 'payment.html', {'total': total_str})
