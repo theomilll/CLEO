@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -37,11 +39,8 @@ span {
 	font-size: 12px;
 }
 
-a {
-	color: #333;
-	font-size: 14px;
-	text-decoration: none;
-	margin: 15px 0;
+a{
+    text-decoration: none;
 }
 
 button {
@@ -119,4 +118,51 @@ nav {
 	border-radius: 5px;
 	border: 1px solid #ccc;
 	font-size: 16px;
+}
+
+.cart-icon {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-size: 40px;
+	
+}
+
+.cart-link {
+    color: #fff;
+}
+
+#sino{
+    position: relative;
+    color: white;
+    text-decoration: none;
+    right: 50px;
+    top: 5px;
+    height: 40px;
+    width: 40px;
+
+}
+
+@media (max-width: 767px) {
+    .col-md-4 {
+        width: 100%;
+        margin-bottom: 30px;
+        padding: 0 15px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .col-md-4 {
+        width: 50%;
+        margin-bottom: 30px;
+        padding: 0 15px;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-4 {
+        width: 30%;
+        margin-bottom: 30px;
+        padding: 0 15px;
+    }
 }

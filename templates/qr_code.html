@@ -18,7 +18,7 @@
         <div class="qr-code-container">
             <img src="{{ qr_base64 }}" alt="Pix QR code" />
         </div>
-        <a href="{% url 'order_status' %}">Compra concluida</a>
+        <a href="{% url 'order_status' %}" name="confirmPurchase">Compra concluida</a>
     </div>
 </body>
 </html>
