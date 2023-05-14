@@ -185,21 +185,23 @@ def payment(request):
 def order_status(request):
     cart = Cart.objects.filter(user=request.user)
     total = cart.aggregate(total=Sum(F('product__price') * F('quantity')))['total']
+    
     if request.method == 'POST':
         pickup_time = datetime.now() + timedelta(minutes=30)
         order_products = [f"{item.quantity}x {item.product.name}" for item in cart]
         order_summary = ", ".join(order_products)
         order = Order.objects.create(user=request.user, order=order_summary, total=total, pickup_time=pickup_time)
         cart.delete()
+    else:
+        # busca o último pedido do usuário quando a requisição for 'GET'
+        order = Order.objects.filter(user=request.user).last()
 
-        context = {
-            'order': order,
-            'total': order.total,
-            'pickup_time': order.pickup_time,
-            'order_summary': order_summary,
-        }
-        # renderiza o template order_status.html com as informações do pedido
-        return render(request, 'order_status.html', context)
+    context = {
+        'order': order,
+    }
+    # renderiza o template order_status.html com as informações do pedido
+    return render(request, 'order_status.html', context)
+
 
    
    # return render(request, 'order_status.html', context)

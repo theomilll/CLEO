@@ -32,6 +32,7 @@
             <h1 class="top-bar-title">Status do pedido</h1>
         </div>
     </div>
+    {% if order %}
     <div class="container px-1 px-md-4 py-5 mx-auto">
       <div class="card">
         <div class="timeline-container">
@@ -82,7 +83,19 @@
           </div>
         </div>
       </div>
-    </div>    
+    </div>
+    {% else %}
+    <div class="container px-1 px-md-4 py-5 mx-auto">
+      <div class="card">
+        <div class="timeline-container">
+          <div class="order_number_text">
+            <p>Não há pedidos feitos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
       <script src="{% static '../static/js/timeline.js' %}"></script>
 </body>
 </html>
+
