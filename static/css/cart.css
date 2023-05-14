@@ -36,6 +36,13 @@ p {
     position: relative;
 }
 
+.container_clear_cart{
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 30px;
+}
+
 .my-4 {
     margin-top: 1.5rem !important;
     margin-bottom: 1.5rem !important;
@@ -82,6 +89,7 @@ td {
     cursor: pointer;
     text-decoration: none;
 }
+
 
 .btn-danger {
     background-color:#082E31;
@@ -148,7 +156,7 @@ td {
     padding: 10px 20px;
     background-color: #dfdfdf;
     border-radius: 10px;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     position: relative;
 }
@@ -156,7 +164,7 @@ td {
 .top-bar-title {
     flex-grow: 1;
     margin: 0;
-    font-size: 40px;
+    font-size: 32px;
     text-align: center;
 }
 
@@ -227,20 +235,29 @@ td {
     border-color: #777;
 }
 
+
+.btn {
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
 .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #082E31;
+    border: 1px solid #082E31;
     color: #fff;
-    padding: 2px 4px;
-    font-size: 8px;
+    padding: 8px 20px;
+    font-size: 12px;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s;
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #004095;
+    background-color: #12646a;
+    border-color: #12646a;
 }
 
 .observation-container {

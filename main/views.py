@@ -1,10 +1,12 @@
 from django.contrib.auth import authenticate, login as auth_login
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import SignUpForm, CartForm
-from .models import FoodProduct, Cart, Favorite
+from .models import FoodProduct, Cart, Favorite, Order
 from django.contrib.auth.decorators import login_required
 from pixqrcode import PixQrCode
 from django.db.models import Sum, F
+from datetime import datetime, timedelta
+
 
 def login(request):
     error_message = None
@@ -178,3 +180,27 @@ def payment(request):
             return redirect('generate_qr_code')
 
     return render(request, 'payment.html', {'total': total_str})
+
+@login_required(login_url='login')
+def order_status(request):
+    cart = Cart.objects.filter(user=request.user)
+    total = cart.aggregate(total=Sum(F('product__price') * F('quantity')))['total']
+    if request.method == 'POST':
+        pickup_time = datetime.now() + timedelta(minutes=30)
+        order_products = [f"{item.quantity}x {item.product.name}" for item in cart]
+        order_summary = ", ".join(order_products)
+        order = Order.objects.create(user=request.user, order=order_summary, total=total, pickup_time=pickup_time)
+        cart.delete()
+
+        context = {
+            'order': order,
+            'total': order.total,
+            'pickup_time': order.pickup_time,
+            'order_summary': order_summary,
+        }
+        # renderiza o template order_status.html com as informações do pedido
+        return render(request, 'order_status.html', context)
+
+   
+   # return render(request, 'order_status.html', context)
+   

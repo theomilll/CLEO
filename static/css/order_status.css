@@ -4,11 +4,6 @@
     padding: 0;
 }
 
-body {
-    background: #f6f5f7;
-    font-family: 'Montserrat', sans-serif;
-}
-
 nav {
     background: linear-gradient(90deg, #082E31, #0b8992);
     padding: 5px;
@@ -20,14 +15,6 @@ nav {
     font-weight: normal;
 }
 
-p {
-    font-size: 14px;
-	font-weight: 100;
-	line-height: 20px;
-	letter-spacing: 0.5px;
-	margin: 20px 0 30px;
-
-}
 .container {
     width: 80%;
     margin: 0 auto;
@@ -40,7 +27,7 @@ p {
     padding: 10px 20px;
     background-color: #dfdfdf;
     border-radius: 10px;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     position: relative;
 }
@@ -48,7 +35,7 @@ p {
 .top-bar-title {
     flex-grow: 1;
     margin: 0;
-    font-size: 40px;
+    font-size: 32px;
     text-align: center;
 }
 
@@ -61,7 +48,7 @@ body {
     color: #000;
     overflow-x: hidden;
     height: 100%;
-    background-color: #fff;;
+    background-color: #f6f5f7;
     background-repeat: no-repeat;
   }
   
@@ -197,14 +184,16 @@ img {
 }
 
 hr {
-  background-color: #000;
+  background-color: #dfdfdf;
   border-width: 2px;
 }
 .timeline-container {
-  border: 2px solid black; /* Adiciona uma borda ao redor da timeline e do track order */
+  border: 1px solid #ddd; /* Adiciona uma borda ao redor da timeline e do track order */
   border-radius: 10px; /* Borda arredondada */
   padding: 10px; /* Espaço interno entre o conteúdo e a borda */
   margin-bottom: 20px; /* Espaço inferior para separar do próximo elemento */
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  
 }
 
 .track-order {
@@ -217,4 +206,34 @@ h5{
 h1{
   font-weight: bold;
   font-weight: 800;
+}
+.top-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #dfdfdf;
+  border-radius: 10px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.top-bar-title {
+  flex-grow: 1;
+  margin: 0;
+  font-size: 32px;
+  text-align: center;
+}
+p {
+  font-size: 15px;
+	line-height: 20px;
+	margin: 20px 0 30px;
+
+}
+
+.order_number_text{
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 16px;
+  font-weight: bolder;
 }

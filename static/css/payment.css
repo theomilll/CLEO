@@ -56,6 +56,7 @@ button {
 	transition: transform 80ms ease-in;
 }
 
+
 button:active {
 	transform: scale(0.95);
 }
@@ -130,6 +131,23 @@ nav {
 
 .cart-link {
     color: #fff;
+}
+
+
+.btn {
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #082E31;
+    color: #fff;
+    border: 1px solid #082E31;
+    
 }
 
 #sino{

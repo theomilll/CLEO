@@ -35,3 +35,10 @@ class Cart(models.Model):
 class Favorite(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(FoodProduct, on_delete=models.CASCADE)
+
+class Order(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    order = models.CharField(max_length=1000)
+    order_datetime = models.DateTimeField(auto_now_add=True)
+    pickup_time = models.DateTimeField()
+    total = models.DecimalField(max_digits=6, decimal_places=2)

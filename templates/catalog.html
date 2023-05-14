@@ -20,40 +20,46 @@
         </div>
     </nav>
     <div class="container">
+        <div class="top-bar">    
         <h1 class="text-center my-5">Catálogo de Comidas</h1>
-        <div class="row mb-4">
-            <div class="col-md-4">
-                <div class="search-container">
-                    <form method="get" action="{% url 'home' %}">
-                        <input class="search-input" type="search" name="search" placeholder="Buscar produto" value="{{ request.GET.search }}">
-                        <button id="btn-busca" type="submit">BUSCAR</button>
-                    </form>
-                </div>
-            </div>
         </div>
-        <div class="row">
-            {% for product in food_products %}
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <a href="{% url 'product_detail' product_id=product.id %}" style="text-decoration:none" name="product-link">
-                            <div class="card-body">
-                                <div class="card-split">
-                                    <div class="card-img">
-                                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">                                    </div>
-                                    <div class="card-content">
-                                        <h5 class="card-title product-link">{{ product.name }}</h5>
-                                        <p class="card-text">R${{ product.price }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="card-footer">
-                            <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary custom-btn" style="text-decoration:none" name="cartAdd">Adicionar ao carrinho</a>
-                            <a class="btn btn-outline-secondary custom-btn">Favorito</a>
-                        </div>
+
+        <div class="container_catalog">
+            <div class="row_searchbar mb-4">
+                <div class="col-md-4">
+                    <div class="search-container">
+                        <form method="get" action="{% url 'home' %}">
+                            <input class="search-input" type="search" name="search" placeholder="Buscar produto" value="{{ request.GET.search }}">
+                            <button id="btn-busca" type="submit">BUSCAR</button>
+                        </form>
                     </div>
                 </div>
-            {% endfor %}
+            </div>
+        
+            <div class="row">
+                {% for product in food_products %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <a href="{% url 'product_detail' product_id=product.id %}" style="text-decoration:none" name="product-link">
+                                <div class="card-body">
+                                    <div class="card-split">
+                                        <div class="card-img">
+                                            <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">                                    </div>
+                                        <div class="card-content">
+                                            <h5 class="card-title product-link">{{ product.name }}</h5>
+                                            <p class="card-text">R${{ product.price }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="card-footer">
+                                <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary custom-btn" style="text-decoration:none" name="cartAdd">Adicionar ao carrinho</a>
+                                <a class="btn btn-outline-secondary custom-btn">Favorito</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </body>

@@ -45,10 +45,19 @@ a{
 
 h1 {
     font-weight: bold;
-    margin-bottom: 40px;
 }
 
 .row {
+    padding-top: 15px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.row_searchbar {
+    padding-top: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -56,7 +65,6 @@ h1 {
 
 .col-md-4 {
     width: 30%;
-    margin-bottom: 30px;
     padding: 0 15px;
 }
 
@@ -167,7 +175,6 @@ h1 {
 @media (max-width: 767px) {
     .col-md-4 {
         width: 100%;
-        margin-bottom: 30px;
         padding: 0 15px;
     }
 }
@@ -175,7 +182,6 @@ h1 {
 @media (min-width: 768px) and (max-width: 991px) {
     .col-md-4 {
         width: 50%;
-        margin-bottom: 30px;
         padding: 0 15px;
     }
 }
@@ -183,7 +189,7 @@ h1 {
 @media (min-width: 992px) {
     .col-md-4 {
         width: 30%;
-        margin-bottom: 30px;
+
         padding: 0 15px;
     }
 }
@@ -219,6 +225,7 @@ input{
 #btn-busca{
     position: absolute;
     cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
     background-color: #082E31;
     color: white;
     border: none;
@@ -226,8 +233,27 @@ input{
     font-size: 14px;
     border-radius: 5px;
     margin-left: 12px;
-    font-weight: bold;
 }
 #btn-busca:hover {
     background-color: #094145;
 }
+.top-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #dfdfdf;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.container_catalog {
+	padding-top: 10px;
+    padding-bottom: 20px;
+	border-radius: 5px;
+	background-color: #fff;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+
