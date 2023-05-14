@@ -281,6 +281,7 @@ td {
 .add-observation-btn-container {
     text-align: left;
     margin-top: 0.4px;
+    padding-left: 10px;
 }
 
 .checkout-btn-container {
