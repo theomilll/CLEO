@@ -269,6 +269,7 @@ td {
 
 .total-box {
     margin-top: 20px;
+    margin-top: 20px;
 }
 
 .bottom-container {
@@ -280,4 +281,12 @@ td {
 .add-observation-btn-container {
     text-align: left;
     margin-top: 10px;
+}
+
+.checkout-btn-container {
+    position: fixed;
+    bottom: 300px;
+    right: 200px;
+    background-color: rgba(8, 46, 49, 0.9);
+    padding: 10px 0;
 }

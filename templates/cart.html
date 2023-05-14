@@ -74,17 +74,20 @@
                         <p class="total-text">Total: {{ cart_total }}</p>
                     </div>
                 </div>
-            {% endif %}                
+            {% endif %}
                 {% comment %} <a href="{% url 'checkout' %}" class="btn btn-success">Proceed to Checkout</a> {% endcomment %}
                 {% else %}
                 <div class="empty-cart-message">
                     <p>Seu carrinho está vazio. <a href="{% url 'home' %}">Continue comprando</a>.</p>
                 </div>
                 {% endif %}
-                <div>
-                    <a href="{% url 'payment' %}" class="btn btn-primary" name="finalizarCompra">Finalizar Compra</a>
             </div>
         </div>
     </div>
+    {% if cart_items_total %}
+    <div class="checkout-btn-container">
+        <a href="{% url 'payment' %}" class="btn btn-primary" name="finalizarCompra">Finalizar Compra</a>
+    </div>
+    {% endif %}
 </body>
 </html>
