@@ -184,3 +184,27 @@ nav {
         padding: 0 15px;
     }
 }
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #dfdfdf;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.top-bar-title {
+    flex-grow: 1;
+    margin: 0;
+    font-size: 32px;
+    text-align: center;
+}
+
+.back-to-home {
+    color: #082E31;
+    font-size: 30px;
+    margin-right: 10px;
+}

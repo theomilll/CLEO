@@ -17,22 +17,25 @@
                 </svg>
            </a>
           <a class="fas fa-shopping-cart cart-link" href="{% url 'cart' %}" style="text-decoration:none" name="cart"></a>
-         
       </div>
   </nav>
-    <div class="container">
-        <form method="post">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="payment-method">Escolha um metodo de pagamento:</label>
-                <select id="payment-method" name="payment-method">
-                    <option value="pix" name="pixPay">Pix</option>
-                    <option value="credit-card">Cartão de Crédito</option>
-                </select>
-            </div>
-            <p>Total: R${{ total }}</p>
-            <input class="btn btn-primary" type="submit" value="Submit" name="generateQrCode">
-        </form>
-    </div>
+  <div class="top-bar">
+    <a href="{% url 'cart' %}" class="back-to-home">&larr;</a>
+    <h2 class="top-bar-title">Pagamento</h2>
+  </div>
+  <div class="container">
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="payment-method">Escolha um metodo de pagamento:</label>
+            <select id="payment-method" name="payment-method">
+                <option value="pix" name="pixPay">Pix</option>
+                <option value="credit-card">Cartão de Crédito</option>
+            </select>
+        </div>
+        <p>Total: R${{ total }}</p>
+        <input class="btn btn-primary" type="submit" value="Submit" name="generateQrCode">
+    </form>
+  </div>
 </body>
 </html>
