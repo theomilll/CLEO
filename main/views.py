@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from pixqrcode import PixQrCode
 from django.db.models import Sum, F
 from datetime import datetime, timedelta
+from django.contrib import messages
 
 
 def login(request):
@@ -190,7 +191,9 @@ def order_status(request):
         pickup_time = datetime.now() + timedelta(minutes=30)
         order_products = [f"{item.quantity}x {item.product.name}" for item in cart]
         order_summary = ", ".join(order_products)
-        order = Order.objects.create(user=request.user, order=order_summary, total=total, pickup_time=pickup_time)
+        order = Order.objects.create(user=request.user, order=order_summary, total=total, 
+        pickup_time=pickup_time)
+        messages.success(request, 'Pedido realizado com sucesso!')        
         cart.delete()
     else:
         # busca o último pedido do usuário quando a requisição for 'GET'
@@ -201,8 +204,4 @@ def order_status(request):
     }
     # renderiza o template order_status.html com as informações do pedido
     return render(request, 'order_status.html', context)
-
-
-   
-   # return render(request, 'order_status.html', context)
    

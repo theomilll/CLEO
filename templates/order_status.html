@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Shopping Cart</title>
+    <title>Order Status</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link
     rel="stylesheet"
@@ -21,6 +21,13 @@
   <link rel="stylesheet" type="text/css" href="{% static './css/order_status.css' %}">
 </head>
 <body>
+  {% if messages %}
+  {% for message in messages %}
+    <div id="success-msg" class="alert alert-success hover" style="display:none; position: fixed; top: 0; left: 0; right: 0; z-index: 9999;">
+      {{ message }}
+    </div>
+  {% endfor %}
+  {% endif %}
   <nav>
           <p>CENTRAL<br>LISTING<br>for<br>EASY<br>ORDERING</p>
   </nav>
@@ -32,6 +39,7 @@
             <h1 class="top-bar-title">Status do pedido</h1>
         </div>
     </div>
+    <div class="container">
     {% if order %}
     <div class="container px-1 px-md-4 py-5 mx-auto">
       <div class="card">
@@ -96,6 +104,18 @@
     </div>
     {% endif %}
       <script src="{% static '../static/js/timeline.js' %}"></script>
+      <script>
+        window.onload = function() {
+          // mostra a mensagem de sucesso
+          var successMsg = document.getElementById("success-msg");
+          successMsg.style.display = "block";
+          
+          // define um tempo limite para a mensagem desaparecer
+          setTimeout(function() {
+            successMsg.style.display = "none";
+          }, 5000); // 5000 milissegundos = 5 segundos
+        }
+      </script>
 </body>
 </html>
 
