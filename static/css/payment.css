@@ -106,6 +106,13 @@ nav {
 	background-color: #fff;
 	box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
+
+.containerBack {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
 .form-group {
 	margin-bottom: 10px;
 }

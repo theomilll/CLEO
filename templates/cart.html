@@ -70,10 +70,14 @@
                             </div>
                         </div>
                     </form>
-                    <div class="total-box">
-                        <p class="total-text">Total: {{ cart_total }}</p>
-                    </div>
-                </div>
+                    <div class="total-and-button-container">
+                        <div class="total-box">
+                            <p class="total-text">Total: {{ cart_total }}</p>
+                        </div>
+                        <div class="checkout-btn-container">
+                            <a href="{% url 'payment' %}" class="btn btn-primary" name="finalizarCompra">Finalizar Compra</a>
+                        </div>
+                    </div>                    
             {% endif %}
                 {% comment %} <a href="{% url 'checkout' %}" class="btn btn-success">Proceed to Checkout</a> {% endcomment %}
                 {% else %}
@@ -85,9 +89,6 @@
         </div>
     </div>
     {% if cart_items_total %}
-    <div class="checkout-btn-container">
-        <a href="{% url 'payment' %}" class="btn btn-primary" name="finalizarCompra">Finalizar Compra</a>
-    </div>
     {% endif %}
 </body>
 </html>
