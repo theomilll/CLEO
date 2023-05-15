@@ -12,7 +12,8 @@ from django.utils import timezone
 
 
 def login(request):
-    error_message = None
+    login_error_message = None
+    registration_error_message = None
 
     if request.method == 'POST':
         form_type = request.POST.get('form_type')
@@ -29,7 +30,8 @@ def login(request):
                 return redirect('home')
             else:
                 print("User is not authenticated")
-                error_message = "Invalid login credentials. Please try again."
+                login_error_message = "Invalid login credentials. Please try again."
+                form_to_show = 'signup'
 
         elif form_type == 'signup':
             form = SignUpForm(request.POST)
@@ -38,13 +40,12 @@ def login(request):
                 print("User is created")
                 return redirect('login')
             else:
-                error_message = "Invalid sign up information. Please try again."
+                registration_error_message = "Invalid sign up information. Please try again."
                 print("User is not created")
                 print(form.errors)
-            error_message = "Invalid request."
 
     form = SignUpForm()
-    return render(request, 'login.html', {'form': form, 'error_message': error_message})
+    return render(request, 'login.html', {'form': form, 'login_error_message': login_error_message, 'registration_error_message': registration_error_message})
 
 @login_required(login_url='login')
 def catalog(request):

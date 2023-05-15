@@ -42,6 +42,12 @@
                 <input type="text" name="Username" placeholder="Username" required />
                 <input type="password" name="password" placeholder="Password" required />
                 <button type="submit" name="login">Log In</button>
+                {% if login_error_message %}
+                  <p style="color:red;">{{ login_error_message }}</p>
+                {% endif %}
+                {% if registration_error_message %}
+                  <p style="color:red;">{{ registration_error_message }}</p>
+                {% endif %}
             </form>
         </div>
         <div class="overlay-container">
