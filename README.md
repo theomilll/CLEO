@@ -46,9 +46,9 @@
 - Acompanhe os protótipos: <a href="https://www.figma.com/file/gsZa5WDhVrfWIilATY4K0P/LO-FI-CLEO?node-id=0%3A1&t=VpvNaYuTkpGkrmfp-1">Protótipo Lo-Fi CLEO</a>
 
 ## Diagrama de atividades
-><a href="https://drive.google.com/file/d/1SBCtBuMAGLTClSOhpTIu6vJ4dyuLK0CC/view?usp=share_link">*Acesse aqui o Diagrama de Atividades CLEO em .pdf.*</a>
+><a href="https://drive.google.com/file/d/1ozhgCaCZVpp_gTuk8OMR06hZ4CobVGuH/view?usp=share_link">*Acesse aqui o Diagrama de Atividades CLEO em .pdf.*</a>
 <div align="center">
-<img src="https://user-images.githubusercontent.com/108446826/232552251-7c0c5e7c-d99f-468d-921f-284854d6dcda.png" title="Diagrama de Atividades CLEO" alt="Diagrama de Atividades CLEO" width="900px"/>
+<img src="https://github.com/theomilll/CLEO/assets/108446826/333b0ed6-b30f-4bb2-8da6-5c41f7c8f267" title="Diagrama de Atividades CLEO" alt="Diagrama de Atividades CLEO" width="900px"/>
 </div>
 
 ## Relato Programação em Pares (Pair Programming)
