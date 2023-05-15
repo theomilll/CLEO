@@ -1,6 +1,6 @@
 from django.contrib.auth import authenticate, login as auth_login
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import SignUpForm, CartForm
+from .forms import SignUpForm, CartForm, CreditCardForm
 from .models import FoodProduct, Cart, Favorite, Order
 from django.contrib.auth.decorators import login_required
 from pixqrcode import PixQrCode
@@ -185,11 +185,16 @@ def payment(request):
 
     if request.method == 'POST':
         payment_method = request.POST.get('payment-method')
+        pickup_time = request.POST.get('pickup-time')
         
+
         if payment_method == 'pix':
             return redirect('generate_qr_code')
+        if payment_method == 'credit-card':
+            return redirect('credit_card')
 
     return render(request, 'payment.html', {'total': total_str})
+
 
 @login_required(login_url='login')
 def order_status(request):
@@ -207,13 +212,11 @@ def order_status(request):
         cart.delete()
         #order_datetime.save()
     else:
-        # busca o último pedido do usuário quando a requisição for 'GET'
         order = Order.objects.filter(user=request.user).last()
 
     context = {
         'order': order,
     }
-    # renderiza o template order_status.html com as informações do pedido
     return render(request, 'order_status.html', context)
    
 @login_required(login_url='login')
@@ -223,3 +226,15 @@ def add_to_cart_from_detail(request, product_id):
     if not created:
         cart_item.save()
     return redirect('home')
+
+def credit_card(request):
+    if request.method == 'POST':
+        form = CreditCardForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('order_status')
+        else:
+            print(form.errors)
+    else:
+        form = CreditCardForm()
+    return render(request, 'credit_card.html', {'form': form})
