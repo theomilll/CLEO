@@ -146,7 +146,7 @@ h1 {
     position: absolute;
     top: 50px;
     right: 50px;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .cart-link {
@@ -210,8 +210,8 @@ h1 {
     text-decoration: none;
     right: 50px;
     top: 5px;
-    height: 40px;
-    width: 40px;
+    height: 33px;
+    width: 30px;
 
 }
 
@@ -260,3 +260,17 @@ input{
 }
 
 
+#log-out{
+    position: relative;
+    color: white;
+    text-decoration: none;
+    top: 10px;
+    height: 40px;
+    width: 40px;
+    left: 10px;
+
+}
+#cart{
+    position: relative;
+    right: 23px;
+}
