@@ -197,13 +197,15 @@ def order_status(request):
     total = cart.aggregate(total=Sum(F('product__price') * F('quantity')))['total']
     
     if request.method == 'POST':
+        order_datetime = datetime.now()
         pickup_time = datetime.now() + timedelta(minutes=30)
         order_products = [f"{item.quantity}x {item.product.name}" for item in cart]
         order_summary = ", ".join(order_products)
         order = Order.objects.create(user=request.user, order=order_summary, total=total, 
-        pickup_time=pickup_time)
+        pickup_time=pickup_time, order_datetime=order_datetime)
         messages.success(request, 'Pedido realizado com sucesso!')        
         cart.delete()
+        #order_datetime.save()
     else:
         # busca o último pedido do usuário quando a requisição for 'GET'
         order = Order.objects.filter(user=request.user).last()
