@@ -15,10 +15,12 @@ nav {
     font-weight: normal;
 }
 
-.container {
-    width: 80%;
+#container {
+    width: 100%;
     margin: 0 auto;
     position: relative;
+    padding-right: 0px;
+    padding-left: 0px;
 }
 
 .top-bar {
@@ -55,7 +57,8 @@ body {
   .card {
     z-index: 0;
     background-color: #fff;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
+    margin-top: 48px;
     border-radius: 10px;
     border: 0px solid rgba(0,0,0,.125);
     
@@ -191,8 +194,9 @@ hr {
   border: 1px solid #ddd; /* Adiciona uma borda ao redor da timeline e do track order */
   border-radius: 10px; /* Borda arredondada */
   padding: 10px; /* Espaço interno entre o conteúdo e a borda */
-  margin-bottom: 20px; /* Espaço inferior para separar do próximo elemento */
+  /* margin-bottom: 20px; Espaço inferior para separar do próximo elemento */
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  padding-top: 48px;
   
 }
 
