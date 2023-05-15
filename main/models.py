@@ -1,5 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
+from creditcards.models import CardNumberField, CardExpiryField, SecurityCodeField
+from django.utils.translation import gettext as _
 
 
 class UserProfile(models.Model):
@@ -42,3 +44,9 @@ class Order(models.Model):
     order_datetime = models.DateTimeField(auto_now_add=True)
     pickup_time = models.DateTimeField()
     total = models.DecimalField(max_digits=6, decimal_places=2)
+    
+class CreditCard(models.Model):
+    name = models.CharField(max_length=60)
+    card_number = CardNumberField(_('card number'))
+    expiry_date = CardExpiryField(_('expiration date'))
+    cvv_code = SecurityCodeField(_('security code'))

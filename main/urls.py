@@ -18,4 +18,5 @@ urlpatterns = [
     path('generate_qr_code', views.generate_qr_code, name='generate_qr_code'),
     path('payment/', views.payment, name='payment'),
     path('add_to_cart_from_detail/<int:product_id>/', views.add_to_cart_from_detail, name='add_to_cart_from_detail'),
+    path('credit_card/', views.credit_card, name='credit_card'),
 ]

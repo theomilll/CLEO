@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>Credit Card Payment</title>
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/credit_card.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <nav>
+      <p>CENTRAL<br>LISTING<br>for<br>EASY<br>ORDERING</p>
+      <div class="cart-icon">
+          <a class="fas fa-shopping-cart cart-link" href="{% url 'cart' %}" style="text-decoration:none" name="cart"></a>
+      </div>
+    </nav>
+    <div class="top-bar">
+      <a href="{% url 'payment' %}" class="back-to-home">
+        <i class="fas fa-arrow-left"></i>
+      </a>
+      <h2 class="top-bar-title">Credit Card Payment</h2>
+    </div>
+    <div class="container">
+      <form method="post">
+          {% csrf_token %}
+          <div class="form-group">
+              <label for="name">Card Holder's Name</label>
+              <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+              <label for="card_number">Card Number</label>
+              <input type="text" id="card_number" name="card_number" required>
+          </div>
+          <div class="form-group">
+              <label for="expiry_date">Expiry Date</label>
+              <input type="date" id="expiry_date" name="expiry_date" required>
+          </div>
+          <div class="form-group">
+              <label for="cvv_code">CVV Code</label>
+              <input type="text" id="cvv_code" name="cvv_code" required>
+          </div>
+          <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
