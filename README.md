@@ -1,6 +1,6 @@
 # CLEO — Central Listing for Easy Ordering
 - Esse repositório contém o código fonte completo do nosso Software.
->- Versão 1.0 já disponível: <a href="http://cleoenv.eba-vmhptwqw.sa-east-1.elasticbeanstalk.com/?next=/home/">CLEO — Central Listing for Easy Ordering</a>
+>- Versão 2.0 já disponível: <a href="http://cleo-v2-env.eba-qr2tnipv.sa-east-1.elasticbeanstalk.com/">CLEO — Central Listing for Easy Ordering</a>
 
 ## Objetivo do Projeto
 - CLEO é uma aplicação web para desburocratizar, agilizar e tornar mais eficiente o acesso aos produtos da Cantina da CESAR School BRUM. A solução busca reduzir o desconforto das filas de espera sob o calor do sol e trazer mais comodidade aos clientes da cantina. Junto à CLEO, a cantina irá registrar seus produtos para que os alunos e funcionários da CESAR possam fazer seus pedidos, assim como realizar o pagamento dos mesmos, de forma antecipada, por meio da aplicação web. Quando o pedido estiver pronto ou separado o cliente apenas terá que se locomover ao balcão para realizar a retirada.
@@ -46,14 +46,17 @@
 - Acompanhe os protótipos: <a href="https://www.figma.com/file/gsZa5WDhVrfWIilATY4K0P/LO-FI-CLEO?node-id=0%3A1&t=VpvNaYuTkpGkrmfp-1">Protótipo Lo-Fi CLEO</a>
 
 ## Diagrama de atividades
->- <a href="https://drive.google.com/file/d/1SBCtBuMAGLTClSOhpTIu6vJ4dyuLK0CC/view?usp=share_link">*Acesse aqui o Diagrama de Atividades CLEO em .pdf.*</a>
+><a href="https://drive.google.com/file/d/1ozhgCaCZVpp_gTuk8OMR06hZ4CobVGuH/view?usp=share_link">*Acesse aqui o Diagrama de Atividades CLEO em .pdf.*</a>
 <div align="center">
-<img src="https://user-images.githubusercontent.com/108446826/232552251-7c0c5e7c-d99f-468d-921f-284854d6dcda.png" title="Diagrama de Atividades CLEO" alt="Diagrama de Atividades CLEO" width="900px"/>
+<img src="https://github.com/theomilll/CLEO/assets/108446826/333b0ed6-b30f-4bb2-8da6-5c41f7c8f267" title="Diagrama de Atividades CLEO" alt="Diagrama de Atividades CLEO" width="900px"/>
 </div>
 
 ## Relato Programação em Pares (Pair Programming)
-- Indubitavelmente a prática do Pair Programming é um dos motivos pela satisfação da equipe e pelos bons resultados vistos ao final da Sprint 1. Por meio dela, foi possível distribuir o conhecimento a respeito dos recursos utilizados e do produto desenvolvido, de forma que todos se mantivessem à parte e compreendendo o todo ao realizar suas tarefas, o que resultou em um produto desenvolvido de forma mais eficiente, com menos erros, mais consciência e melhores experiências.
->- <a href="https://docs.google.com/document/d/19kMGlKWTtmS4_a0b0ogvFF-unXA4oes1-lSFioI59Ns/edit?usp=sharing">*Acesse aqui o relato completo.*</a>
+><a href="https://docs.google.com/document/d/19kMGlKWTtmS4_a0b0ogvFF-unXA4oes1-lSFioI59Ns/edit?usp=sharing">*Acesse aqui o relato completo.*</a>
+### Sprint 1
+- *"Indubitavelmente a prática do Pair Programming é um dos motivos pela satisfação da equipe e pelos bons resultados vistos ao final da Sprint 1. Por meio dela, foi possível distribuir o conhecimento a respeito dos recursos utilizados e do produto desenvolvido, de forma que todos se mantivessem à parte e compreendendo o todo ao realizar suas tarefas, o que resultou em um produto desenvolvido de forma mais eficiente, com menos erros, mais consciência e melhores experiências."*
+### Sprint 2
+- *"Acreditamos que, mesmo levantando dificuldades, a experiência da programação em pares nesta Sprint 2 revelou muitos pontos de melhoria, o que aumentou, está aumentando e certamente aumentará a qualidade do nosso projeto, assim como reforçou a comunicação e o sentimento de equipe entre os integrantes."*
 
 ## Integrantes da Equipe
 - <a href="mailto:abxa@cesar.school">Ana Beatriz Alves</a>

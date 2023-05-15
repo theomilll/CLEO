@@ -52,18 +52,20 @@
                                         <div class="card-img">
                                             <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">                                    </div>
                                         <div class="card-content">
-                                            <h5 class="card-title product-link">{{ product.name }}</h5>
-                                            <p class="card-text">R${{ product.price }}</p>
+                                                <h5 class="card-title product-link">{{ product.name }}</h5>
+                                                <p class="card-text">R${{ product.price }}</p>
+                                                </div>
+                                            </div>
                                         </div>
+                                    </a>
+                                    <div class="card-footer">
+                                        <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary custom-btn" style="text-decoration:none" name="cartAdd">Adicionar ao carrinho</a>
+                                        <a class="btn btn-outline-secondary custom-btn">Favorito</a>
                                     </div>
                                 </div>
-                            </a>
-                            <div class="card-footer">
-                                <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary custom-btn" style="text-decoration:none" name="cartAdd">Adicionar ao carrinho</a>
-                                <a class="btn btn-outline-secondary custom-btn">Favorito</a>
                             </div>
-                        </div>
-                    </div>
+                        {%empty%}
+                    <h5 class="text-center">Esse produto não existe.</h5>
                 {% endfor %}
             </div>
         </div>
