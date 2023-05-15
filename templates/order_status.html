@@ -80,10 +80,15 @@
                 <p>Horário de retirada: {{ order.pickup_time|date:"H:i"}}</p>
                 <p>Tipo de pagamento: {{ order.payment_method }}</p>
               </div>
-              <div class="d-flex flex-column text-sm-right">
+              <div>
                 <p>Detalhe do pedido:</p>
                 <p>{{order.order}}</p>
-                <p><br><br><br>Valor Total: R${{order.total}}</p>
+                
+              </div>
+              <div class="d-flex flex-column text-sm-right">
+                <p>Observação do pedido:</p>
+                <p>Vocês são demais obrigada!</p>
+                <p><br><br>Valor Total: R${{order.total}}</p>
               </div>
             </div>
           </div>
@@ -104,14 +109,11 @@
       <script src="{% static '../static/js/timeline.js' %}"></script>
       <script>
         window.onload = function() {
-          // mostra a mensagem de sucesso
           var successMsg = document.getElementById("success-msg");
           successMsg.style.display = "block";
-          
-          // define um tempo limite para a mensagem desaparecer
           setTimeout(function() {
             successMsg.style.display = "none";
-          }, 5000); // 5000 milissegundos = 5 segundos
+          }, 5000); // 5 segundos
         }
       </script>
 </body>
