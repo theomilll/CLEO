@@ -1,6 +1,6 @@
 # CLEO — Central Listing for Easy Ordering
 - Esse repositório contém o código fonte completo do nosso Software.
->- Versão 2.0 já disponível: <a href="http://cleoenv.eba-vmhptwqw.sa-east-1.elasticbeanstalk.com/?next=/home/">CLEO — Central Listing for Easy Ordering</a>
+>- Versão 2.0 já disponível: <a href="http://cleo-v2-env.eba-qr2tnipv.sa-east-1.elasticbeanstalk.com/">CLEO — Central Listing for Easy Ordering</a>
 
 ## Objetivo do Projeto
 - CLEO é uma aplicação web para desburocratizar, agilizar e tornar mais eficiente o acesso aos produtos da Cantina da CESAR School BRUM. A solução busca reduzir o desconforto das filas de espera sob o calor do sol e trazer mais comodidade aos clientes da cantina. Junto à CLEO, a cantina irá registrar seus produtos para que os alunos e funcionários da CESAR possam fazer seus pedidos, assim como realizar o pagamento dos mesmos, de forma antecipada, por meio da aplicação web. Quando o pedido estiver pronto ou separado o cliente apenas terá que se locomover ao balcão para realizar a retirada.
