@@ -14,6 +14,7 @@ class cleo(TestCase):
 
         driver.get("http://127.0.0.1:8000/")
 
+        self.run_tests(driver)
 
     def register(self, driver):
         register = driver.find_element(By.ID,"signUp")
@@ -112,3 +113,18 @@ class cleo(TestCase):
         # cartClear.click()
         # time.sleep(2)
         driver.quit()
+    def run_tests(self, driver):
+        self.register(driver)
+        self.login(driver)
+        self.status_pedido(driver)
+        self.busca_produto_existente(driver)
+        self.busca_produto_inexistente(driver)
+        self.adicionarcarrinho(driver)
+        self.detalhes_produto(driver)
+        self.entrar_carrinho(driver)
+        self.alterar_quantidade(driver)
+        self.adicionar_obs(driver)
+        self.finalizar_compra(driver)
+        self.metodo_pagamento(driver)
+        self.confirmar_compra(driver)
+        self.voltar_home(driver)
