@@ -55,7 +55,7 @@
                                 <span>quantidade: {{ quant.quantity }}</span>
                                 <a href="{% url 'increment_quantity_prod_detail' product.id %}" class="fa-light fa-plus btn-sm plus-link" style="text-decoration: none" name="increase"></a>
                         </div>
-                        <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary" style="text-decoration:none" name="cartAdd">Adicionar ao Carrinho</a>
+                        <a href="{% url 'add_to_cart_from_detail' product.id %}" class="btn btn-primary" style="text-decoration:none" name="cartAdd">Adicionar ao Carrinho</a>
                     </div>
                     </div>
                 </div>

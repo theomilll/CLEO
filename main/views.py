@@ -53,11 +53,20 @@ def catalog(request):
 @login_required(login_url='login')
 def add_to_cart(request, product_id):
     product = get_object_or_404(FoodProduct, id=product_id)
-    cart, created = Cart.objects.get_or_create(user=request.user, product=product)
+    cart, created = Cart.objects.get_or_create(user=request.user, product=product, defaults={'quantity': 0})
+
+    selected_quantity = int(request.POST.get('quantity', 1))
+
     if not created:
-        cart.quantity += 1
-        cart.save()
+        cart.quantity += selected_quantity
+    else:
+        cart.quantity = selected_quantity
+
+    cart.save()
+
     return redirect('home')
+
+
 
 @login_required(login_url='login')
 def product_detail_view(request, product_id):
@@ -205,3 +214,10 @@ def order_status(request):
     # renderiza o template order_status.html com as informações do pedido
     return render(request, 'order_status.html', context)
    
+@login_required(login_url='login')
+def add_to_cart_from_detail(request, product_id):
+    product = get_object_or_404(FoodProduct, id=product_id)
+    cart_item, created = Cart.objects.get_or_create(user=request.user, product=product)
+    if not created:
+        cart_item.save()
+    return redirect('home')
