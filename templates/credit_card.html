@@ -18,28 +18,28 @@
       <a href="{% url 'payment' %}" class="back-to-home">
         <i class="fas fa-arrow-left"></i>
       </a>
-      <h2 class="top-bar-title">Credit Card Payment</h2>
+      <h2 class="top-bar-title">Cartão de Crédito</h2>
     </div>
     <div class="container">
       <form method="post">
           {% csrf_token %}
           <div class="form-group">
-              <label for="name">Card Holder's Name</label>
+              <label for="name">Nome do Titular</label>
               <input type="text" id="name" name="name" required>
           </div>
           <div class="form-group">
-              <label for="card_number">Card Number</label>
+              <label for="card_number">Número do Cartão</label>
               <input type="text" id="card_number" name="card_number" required>
           </div>
           <div class="form-group">
-              <label for="expiry_date">Expiry Date</label>
+              <label for="expiry_date">Data de Expedição</label>
               <input type="date" id="expiry_date" name="expiry_date" required>
           </div>
           <div class="form-group">
-              <label for="cvv_code">CVV Code</label>
+              <label for="cvv_code">CVV</label>
               <input type="text" id="cvv_code" name="cvv_code" required>
           </div>
-          <button class="btn btn-primary" type="submit">Submit</button>
+          <button class="btn btn-primary" type="submit">Confirmar</button>
       </form>
     </div>
   </body>

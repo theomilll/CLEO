@@ -7,6 +7,8 @@ from pixqrcode import PixQrCode
 from django.db.models import Sum, F
 from datetime import datetime, timedelta
 from django.contrib import messages
+from django.utils import timezone
+
 
 
 def login(request):
@@ -178,6 +180,7 @@ def generate_qr_code(request):
     else:
         return render(request, 'error.html', {'message': 'Invalid input fields'})
 
+
 def payment(request):
     cart_items = Cart.objects.filter(user=request.user)
     total = cart_items.aggregate(total=Sum(F('product__price') * F('quantity')))['total']
@@ -185,8 +188,12 @@ def payment(request):
 
     if request.method == 'POST':
         payment_method = request.POST.get('payment-method')
-        pickup_time = request.POST.get('pickup-time')
-        
+        pickup_time_str = request.POST.get('pickup-time')
+        pickup_time = datetime.strptime(pickup_time_str, "%H:%M") if pickup_time_str else None
+
+        order = Order(user=request.user, order="Order description", order_datetime=timezone.now(),
+                      pickup_time=pickup_time, total=total, payment_method=payment_method)
+        order.save()
 
         if payment_method == 'pix':
             return redirect('generate_qr_code')
