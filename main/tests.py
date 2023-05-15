@@ -113,19 +113,12 @@ class cleo(TestCase):
     def finalizar_pedido(self, driver):
         FinalizarPedido=driver.find_element(By.NAME, "confirmPurchase")
         FinalizarPedido.click()
-        time.sleep(2)
     def voltar_catalogo(self, driver):
-        time.sleep(2)
         voltar_catalogo=driver.find_element(By.ID, "arrow")
-        time.sleep(2)
         voltar_catalogo.click()
-        time.sleep(2)
     def logout(self, driver):
-        time.sleep(2)
         logout= driver.find_element(By.ID,"log-out")
-        time.sleep(2)
         logout.click()
-        time.sleep(1)
         driver.quit()
     def run_tests(self, driver):
         self.register(driver)
