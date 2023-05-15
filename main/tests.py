@@ -40,6 +40,7 @@ class cleo(TestCase):
     def status_pedido(self, driver):
         view_order_status = driver.find_element(By.ID,'sino')
         view_order_status.click()
+        time.sleep(2)
         backtocatalog1 = driver.find_element(By.ID,'arrow')
         backtocatalog1.click()
     def busca_produto_existente(self, driver):
@@ -113,6 +114,10 @@ class cleo(TestCase):
         # cartClear.click()
         # time.sleep(2)
         driver.quit()
+    def logout(self, driver):
+        logout= driver.find_element(By.ID,"log-out")
+        logout.click()
+        time.sleep(1)
     def run_tests(self, driver):
         self.register(driver)
         self.login(driver)
@@ -128,3 +133,4 @@ class cleo(TestCase):
         self.metodo_pagamento(driver)
         self.confirmar_compra(driver)
         self.voltar_home(driver)
+        self.logout(driver)
