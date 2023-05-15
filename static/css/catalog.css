@@ -128,6 +128,9 @@ h1 {
     border: 1px solid #082E31;
     
 }
+.btn-primary:hover {
+    background-color: #12646a;
+}
 
 .btn-outline-secondary {
     background-color: transparent;
@@ -235,7 +238,7 @@ input{
     margin-left: 12px;
 }
 #btn-busca:hover {
-    background-color: #094145;
+    background-color: #12646a;
 }
 .top-bar {
     display: flex;
