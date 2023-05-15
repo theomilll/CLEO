@@ -39,11 +39,17 @@ class Favorite(models.Model):
     product = models.ForeignKey(FoodProduct, on_delete=models.CASCADE)
 
 class Order(models.Model):
+    PAYMENT_METHOD_CHOICES = [
+        ('pix', 'PIX'),
+        ('credit_card', 'Credit Card'),
+    ]
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     order = models.CharField(max_length=1000)
     order_datetime = models.DateTimeField()
     pickup_time = models.DateTimeField()
     total = models.DecimalField(max_digits=6, decimal_places=2)
+    payment_method = models.CharField(max_length=20, choices=PAYMENT_METHOD_CHOICES, null=True)
+
     
 class CreditCard(models.Model):
     name = models.CharField(max_length=60)

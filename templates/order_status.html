@@ -77,9 +77,8 @@
                 <img src="https://placehold.co/600x400?text=product_img" alt="Product Image" style="width:250px;height:125px;">
               </div>
               <div>
-                <p>Horário de retirada: {{ order.pickup_time }}</p>
-                <p>Data do pedido: {{ order.order_datetime }}</p>
-                <p>Tipo de pagamento: PIX</p>
+                <p>Horário de retirada: {{ order.pickup_time|date:"H:i"}}</p>
+                <p>Tipo de pagamento: {{ order.payment_method }}</p>
               </div>
               <div class="d-flex flex-column text-sm-right">
                 <p>Detalhe do pedido:</p>
