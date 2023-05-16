@@ -39,6 +39,10 @@
   <img src="https://user-images.githubusercontent.com/108446826/232560661-522de845-7aa1-425b-93cd-7526af1a3bcb.png" title="Visão do Terminal" alt="Visão do Terminal" width="500px"/>
  </div>
 
+7.Teste de Sistema (E2E) Automatizados
+	Para a instalação do selenium, digite no seu terminal pip install selenium, após isso faça a verificação de qual versão é o seu google chrome, feita a verificação acesse o link: https://sites.google.com/chromium.org/driver/downloads?authuser=0
+e faça o download que condiz a versão do seu google chrome. Feito isso agora vamos ao vscode, onde na nossa pasta main criaremos a pasta com o nome de: “selPath.py”, feito isso, dentro dela criaremos a variavel SELENIUM_DIRS e passaremos a nossa url do chrome drive para essa variável.
+
 ## Link do Jira
 - Acompanhe o desenvolvimento: <a href="https://mffbm.atlassian.net/jira/software/projects/FDS/boards/1">CLEO Jira Board</a>
 
