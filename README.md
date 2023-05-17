@@ -16,7 +16,7 @@
 
 2. **Ativar ambiente virtual**
 >No diretório da pasta "venv" (criado acima):
->- MacOS/Linux: `venv/bin/activate`
+>- MacOS/Linux: `source venv/bin/activate`
 >- Windows: `venv/Scripts/activate`
 
 3. **Clonar repositório CLEO**
