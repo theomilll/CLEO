@@ -208,10 +208,10 @@ h1 {
     position: relative;
     color: white;
     text-decoration: none;
-    right: 50px;
+    right: 60px;
     top: 5px;
     height: 33px;
-    width: 30px;
+    width: 33px;
 
 }
 
@@ -264,13 +264,25 @@ input{
     position: relative;
     color: white;
     text-decoration: none;
-    top: 10px;
     height: 40px;
     width: 40px;
-    left: 10px;
-
+    float: left;
+    bottom: 100px;
+    left: 20px;
 }
 #cart{
     position: relative;
-    right: 23px;
+    left: 10px;
+    
+}
+#star{
+    position: relative;
+    float: right;
+    text-decoration: none;
+    height: 40px;
+    width: 40px;
+    float: left;
+    left: 30px;
+    top: 5px;
+    
 }
