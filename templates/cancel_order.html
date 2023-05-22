@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Order Status</title>
+    <title>Cancel order</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link
     rel="stylesheet"
@@ -36,10 +36,10 @@
             <a id="arrow" href="{% url 'home' %}" class="back-to-home">
                 <i class="fas fa-arrow-left"></i>
             </a>
-            <h1 class="top-bar-title">Status do pedido</h1>
+            <h1 class="top-bar-title">Cancelar pedido</h1>
         </div>
     </div>
-    {% if order %}
+    
     <div class="container">
       <div class="card">
         <div class="timeline-container">
@@ -90,19 +90,14 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    {% else %}
-    <div class="container px-1 px-md-4 py-5 mx-auto">
-      <div class="card">
-        <div class="timeline-container">
-          <div class="order_number_text">
-            <p>Não há pedidos feitos.</p>
-          </div>
+        <div class="cancel-box">
+          <textarea placeholder="Por que voce deseja cancelar ?"></textarea>
+          <p id="txt-cancelar">Deseja cancelar o pedido ?</p>
+          <button class="btn btn-primary" id="cancel-button">Cancelar</button>
         </div>
       </div>
     </div>
-    {% endif %}
+  
       <script src="{% static '../static/js/timeline.js' %}"></script>
 </body>
 </html>

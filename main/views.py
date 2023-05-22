@@ -248,7 +248,7 @@ def credit_card(request):
     return render(request, 'credit_card.html', {'form': form})
 
 def cancel_order(request):
-    pass #não faz nada por enquanto
+     return render(request, 'cancel_order.html')
 
 def list_favorite(request):
     favorite_item = Favorite.objects.filter(user=request.user)
