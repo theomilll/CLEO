@@ -249,3 +249,21 @@ def credit_card(request):
 
 def cancel_order(request):
     pass #não faz nada por enquanto
+
+def list_favorite(request):
+    favorite_item = Favorite.objects.filter(user=request.user)
+    return render(request, 'favorite.html', {'favorite_item': favorite_item})
+
+def add_favorite(request, product_id):
+    product = get_object_or_404(FoodProduct, id=product_id)
+    favorite_item, created = Favorite.objects.get_or_create(user=request.user, product=product)
+    if not created:
+        favorite_item.save()
+    return redirect('home')
+
+def remove_favoite(request, product_id):
+    product = get_object_or_404(FoodProduct, id=product_id)
+    favorite_item = get_object_or_404(Favorite, user=request.user, product=product)
+    favorite_item.delete()
+    return redirect('list_favorite')
+    
