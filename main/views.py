@@ -261,7 +261,7 @@ def add_favorite(request, product_id):
         favorite_item.save()
     return redirect('home')
 
-def remove_favoite(request, product_id):
+def remove_favorite(request, product_id):
     product = get_object_or_404(FoodProduct, id=product_id)
     favorite_item = get_object_or_404(Favorite, user=request.user, product=product)
     favorite_item.delete()
