@@ -246,3 +246,6 @@ def credit_card(request):
     else:
         form = CreditCardForm()
     return render(request, 'credit_card.html', {'form': form})
+
+def cancel_order(request):
+    pass #não faz nada por enquanto

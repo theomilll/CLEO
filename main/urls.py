@@ -19,4 +19,5 @@ urlpatterns = [
     path('payment/', views.payment, name='payment'),
     path('add_to_cart_from_detail/<int:product_id>/', views.add_to_cart_from_detail, name='add_to_cart_from_detail'),
     path('credit_card/', views.credit_card, name='credit_card'),
+    path('cancel_order/', views.cancel_order, name='cancel_order'),
 ]

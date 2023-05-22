@@ -18,7 +18,7 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-  <link rel="stylesheet" type="text/css" href="{% static './css/order_status.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static './css/cancel_order.css' %}">
 </head>
 <body>
   {% if messages %}
@@ -45,7 +45,6 @@
         <div class="timeline-container">
           <div class="order_number_text">
             Pedido nº: 0000{{ order.id }}</p>
-            <a href="{% url 'cancel_order' %}" class="btn btn-primary custom-btn" id="cancelar_pedido" style="text-decoration:none" name="cartAdd">Cancelar pedido</a>
           </div>
           <!-- Add class "active" to progress -->
           <ul id="progressbar" class="text-center">
@@ -88,9 +87,6 @@
                 <p>Vocês são demais obrigada!</p>
                 <p><br><br>Valor Total: R${{order.total}}</p>
               </div>
-              <div>
-                
-              </div>
             </div>
           </div>
         </div>
@@ -108,15 +104,6 @@
     </div>
     {% endif %}
       <script src="{% static '../static/js/timeline.js' %}"></script>
-      <script>
-        window.onload = function() {
-          var successMsg = document.getElementById("success-msg");
-          successMsg.style.display = "block";
-          setTimeout(function() {
-            successMsg.style.display = "none";
-          }, 5000); // 5 segundos
-        }
-      </script>
 </body>
 </html>
 
