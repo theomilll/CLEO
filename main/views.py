@@ -256,9 +256,7 @@ def list_favorite(request):
 
 def add_favorite(request, product_id):
     product = get_object_or_404(FoodProduct, id=product_id)
-    favorite_item, created = Favorite.objects.get_or_create(user=request.user, product=product)
-    if not created:
-        favorite_item.save()
+    favorite_item, created = Favorite.objects.get_or_create(user=request.user, product=product)    
     return redirect('home')
 
 def remove_favorite(request, product_id):

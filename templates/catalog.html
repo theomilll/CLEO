@@ -10,6 +10,7 @@
     <nav>
         <p>CENTRAL<br>LISTING<br>for<br>EASY<br>ORDERING</p>
     </a>
+    <a href="{% url 'list_favorite' %}"> <i class="fa-solid fa-star" style="color: #ffffff;"></i> </a>
         <div class="cart-icon">
              <a href="{% url 'order_status' %}">
                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="sino" class="bi bi-bell-fill" viewBox="0 0 16 16">
@@ -60,7 +61,7 @@
                                     </a>
                                     <div class="card-footer">
                                         <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary custom-btn" style="text-decoration:none" name="cartAdd">Adicionar ao carrinho</a>
-                                        <a class="btn btn-outline-secondary custom-btn">Favorito</a>
+                                        <a href="{% url 'add_favorite' product.id %}" class="btn btn-outline-secondary custom-btn" name="favoriteAdd">Favorito</a>
                                     </div>
                                 </div>
                             </div>

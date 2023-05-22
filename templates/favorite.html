@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favoritos</title>
+    <link rel="stylesheet" type="text/css" href="{% static './css/favorite.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav>
+        <p>CENTRAL<br>LISTING<br>for<br>EASY<br>ORDERING</p>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="top-bar">       
+            <a href="{% url 'home' %}" class="back-to-home">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <h1 class="top-bar-title">Favoritos</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                {% if list_favorite %}
+                <div class="table-container">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nome do Produto</th>
+                            <th>Preço</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in list_favorite %}
+                        <tr>
+                            <td>{{ item.product.name }}</td>
+                            <td>{{ item.product.price }}</td>
+                            <td>
+                                <a href="{% url 'remove_favorite' item.product.id %}" class="btn btn-danger btn-sm" name="removeFavorite">Remover</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+                {% else %}
+                <div class="empty-favorite-message">
+                    <p>Você não tem produtos favoritos <a href="{% url 'home' %}">Continue comprando</a>.</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

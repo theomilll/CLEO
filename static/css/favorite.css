@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f6f5f7;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    background: linear-gradient(90deg, #082E31, #0b8992);
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+p {
+    font-size: 14px;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.my-4 {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+
+.table-bordered {
+    border: 1px solid #dee2e6;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #dee2e6;
+}
+
+th {
+    text-align: inherit;
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.text-end {
+    text-align: end !important;
+}
+
+.btn {
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-danger {
+    background-color:#082E31;
+    color: #fff;
+    border: 1px solid #082E31;
+}
+
+.btn-danger:hover {
+    background-color: #082E31;
+    border-color: #082E31;
+}
+
+.btn-sm {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.2rem;
+}
+
+.cart-icon {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-size: 40px;
+}
+
+.cart-link {
+    color: #fff;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #dfdfdf;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.top-bar-title {
+    flex-grow: 1;
+    margin: 0;
+    font-size: 32px;
+    text-align: center;
+}
+
+.back-to-home {
+    color: #082E31;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.empty-favorite-message {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+.empty-favorite-message p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: black;
+    text-decoration: underline;
+}
+
+.table-container {
+    margin-top: 25px;
+}
