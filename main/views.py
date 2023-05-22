@@ -252,7 +252,7 @@ def cancel_order(request):
 
 def list_favorite(request):
     favorite_item = Favorite.objects.filter(user=request.user)
-    return render(request, 'favorite.html', {'favorite_item': favorite_item})
+    return render(request, 'favorite.html', {'list_favorite': favorite_item})
 
 def add_favorite(request, product_id):
     product = get_object_or_404(FoodProduct, id=product_id)
