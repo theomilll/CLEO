@@ -1,10 +1,9 @@
 var listItems = document.querySelectorAll("#progressbar li");
 
-
 var currentProgress = 0;
 
 function advanceProgress() {
-  if(currentProgress < listItems.length){
+  if(currentProgress < 3){
     listItems[currentProgress].classList.add("active");
     currentProgress++;
   } else {
@@ -13,3 +12,9 @@ function advanceProgress() {
 }
 
 var progressInterval = setInterval(advanceProgress, 2500);
+document.getElementById('advance').addEventListener('click', function() {
+  if(currentProgress < listItems.length){
+    listItems[currentProgress].classList.add("active");
+    currentProgress++;
+  }
+});
