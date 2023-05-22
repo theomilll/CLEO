@@ -208,7 +208,7 @@ h1 {
     position: relative;
     color: white;
     text-decoration: none;
-    right: 60px;
+    right: 71px;
     top: 5px;
     height: 33px;
     width: 33px;
@@ -267,7 +267,7 @@ input{
     height: 40px;
     width: 40px;
     float: left;
-    bottom: 100px;
+    bottom: 108px;
     left: 20px;
 }
 #cart{
@@ -282,7 +282,7 @@ input{
     height: 40px;
     width: 40px;
     float: left;
-    left: 30px;
+    left: 26px;
     top: 5px;
     
 }
