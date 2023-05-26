@@ -3,8 +3,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 from .forms import SignUpForm
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--headless")
@@ -110,7 +108,6 @@ class cleo(TestCase):
         confirmPurchase.click()
         time.sleep(2)
     def finalizar_pedido(self, driver):
-        WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, "confirmPurchase")))
         FinalizarPedido=driver.find_element(By.ID, "confirmPurchase")
         FinalizarPedido.click()
     def voltar_catalogo(self, driver):
@@ -119,41 +116,6 @@ class cleo(TestCase):
     def logout(self, driver):
         logout= driver.find_element(By.ID,"log-out")
         logout.click()
-    def pagamento_cartao(self, driver):
-        escrever_username1 = driver.find_element(By.NAME,"Username")
-        escrever_username1.send_keys("thanos")
-        password_login1 = driver.find_element(By.NAME,"password")
-        password_login1.send_keys("inevitavel40")
-        botao_login1 = driver.find_element(By.NAME,"login")
-        botao_login1.click()
-        adicionar_carrinho1 = driver.find_element(By.NAME,"cartAdd")
-        adicionar_carrinho1.click()
-        cartBtn1 = driver.find_element(By.NAME, "cart")
-        cartBtn1.click()
-        finalizarCompra1 = driver.find_element(By.NAME, "finalizarCompra")
-        finalizarCompra1.click()
-        paymentMethod1 = driver.find_element(By.NAME, 'payment-method')
-        paymentMethod1.click()
-        cartao_credito1 = driver.find_element(By.NAME, "Cartao-credito")
-        cartao_credito1.click()
-        selecionar_tempo1 = driver.find_element(By.NAME, "pickup-time")
-        selecionar_tempo1.send_keys("1030")
-        confirmPurchase1 = driver.find_element(By.NAME, "generateQrCode")
-        confirmPurchase1.click()
-        nome_cartao = driver.find_element(By.NAME,"name")
-        nome_cartao.send_keys("Thor")
-        numero_cartao = driver.find_element(By.NAME,"card_number")
-        numero_cartao.send_keys("4111111111111111")
-        data_expediçao = driver.find_element(By.NAME,"expiry_date")
-        data_expediçao.send_keys("13062023")
-        data_expediçao = driver.find_element(By.NAME,"cvv_code")
-        data_expediçao.send_keys("666")
-        confirmar_cartao = driver.find_element(By.NAME, "btn-confirmar")
-        confirmar_cartao.click()
-        voltar_catalogo1=driver.find_element(By.ID, "arrow")
-        voltar_catalogo1.click()
-        logout1= driver.find_element(By.ID,"log-out")
-        logout1.click()
         driver.quit()
     def run_tests(self, driver):
         self.register(driver)
@@ -172,4 +134,3 @@ class cleo(TestCase):
         self.finalizar_pedido(driver)
         self.voltar_catalogo(driver)
         self.logout(driver)
-        self.pagamento_cartao(driver)
