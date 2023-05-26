@@ -3,7 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 from .forms import SignUpForm
-
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 class cleo(TestCase):
     def test(self):
         chrome_options = webdriver.ChromeOptions()
@@ -107,9 +108,8 @@ class cleo(TestCase):
         confirmPurchase.click()
         time.sleep(2)
     def finalizar_pedido(self, driver):
-        time.sleep(5)
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "confirmPurchase")))
         FinalizarPedido=driver.find_element(By.ID, "confirmPurchase")
-        time.sleep(2)
         FinalizarPedido.click()
     def voltar_catalogo(self, driver):
         voltar_catalogo=driver.find_element(By.ID, "arrow")
