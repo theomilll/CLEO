@@ -107,6 +107,16 @@ class cleo(TestCase):
         confirmPurchase = driver.find_element(By.NAME, "generateQrCode")
         confirmPurchase.click()
         time.sleep(2)
+    def finalizar_pedido(self, driver):
+        FinalizarPedido=driver.find_element(By.ID, "confirmPurchase")
+        FinalizarPedido.click()
+    def voltar_catalogo(self, driver):
+        voltar_catalogo=driver.find_element(By.ID, "arrow")
+        voltar_catalogo.click()
+    def logout(self, driver):
+        logout= driver.find_element(By.ID,"log-out")
+        logout.click()
+        driver.quit()
     def run_tests(self, driver):
         self.register(driver)
         self.login(driver)
@@ -121,3 +131,6 @@ class cleo(TestCase):
         self.finalizar_compra(driver)
         self.metodo_pagamento(driver)
         self.confirmar_compra(driver)
+        self.finalizar_pedido(driver)
+        self.voltar_catalogo(driver)
+        self.logout(driver)
