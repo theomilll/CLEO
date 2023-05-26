@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 from .forms import SignUpForm
+from selenium.webdriver.common.action_chains import ActionChains
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--headless")
@@ -100,7 +101,7 @@ class cleo(TestCase):
         pixPay.click()
     def confirmar_compra(self, driver):
         escolher_hora = driver.find_element(By.NAME, 'payment-method')
-        escolher_hora.send_keys("1030AM")
+        ActionChains(driver).send_keys_to_element(escolher_hora, "1030").perform()
         confirmPurchase = driver.find_element(By.NAME, "generateQrCode")
         confirmPurchase.click()
         time.sleep(2)
