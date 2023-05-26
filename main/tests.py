@@ -7,9 +7,7 @@ from .forms import SignUpForm
 class cleo(TestCase):
     def test(self):
         chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument("--incognito")
-        chrome_options.add_argument("--start-maximized")
-        driver = webdriver.Chrome(options=chrome_options)
+        driver = webdriver.Chrome()
 
         driver.get("http://127.0.0.1:8000/")
 
