@@ -108,7 +108,7 @@ class cleo(TestCase):
         confirmPurchase.click()
         time.sleep(2)
     def finalizar_pedido(self, driver):
-        finalizar_pedido = driver.find_element(By.NAME,"confirmpurchaselink")
+        finalizar_pedido = driver.find_element(By.CLASS_NAME,"btn-primary-cp")
         finalizar_pedido.click()
     def voltar_catalogo(self, driver):
         voltar_catalogo=driver.find_element(By.ID, "arrow")

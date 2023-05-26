@@ -113,3 +113,9 @@ a:hover {
     color: #fff;
     border: 1px solid #082E31;
 }
+
+#btn-primary-cp {
+    background-color: #082E31;
+    color: #fff;
+    border: 1px solid #082E31;
+}
