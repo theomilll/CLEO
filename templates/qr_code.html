@@ -19,10 +19,6 @@
             <img src="{{ qr_base64 }}" alt="Pix QR code" />
         </div>
         <a href="{% url 'order_status' %}" class="btn btn-primary"  name="confirmpurchaselink">Finalizar Pedido</a>
-        {% comment %} <form method="POST" action="{% url 'order_status' %}">
-            {% csrf_token %}
-            <button class="btn btn-primary" type="submit"  name="confirmPurchase">Finalizar Pedido</button>
-        </form> {% endcomment %}
     </div>
 </body>
 </html>
