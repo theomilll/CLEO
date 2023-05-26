@@ -108,7 +108,7 @@ class cleo(TestCase):
         confirmPurchase.click()
         time.sleep(2)
     def finalizar_pedido(self, driver):
-        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "confirmPurchase")))
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, "confirmPurchase")))
         FinalizarPedido=driver.find_element(By.ID, "confirmPurchase")
         FinalizarPedido.click()
     def voltar_catalogo(self, driver):
