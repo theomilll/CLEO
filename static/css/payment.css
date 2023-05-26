@@ -215,3 +215,9 @@ nav {
     font-size: 30px;
     margin-right: 10px;
 }
+
+#btn-primary-cp {
+    background-color: #082E31;
+    color: #fff;
+    border: 1px solid #082E31;
+}
