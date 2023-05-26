@@ -74,9 +74,6 @@ class cleo(TestCase):
         adicionar_carrinho2 = driver.find_element(By.NAME, "cartAdd")
         adicionar_carrinho2.click()
         time.sleep(2)
-        # leftArrowBack = driver.find_element(By.NAME, 'go-back')
-        # leftArrowBack.click()
-        # time.sleep(2)
     def entrar_carrinho(self, driver):
         cartBtn = driver.find_element(By.NAME, "cart")
         cartBtn.click()
