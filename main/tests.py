@@ -7,7 +7,8 @@ from .forms import SignUpForm
 class cleo(TestCase):
     def test(self):
         chrome_options = webdriver.ChromeOptions()
-        driver = webdriver.Chrome()
+        chrome_options.add_argument("--headless")
+        self.driver = webdriver.Chrome(options=chrome_options)
 
         driver.get("http://127.0.0.1:8000/")
 
