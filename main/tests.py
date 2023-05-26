@@ -121,6 +121,3 @@ class cleo(TestCase):
         self.finalizar_compra(driver)
         self.metodo_pagamento(driver)
         self.confirmar_compra(driver)
-        self.finalizar_pedido(driver)
-        self.voltar_catalogo(driver)
-        self.logout(driver)
