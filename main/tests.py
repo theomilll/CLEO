@@ -106,8 +106,8 @@ class cleo(TestCase):
         confirmPurchase = driver.find_element(By.NAME, "generateQrCode")
         confirmPurchase.click()
     def finalizar_pedido(self, driver):
-        time.sleep(10)
-        FinalizarPedido=driver.find_element(By.NAME, "confirmPurchase")
+        time.sleep(5)
+        FinalizarPedido=driver.find_element(By.ID, "confirmPurchase")
         FinalizarPedido.click()
     def voltar_catalogo(self, driver):
         voltar_catalogo=driver.find_element(By.ID, "arrow")
