@@ -20,7 +20,7 @@
         </div>
         <form method="POST" action="{% url 'order_status' %}">
             {% csrf_token %}
-            <button class="btn btn-primary" type="submit" name="confirmPurchase">Finalizar Pedido</button>
+            <button class="btn btn-primary" type="submit" name="confirmPurchase" id="confirmPurchase">Finalizar Pedido</button>
         </form>
     </div>
 </body>
