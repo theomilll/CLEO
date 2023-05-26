@@ -98,8 +98,6 @@ class cleo(TestCase):
         paymentMethod.click()
         pixPay = driver.find_element(By.NAME, "pixPay")
         pixPay.click()
-        qrCodeGen = driver.find_element(By.NAME, "generateQrCode")
-        qrCodeGen.click()
     def confirmar_compra(self, driver):
         time.sleep(2)
         confirmPurchase = driver.find_element(By.NAME, "generateQrCode")
