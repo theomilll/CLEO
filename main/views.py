@@ -190,9 +190,14 @@ def payment(request):
     if request.method == 'POST':
         payment_method = request.POST.get('payment-method')
         pickup_time_str = request.POST.get('pickup-time')
-        pickup_time = datetime.strptime(pickup_time_str, "%H:%M") if pickup_time_str else None
 
-        order = Order(user=request.user, order="Order description", order_datetime=timezone.now(),
+        order_datetime = datetime.now()
+        pickup_time = datetime.strptime(pickup_time_str, "%H:%M") if pickup_time_str else None
+        order_products = [f"{item.quantity}x {item.product.name}" for item in cart_items]
+        order_summary = ", ".join(order_products)
+        
+
+        order = Order(user=request.user, order=order_summary, order_datetime=order_datetime,
                       pickup_time=pickup_time, total=total, payment_method=payment_method)
         order.save()
 
@@ -206,19 +211,11 @@ def payment(request):
 
 @login_required(login_url='login')
 def order_status(request):
-    cart = Cart.objects.filter(user=request.user)
-    total = cart.aggregate(total=Sum(F('product__price') * F('quantity')))['total']
-    
+    cart = Cart.objects.filter(user=request.user) 
+    order = Order.objects.filter(user=request.user).last() 
     if request.method == 'POST':
-        order_datetime = datetime.now()
-        pickup_time = datetime.now() + timedelta(minutes=30)
-        order_products = [f"{item.quantity}x {item.product.name}" for item in cart]
-        order_summary = ", ".join(order_products)
-        order = Order.objects.create(user=request.user, order=order_summary, total=total, 
-        pickup_time=pickup_time, order_datetime=order_datetime)
         messages.success(request, 'Pedido realizado com sucesso!')        
         cart.delete()
-        #order_datetime.save()
     else:
         order = Order.objects.filter(user=request.user).last()
 
