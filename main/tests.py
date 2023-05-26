@@ -101,8 +101,9 @@ class cleo(TestCase):
         qrCodeGen = driver.find_element(By.NAME, "generateQrCode")
         qrCodeGen.click()
     def confirmar_compra(self, driver):
+        time.sleep(2)
         selecionar_tempo = driver.find_element(By.NAME, "pickup-time")
-        selecionar_tempo.send_keys("1030")
+        selecionar_tempo.send_keys("10:30")
         time.sleep(2)
         confirmPurchase = driver.find_element(By.NAME, "generateQrCode")
         confirmPurchase.click()
