@@ -8,7 +8,7 @@ class cleo(TestCase):
     def test(self):
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument("--headless")
-        self.driver = webdriver.Chrome(options=chrome_options)
+        driver = webdriver.Chrome(options=chrome_options)
 
         driver.get("http://127.0.0.1:8000/")
 
