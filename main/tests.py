@@ -89,8 +89,11 @@ class cleo(TestCase):
         cartObs.send_keys("Eu sou inevitavel!")
         cartObsBtn = driver.find_element(By.NAME, "obsCartBtn")
         cartObsBtn.click()
+        time.sleep(2)
     def finalizar_compra(self, driver):
+        time.sleep(2)
         finalizarCompra = driver.find_element(By.NAME, "finalizarCompra")
+        time.sleep(2)
         finalizarCompra.click()
     def metodo_pagamento(self, driver):
         paymentMethod = driver.find_element(By.NAME, 'payment-method')
