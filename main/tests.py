@@ -5,11 +5,13 @@ import time
 from .forms import SignUpForm
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-gpu")
+driver = webdriver.Chrome(options=chrome_options)
 class cleo(TestCase):
     def test(self):
-        chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument("--headless")
-        driver = webdriver.Chrome(options=chrome_options)
 
         driver.get("http://127.0.0.1:8000/")
 
@@ -108,7 +110,7 @@ class cleo(TestCase):
         confirmPurchase.click()
         time.sleep(2)
     def finalizar_pedido(self, driver):
-        WebDriverWait(driver, 50).until(EC.visibility_of_element_located((By.ID, "confirmPurchase")))
+        WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, "confirmPurchase")))
         FinalizarPedido=driver.find_element(By.ID, "confirmPurchase")
         FinalizarPedido.click()
     def voltar_catalogo(self, driver):
