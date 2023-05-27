@@ -192,7 +192,7 @@ def payment(request):
         pickup_time_str = request.POST.get('pickup-time')
 
         order_datetime = datetime.now()
-        pickup_time = datetime.strptime(pickup_time_str, "%H:%M") if pickup_time_str else None
+        pickup_time = datetime.strptime(pickup_time_str, "%H:%M") if pickup_time_str and pickup_time_str.strip() != '' else None
         order_products = [f"{item.quantity}x {item.product.name}" for item in cart_items]
         order_summary = ", ".join(order_products)
         
