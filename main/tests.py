@@ -113,7 +113,6 @@ class cleo(TestCase):
     def logout(self, driver): 
         logout= driver.find_element(By.ID,"log-out")
         logout.click()
-        driver.quit()
     def pagamento_cartao(self, driver):
         escrever_username1 = driver.find_element(By.NAME,"Username")
         escrever_username1.send_keys("thanos")
