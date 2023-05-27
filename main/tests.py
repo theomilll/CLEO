@@ -99,6 +99,8 @@ class cleo(TestCase):
         paymentMethod.click()
         pixPay = driver.find_element(By.NAME, "pixPay")
         pixPay.click()
+        selecionar_tempo1 = driver.find_element(By.NAME, "pickup-time")
+        selecionar_tempo1.send_keys("1030")
     def confirmar_compra(self, driver):
         time.sleep(2)
         confirmPurchase = driver.find_element(By.NAME, "generateQrCode")
