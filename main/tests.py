@@ -6,7 +6,6 @@ from .forms import SignUpForm
 from selenium.webdriver.common.action_chains import ActionChains
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--no-sandbox")
-chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-gpu")
 driver = webdriver.Chrome(options=chrome_options)
 class cleo(TestCase):
@@ -108,6 +107,8 @@ class cleo(TestCase):
         confirmPurchase.click()
         time.sleep(2)
     def finalizar_pedido(self, driver):
+        confirmPurchase = driver.find_element(By.NAME, "generateQrCode")
+        confirmPurchase.click()
         finalizar_pedido = driver.find_element(By.ID,"btn-primary-cp")
         finalizar_pedido.click()
     def voltar_catalogo(self, driver):
