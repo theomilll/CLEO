@@ -101,6 +101,7 @@ class cleo(TestCase):
         pixPay.click()
     def confirmar_compra(self, driver):
         escolher_hora = driver.find_element(By.NAME, 'pickup-time')
+        escolher_hora.click()
         escolher_hora.clear()
         escolher_hora.send_keys("1030")
         time.sleep(2)
