@@ -4,8 +4,6 @@ from selenium.webdriver.common.by import By
 import time
 from .forms import SignUpForm
 from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--headless")
@@ -102,8 +100,8 @@ class cleo(TestCase):
         pixPay = driver.find_element(By.NAME, "pixPay")
         pixPay.click()
     def confirmar_compra(self, driver):
-        wait = WebDriverWait(driver, 10)
-        escolher_hora = wait.until(EC.presence_of_element_located((By.NAME, 'pickup-time')))
+        escolher_hora = driver.find_element(By.NAME, 'pickup-time')
+        escolher_hora.clear()
         ActionChains(driver).send_keys_to_element(escolher_hora, "1030").perform()
         time.sleep(2)
         confirmPurchase = driver.find_element(By.NAME, "generateQrCode")
