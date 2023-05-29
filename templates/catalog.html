@@ -28,6 +28,11 @@
         </div>
     </nav>
     <div class="container">
+        {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                {{ message }}
+            </div>
+        {% endfor %}
         <div class="top-bar">    
         <h1 class="text-center my-5">Catálogo de Comidas</h1>
         </div>

@@ -61,7 +61,18 @@ class cleo(TestCase):
         busca.clear()
         btn_busca = driver.find_element(By.ID,"btn-busca")
         btn_busca.click()
-    def adicionarcarrinho(self, driver):
+    def adicionar_favoritos(self, driver):
+        adicionar_favoritos = driver.find_element(By.NAME, "favoriteAdd")
+        adicionar_favoritos.click()
+        adicionar_favoritos = driver.find_element(By.NAME, "favoriteAdd")
+        adicionar_favoritos.click()
+        btn_favorito = driver.find_element(By.ID, "star")
+        btn_favorito.click()
+        remover_favoritos = driver.find_element(By.NAME, "removeFavorite")
+        remover_favoritos.click()
+        seta_favoritos = driver.find_element(By.NAME, "arrow_favorites")
+        seta_favoritos.click()
+    def adicionar_carrinho(self, driver):
         adicionar_carrinho = driver.find_element(By.NAME,"cartAdd")
         adicionar_carrinho.click()
     def detalhes_produto(self, driver):
@@ -157,7 +168,8 @@ class cleo(TestCase):
         self.status_pedido(driver)
         self.busca_produto_existente(driver)
         self.busca_produto_inexistente(driver)
-        self.adicionarcarrinho(driver)
+        self.adicionar_favoritos(driver)
+        self.adicionar_carrinho(driver)
         self.detalhes_produto(driver)
         self.entrar_carrinho(driver)
         self.alterar_quantidade(driver)
