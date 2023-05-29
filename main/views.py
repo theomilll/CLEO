@@ -9,8 +9,6 @@ from datetime import datetime, timedelta
 from django.contrib import messages
 from django.utils import timezone
 
-
-
 def login(request):
     login_error_message = None
     registration_error_message = None
@@ -211,16 +209,17 @@ def payment(request):
 
 @login_required(login_url='login')
 def order_status(request):
-    cart = Cart.objects.filter(user=request.user) 
-    order = Order.objects.filter(user=request.user).last() 
+    cart = Cart.objects.filter(user=request.user)
+    order = Order.objects.filter(user=request.user).last()
+    order_history = Order.objects.filter(user=request.user).order_by('-order_datetime')
+
     if request.method == 'POST':
         messages.success(request, 'Pedido realizado com sucesso!')        
         cart.delete()
-    else:
-        order = Order.objects.filter(user=request.user).last()
 
     context = {
         'order': order,
+        'order_history': order_history,
     }
     return render(request, 'order_status.html', context)
    

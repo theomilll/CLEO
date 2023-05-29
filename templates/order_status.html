@@ -108,6 +108,34 @@
       </div>
     </div>
     {% endif %}
+    <h2>Order History</h2>
+    <div class="order-history-container">
+        <table class="order-history-table">
+            <thead>
+                <tr>
+                    <th>Order Time</th>
+                    <th>Total Cost</th>
+                    <th>Products</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in order_history %}
+                    <tr>
+                        <td>{{ order.order_datetime }}</td>
+                        <td>{{ order.total }}</td>
+                        <td>
+                            {% for product in order.products.all %}
+                                <div class="product-item">
+                                    <span class="product-name">{{ product.name }}</span>
+                                    <span class="product-quantity">{{ product.quantity }}</span>
+                                </div>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
       <script src="{% static '../static/js/timeline.js' %}"></script>
       <script>
         window.onload = function() {

@@ -287,3 +287,25 @@ p {
   position: relative;
   top: 46px;
 }
+
+.order-history-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.order-history-table th,
+.order-history-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.order-history-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #082E31;
+  color: white;
+}
+
+.order-history-table tr:hover {background-color: #f6f5f7;}
