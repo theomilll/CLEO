@@ -100,8 +100,6 @@ class cleo(TestCase):
     def adicionar_obs(self, driver):
         cartObs = driver.find_element(By.NAME, "text_box_obs")
         cartObs.send_keys("Eu sou inevitavel!")
-        cartObsBtn = driver.find_element(By.NAME, "obsCartBtn")
-        cartObsBtn.click()
     def finalizar_compra(self, driver):
         finalizarCompra = driver.find_element(By.NAME, "finalizarCompra")
         finalizarCompra.click()

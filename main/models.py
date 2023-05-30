@@ -48,6 +48,7 @@ class Order(models.Model):
     order_datetime = models.DateTimeField()
     pickup_time = models.DateTimeField()
     total = models.DecimalField(max_digits=6, decimal_places=2)
+    obs = models.TextField(blank=True)
     payment_method = models.CharField(max_length=20, choices=PAYMENT_METHOD_CHOICES, null=True)
 
     
@@ -56,3 +57,8 @@ class CreditCard(models.Model):
     card_number = CardNumberField(_('card number'))
     expiry_date = CardExpiryField(_('expiration date'))
     cvv_code = SecurityCodeField(_('security code'))
+
+class CartObs(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    text_box_obs = models.TextField(blank=True)
+    

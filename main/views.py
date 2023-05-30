@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login as auth_login
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import SignUpForm, CartForm, CreditCardForm
-from .models import FoodProduct, Cart, Favorite, Order
+from .models import FoodProduct, Cart, Favorite, Order, CartObs
 from django.contrib.auth.decorators import login_required
 from pixqrcode import PixQrCode
 from django.db.models import Sum, F
@@ -120,12 +120,19 @@ def cart(request):
     if request.method == "POST":
         form = CartForm(request.POST)
         if form.is_valid():
-            obs = form.cleaned_data["text_box_obs"]
-            request.session["cart_obs"] = obs
-            return redirect('cart')
+            text_box_obs_value = form.cleaned_data.get('text_box_obs', '')
+            if not text_box_obs_value:
+                text_box_obs_value = 'nenhuma'
+            
+            # Salvar a observação do usuário no modelo CartObs
+            cart_obs = CartObs(user=request.user, text_box_obs=text_box_obs_value)
+            cart_obs.save()
+            
+            
+            return redirect('payment')
     else:
         form = CartForm()
-
+        
     context = {
         'cart_items_total': cart_items_total,
         'cart_total': cart_total,
@@ -182,6 +189,7 @@ def generate_qr_code(request):
 
 def payment(request):
     cart_items = Cart.objects.filter(user=request.user)
+    cart_obs = CartObs.objects.filter(user=request.user).latest('id')
     total = cart_items.aggregate(total=Sum(F('product__price') * F('quantity')))['total']
     total_str = format(float(total), '.2f') if total is not None else '0.00'
 
@@ -196,7 +204,7 @@ def payment(request):
         
 
         order = Order(user=request.user, order=order_summary, order_datetime=order_datetime,
-                      pickup_time=pickup_time, total=total, payment_method=payment_method)
+                      pickup_time=pickup_time, total=total, payment_method=payment_method, obs = cart_obs.text_box_obs)
         order.save()
 
         if payment_method == 'pix':
@@ -210,12 +218,14 @@ def payment(request):
 @login_required(login_url='login')
 def order_status(request):
     cart = Cart.objects.filter(user=request.user)
+    cart_obs = CartObs.objects.filter(user=request.user).last()
     order = Order.objects.filter(user=request.user).last()
     order_history = Order.objects.filter(user=request.user).order_by('-order_datetime')
 
     if request.method == 'POST':
         messages.success(request, 'Pedido realizado com sucesso!')        
         cart.delete()
+        cart_obs.delete()
 
     context = {
         'order': order,

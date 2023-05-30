@@ -61,22 +61,20 @@
             </div>
             {% if cart_items_total %}
                 <div class="bottom-container">
-                    <form method="post">
+                    <form id="cartForm" method="POST">
                         {% csrf_token %}
                         <div class="observation-container">
-                            <input type="text" name="{{ form.text_box_obs.name }}" class="observation-box" placeholder="Alguma observação?"/>
-                            <div class="add-observation-btn-container">
-                                <button type="submit" class="btn btn-primary" name="obsCartBtn">Adicionar observação</button>
-                            </div>
+                          <input type="text" name="{{ form.text_box_obs.name }}" class="observation-box" placeholder="Alguma observação?"/>
                         </div>
-                    </form>
-                    <div class="total-and-button-container">
-                        <div class="total-box">
+                        <div class="total-and-button-container">
+                          <div class="total-box">
                             <p class="total-text">Total: {{ cart_total }}</p>
+                          </div>
+                          <div class="checkout-btn-container">
+                            <button type="button" class="btn btn-primary" id="finalizarCompraBtn">Finalizar Compra</button>
+                          </div>
                         </div>
-                        <div class="checkout-btn-container">
-                            <a href="{% url 'payment' %}" class="btn btn-primary" name="finalizarCompra">Finalizar Compra</a>
-                        </div>
+                      </form>
                     </div>                    
             {% endif %}
                 {% comment %} <a href="{% url 'checkout' %}" class="btn btn-success">Proceed to Checkout</a> {% endcomment %}
@@ -90,5 +88,19 @@
     </div>
     {% if cart_items_total %}
     {% endif %}
+    <script>
+        // Capturar o evento de clique no botão "Finalizar Compra"
+        document.getElementById('finalizarCompraBtn').addEventListener('click', function() {
+          // Adicionar a observação ao formulário
+          var observationInput = document.querySelector('input[name="{{ form.text_box_obs.name }}"]');
+          var observationValue = observationInput.value;
+          observationInput.value = observationValue.trim(); // Opcional: remover espaços em branco no início e no final da observação
+      
+          // Enviar o formulário
+          document.getElementById('cartForm').submit();
+        });
+    </script>
+
+
 </body>
 </html>
