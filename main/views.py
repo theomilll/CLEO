@@ -60,6 +60,7 @@ def add_to_cart(request, product_id):
 
     if not created:
         cart.quantity += selected_quantity
+        messages.success(request, "Seu produto foi adicionado ao carrinho!")
     else:
         cart.quantity = selected_quantity
 
