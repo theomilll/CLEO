@@ -135,7 +135,7 @@ class cleo(TestCase):
         adicionar_carrinho1.click()
         cartBtn1 = driver.find_element(By.NAME, "cart")
         cartBtn1.click()
-        finalizarCompra1 = driver.find_element(By.NAME, "finalizarCompra")
+        finalizarCompra1 = driver.find_element(By.ID, "finalizarCompraBtn")
         finalizarCompra1.click()
         paymentMethod1 = driver.find_element(By.NAME, 'payment-method')
         paymentMethod1.click()
