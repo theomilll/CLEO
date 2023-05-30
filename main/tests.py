@@ -72,6 +72,10 @@ class cleo(TestCase):
         remover_favoritos.click()
         seta_favoritos = driver.find_element(By.NAME, "arrow_favorites")
         seta_favoritos.click()
+        first_product = driver.find_element(By.NAME, "product-link")
+        first_product.click()
+        btn_star_descricao = driver.find_element(By.CLASS_NAME, "fa fa-star")
+        btn_star_descricao.click()
     def adicionar_carrinho(self, driver):
         adicionar_carrinho = driver.find_element(By.NAME,"cartAdd")
         adicionar_carrinho.click()

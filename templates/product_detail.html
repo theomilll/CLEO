@@ -23,7 +23,7 @@
                             <i class="fas fa-arrow-left" name="go-back"></i>
                         </a>
                         <h1 class="text-center">{{ product.name }} </h1>
-                        <a href="{% url 'cart' %}" style="text-decoration:none">
+                        <a href="{% url 'add_favorite' product.id %}" style="text-decoration:none">
                             <i class="fa fa-star"></i>
                         </a>
                     </div>
