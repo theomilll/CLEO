@@ -266,7 +266,8 @@ def cancel_order(request):
         'payment_type': last_order.get_payment_method_display(),
         'order_detail': last_order.order,
         'order_note': last_order.obs,
-        'total_value': last_order.total
+        'total_value': last_order.total,
+        'order_id': last_order.id,
     }
 
     return render(request, 'cancel_order.html', order_detail)
