@@ -61,4 +61,3 @@ class CreditCard(models.Model):
 class CartObs(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     text_box_obs = models.TextField(blank=True)
-    

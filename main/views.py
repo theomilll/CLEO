@@ -255,7 +255,23 @@ def credit_card(request):
     return render(request, 'credit_card.html', {'form': form})
 
 def cancel_order(request):
-     return render(request, 'cancel_order.html')
+    # Certifique-se de que há um pedido a ser cancelado
+    last_order = Order.objects.filter(user=request.user).last()
+
+    if last_order is None:
+        return render(request, 'error.html', {'message': 'Não há pedidos para cancelar.'})
+    
+    order_detail = {
+        'pickup_time': last_order.pickup_time,
+        'payment_type': last_order.get_payment_method_display(),
+        'order_detail': last_order.order,
+        'order_note': last_order.obs,
+        'total_value': last_order.total
+    }
+
+    return render(request, 'cancel_order.html', order_detail)
+
+     
 
 def list_favorite(request):
     favorite_item = Favorite.objects.filter(user=request.user)
