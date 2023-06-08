@@ -309,6 +309,7 @@ p {
     right: 130px;
     height: 40px;
     width: 120px;
+    top: 30px;
 }
 #txt-cancelar{
     position: relative;

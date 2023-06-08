@@ -93,7 +93,8 @@
         <div class="cancel-box">
           <textarea placeholder="Por que voce deseja cancelar ?"></textarea>
           <p id="txt-cancelar">Deseja cancelar o pedido ?</p>
-          <button class="btn btn-primary" id="cancel-button">Cancelar</button>
+          
+          <a href="{% url 'order_status' %}"><button class="btn btn-primary" id="cancel-button">Cancelar</button></a>
         </div>
       </div>
     </div>
