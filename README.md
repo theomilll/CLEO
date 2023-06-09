@@ -56,6 +56,7 @@ e faça o download que condiz a versão do seu google chrome. Feito isso agora v
 <img src="https://github.com/theomilll/CLEO/assets/108446826/333b0ed6-b30f-4bb2-8da6-5c41f7c8f267" title="Diagrama de Atividades CLEO" alt="Diagrama de Atividades CLEO" width="900px"/>
 </div>
 
+
 ## Relato Programação em Pares (Pair Programming)
 ><a href="https://docs.google.com/document/d/19kMGlKWTtmS4_a0b0ogvFF-unXA4oes1-lSFioI59Ns/edit?usp=sharing">*Acesse aqui o relato completo.*</a>
 ### Sprint 1
