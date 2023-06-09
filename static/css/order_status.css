@@ -309,3 +309,53 @@ p {
 }
 
 .order-history-table tr:hover {background-color: #f6f5f7;}
+
+
+.order-history-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.cardLower {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  padding: 20px;
+  max-width: 300px;
+  height: auto;
+  margin: 10px;
+}
+
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  color: green;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.card-subtitle {
+  color: #6c757d;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.centered-title {
+  text-align: center;
+}
+
+.order-id {
+  font-size: 18px;
+  color: #082E31;
+}
+
+.order-number {
+  font-weight: bold;
+}

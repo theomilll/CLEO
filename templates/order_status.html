@@ -108,34 +108,32 @@
       </div>
     </div>
     {% endif %}
-    <h2>Order History</h2>
+    <div class="container">
+      <div class="top-bar">       
+          <a id="arrow" href="{% url 'home' %}" class="back-to-home">
+              <i class="fas fa-arrow-left"></i>
+          </a>
+          <h1 class="top-bar-title">Histórico de pedidos</h1>
+      </div>
+  </div>
     <div class="order-history-container">
-        <table class="order-history-table">
-            <thead>
-                <tr>
-                    <th>Order Time</th>
-                    <th>Total Cost</th>
-                    <th>Products</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for order in order_history %}
-                    <tr>
-                        <td>{{ order.order_datetime }}</td>
-                        <td>{{ order.total }}</td>
-                        <td>
-                            {% for product in order.products.all %}
-                                <div class="product-item">
-                                    <span class="product-name">{{ product.name }}</span>
-                                    <span class="product-quantity">{{ product.quantity }}</span>
-                                </div>
-                            {% endfor %}
-                        </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+      {% for order in order_history %}
+          <div class="cardLower h-100">
+              <div class="card-body">
+                  <h5 class="order-id">Número do pedido: <span class="order-number">{{ order.id }}</span></h5>
+                  <h5 class="card-title">Data: {{ order.order_datetime }}</h5>
+                  <p class="card-text">Valor total: {{ order.total }}</p>
+                  {% for product in order.products.all %}
+                      <div class="product-item">
+                          <p class="card-text">{{ product.name }} (Quantity: {{ product.quantity }})</p>
+                      </div>
+                  {% endfor %}
+              </div>
+          </div>
+      {% empty %}
+          <h5 class="text-center">No orders found.</h5>
+      {% endfor %}
+  </div>  
       <script src="{% static '../static/js/timeline.js' %}"></script>
       <script>
         window.onload = function() {
