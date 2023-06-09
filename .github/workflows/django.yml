@@ -49,5 +49,5 @@ jobs:
         application_name: Cleo-V2 
         environment_name: Cleo-V2-env
         version_label: ${{ github.sha }}
-        region: sa-east-1
+        region: sa-east-1a
         deployment_package: deploy.zip
