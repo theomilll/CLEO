@@ -205,7 +205,7 @@ def payment(request):
         
 
         order = Order(user=request.user, order=order_summary,           order_datetime=order_datetime,
-                      pickup_time=pickup_time, total=total, payment_method=payment_method, obs = cart_obs.text_box_obs,order_status= "active" )
+                      pickup_time=pickup_time, total=total, payment_method=payment_method, obs = cart_obs.text_box_obs, order_status= "active" )
         order.save()
 
         if payment_method == 'pix':
@@ -224,9 +224,16 @@ def order_status(request):
     order_history = Order.objects.filter(user=request.user).order_by('-order_datetime')
 
     if request.method == 'POST':
-        messages.success(request, 'Pedido realizado com sucesso!')        
-        cart.delete()
-        cart_obs.delete()
+        if 'finishorder' in request.POST:
+            order.order_status = "finished"
+            order.save()
+            messages.success(request, 'Pedido retirado! Bom apetite!')
+        else:
+            messages.success(request, 'Pedido finalizado com sucesso!')
+            cart.delete()
+            cart_obs.delete()
+
+        return redirect('order_status')
 
     context = {
         'order': order,
@@ -275,11 +282,11 @@ def cancel_order(request):
 @login_required(login_url='login')
 def finish_order(request):
     order = Order.objects.filter(user=request.user).last()
-
     if request.method == 'POST':
-        messages.success(request, 'Pedido Finalizado com sucesso!')        
         order.order_status = "finished"
-
+        order.save()
+        messages.success(request, 'Pedido retirado, bom apetite')
+    
     return redirect('order_status')
      
 
