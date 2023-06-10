@@ -262,12 +262,17 @@ def credit_card(request):
     return render(request, 'credit_card.html', {'form': form})
 
 def cancel_order(request):
-    # Certifique-se de que há um pedido a ser cancelado
     last_order = Order.objects.filter(user=request.user).last()
 
     if last_order is None:
         return render(request, 'error.html', {'message': 'Não há pedidos para cancelar.'})
     
+    if request.method == 'POST':
+        last_order.order_status = 'cancelled'
+        last_order.save()
+        messages.success(request, 'Pedido cancelado com sucesso.')
+        return redirect('order_status')
+
     order_detail = {
         'pickup_time': last_order.pickup_time,
         'payment_type': last_order.get_payment_method_display(),
@@ -278,7 +283,6 @@ def cancel_order(request):
     }
 
     return render(request, 'cancel_order.html', order_detail)
-
 @login_required(login_url='login')
 def finish_order(request):
     order = Order.objects.filter(user=request.user).last()

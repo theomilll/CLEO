@@ -94,7 +94,11 @@
           <textarea placeholder="Por que voce deseja cancelar ?"></textarea>
           <p id="txt-cancelar">Deseja cancelar o pedido ?</p>
           
-          <a href="{% url 'order_status' %}"><button class="btn btn-primary" id="cancel-button">Cancelar</button></a>
+          <form method="post">
+            {% csrf_token %}
+            <input type="submit" id="cancel-button" class="btn btn-primary custom-btn" value="Cancelar pedido">
+          </form>
+          
         </div>
       </div>
     </div>

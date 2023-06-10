@@ -304,12 +304,16 @@ p {
 }
 
 #cancel-button {
-    position: relative;
-    align-self: flex-end;
-    right: 130px;
-    height: 40px;
-    width: 120px;
-    top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  align-self: flex-end;
+  right: 130px;
+  height: 40px;
+  width: 120px;
+  top: 30px;
 }
 #txt-cancelar{
     position: relative;
