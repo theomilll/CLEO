@@ -50,6 +50,8 @@ class Order(models.Model):
     total = models.DecimalField(max_digits=6, decimal_places=2)
     obs = models.TextField(blank=True)
     payment_method = models.CharField(max_length=20, choices=PAYMENT_METHOD_CHOICES, null=True)
+    order_status = models.CharField(max_length=20, blank=True) #active/ canceled/ finished
+
 
     
 class CreditCard(models.Model):

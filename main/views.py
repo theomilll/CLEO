@@ -204,8 +204,8 @@ def payment(request):
         order_summary = ", ".join(order_products)
         
 
-        order = Order(user=request.user, order=order_summary, order_datetime=order_datetime,
-                      pickup_time=pickup_time, total=total, payment_method=payment_method, obs = cart_obs.text_box_obs)
+        order = Order(user=request.user, order=order_summary,           order_datetime=order_datetime,
+                      pickup_time=pickup_time, total=total, payment_method=payment_method, obs = cart_obs.text_box_obs,order_status= "active" )
         order.save()
 
         if payment_method == 'pix':
@@ -272,6 +272,15 @@ def cancel_order(request):
 
     return render(request, 'cancel_order.html', order_detail)
 
+@login_required(login_url='login')
+def finish_order(request):
+    order = Order.objects.filter(user=request.user).last()
+
+    if request.method == 'POST':
+        messages.success(request, 'Pedido Finalizado com sucesso!')        
+        order.order_status = "finished"
+
+    return redirect('order_status')
      
 
 def list_favorite(request):

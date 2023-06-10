@@ -87,10 +87,6 @@
                 <p>Observação do pedido:</p>
                 <p>{{ order.obs }}</p>
                 <p><br><br>Valor Total: R${{order.total}}</p>
-                
-              </div>
-              <div>
-                
               </div>
             </div>
           </div>
@@ -122,6 +118,9 @@
               <div class="card-body">
                   <h5 class="order-id">Número do pedido: <span class="order-number">{{ order.id }}</span></h5>
                   <h5 class="card-title">Data: {{ order.order_datetime }}</h5>
+                  <p class="card-text">Status do pedido: {{ order.order_status }}</p>
+                  <p class="card-text">Status do pedido: {{ order.order_status }}</p>
+                  <p class="card-text">Detalhe o pedido: {{ order.order }}</p>
                   <p class="card-text">Valor total: {{ order.total }}</p>
                   {% for product in order.products.all %}
                       <div class="product-item">
