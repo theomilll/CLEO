@@ -159,6 +159,11 @@ class cleo(TestCase):
         data_expediçao.send_keys("666")
         confirmar_cartao = driver.find_element(By.NAME, "btn-confirmar")
         confirmar_cartao.click()
+    def cancelar_pedido(self, driver):
+        cancelar = driver.find_element(By.NAME, "cancel_order")
+        cancelar.click()
+        confirmar_cancelamento = driver.find_element(By.NAME, "cancel_confirm")
+        confirmar_cancelamento.click()
         voltar_catalogo1=driver.find_element(By.ID, "arrow")
         voltar_catalogo1.click()
         logout1= driver.find_element(By.ID,"log-out")
@@ -183,3 +188,4 @@ class cleo(TestCase):
         self.voltar_catalogo(driver)
         self.logout(driver)
         self.pagamento_cartao(driver)
+        self.cancelar_pedido(driver)
