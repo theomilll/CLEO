@@ -42,7 +42,7 @@
                     <div class="search-container">
                         <form method="get" action="{% url 'home' %}">
                             <select id="category-select" name="categoria">
-                                <option value="Selecione uma categoria">Selecione uma categoria</option>
+                                <option value="">Selecione uma categoria</option>
                                 {% for categoria in todas_categorias %}
                                     <option value="{{ categoria.categoria }}">{{ categoria.categoria }}</option>
                                 {% endfor %}
