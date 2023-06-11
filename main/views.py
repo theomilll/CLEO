@@ -242,7 +242,7 @@ def order_status(request):
             order.save()
             messages.success(request, 'Pedido retirado! Bom apetite!')
         else:
-            messages.success(request, 'Pedido finalizado com sucesso!')
+            messages.success(request, 'Pedido realizado com sucesso! Aguarde')
             cart.delete()
             cart_obs.delete()
 
@@ -279,14 +279,17 @@ def cancel_order(request):
 
     if not last_order:
         return render(request, 'error.html', {'message': 'Não há pedidos para cancelar.'})
-    
+    # se encontrar um botao entra no post
     if request.method == 'POST':
+        print(request.POST)
         order_id = request.POST.get('order_id')
         last_order = get_object_or_404(Order, id=order_id)
-        last_order.order_status = 'cancelled'
-        last_order.save()
-        messages.success(request, 'Pedido cancelado com sucesso.')
-        return redirect('order_status')
+        if 'cancel_confirm' in request.POST:
+            print(request.POST)
+            last_order.order_status = 'cancelled'
+            last_order.save()
+            messages.success(request, 'Pedido cancelado com sucesso.')
+            return redirect('order_status')
 
     order_detail = {
         'order_id': last_order.id,

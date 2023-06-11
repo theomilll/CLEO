@@ -93,10 +93,11 @@
         <div class="cancel-box">
           <textarea placeholder="Por que voce deseja cancelar ?"></textarea>
           <p id="txt-cancelar">Deseja cancelar o pedido ?</p>
-          
-          <form method="post">
+
+          <form method="POST" action="">
             {% csrf_token %}
-            <input type="submit" id="cancel-button" class="btn btn-primary custom-btn" value="Cancelar pedido">
+            <input type="hidden" name="order_id" value="{{ order_id }}">
+            <button type="submit" class="btn btn-primary custom-btn" id="cancelar pedido" name="cancel_confirm" style="text-decoration:none">Cancelar pedido</button>
           </form>
           
         </div>
