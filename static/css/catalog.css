@@ -111,6 +111,7 @@ h1 {
     padding: 10px 15px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    margin-top: auto
 }
 
 .btn {
@@ -178,7 +179,7 @@ h1 {
 @media (max-width: 767px) {
     .col-md-4 {
         width: 100%;
-        padding: 0 15px;
+        padding: 0 15px ;
     }
 }
 
@@ -193,7 +194,7 @@ h1 {
     .col-md-4 {
         width: 30%;
 
-        padding: 0 15px;
+        padding: 0 15px 30px;
     }
 }
 
