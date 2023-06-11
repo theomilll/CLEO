@@ -237,6 +237,7 @@ input{
     font-size: 14px;
     border-radius: 5px;
     margin-left: 12px;
+    margin-top: 0.5px;
 }
 #btn-busca:hover {
     background-color: #12646a;
@@ -286,4 +287,34 @@ input{
     left: 26px;
     top: 5px;
     
+}
+/* Style for Category dropdown */
+#category-select {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 12px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+/* Style for Filter Button */
+#filter-btn {
+    position: absolute;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #082E31;
+    color: white;
+    border: none;
+    padding: 9px 18px;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-left: 12px;
+    width: 96px;
+    margin-bottom: 5px;
+}
+
+#filter-btn:hover {
+    background-color: #12646a;
 }
