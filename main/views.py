@@ -49,13 +49,17 @@ def login(request):
 def catalog(request):
     pesquisa = request.GET.get('search', '')
     categoria = request.GET.get('categoria', '')
-    if categoria:
-       food_product = FoodProduct.objects.filter(categoria__name=categoria)
-    else:
+    if pesquisa:
         food_product = FoodProduct.objects.filter(name__icontains=pesquisa)
+    elif categoria:
+        food_product = FoodProduct.objects.filter(categoria__categoria=categoria)
+    else:
+        food_product = FoodProduct.objects.all()
     
-    todas_categorias = Categoria.objects.all()    
+    todas_categorias = Categoria.objects.all()
     return render(request, 'catalog.html', {'food_products': food_product, 'todas_categorias': todas_categorias})
+
+
 
 @login_required(login_url='login')
 def add_to_cart(request, product_id):
