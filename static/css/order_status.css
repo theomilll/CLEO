@@ -247,6 +247,8 @@ p {
   width: 50%;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
+  position: relative;
 }
 
 .overlay {
@@ -318,7 +320,6 @@ p {
   justify-content: space-between;
   padding: 20px;
   max-width: 1140px;
-  position: relative;
   margin: 0 auto;
   position: relative;
 }
