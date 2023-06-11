@@ -295,7 +295,7 @@ p {
 }
 
 .cancel-box textarea {
-    flex-grow: 1;
+    width: 600px;
     margin-right: 20px;
     padding: 10px;
     border-radius: 5px;
