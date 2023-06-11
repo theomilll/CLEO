@@ -73,16 +73,16 @@
                         <div class="observation-container">
                           <input type="text" name="{{ form.text_box_obs.name }}" class="observation-box" placeholder="Alguma observação?"/>
                         </div>
-                        <div class="total-and-button-container">
-                          <div class="total-box">
-                            <p class="total-text">Total: {{ cart_total }}</p>
-                          </div>
-                          <div class="checkout-btn-container">
-                            <button type="button" class="btn btn-primary" id="finalizarCompraBtn">Finalizar Compra</button>
-                          </div>
+                    </form>
+                    <div class="total-and-button-container">
+                        <div class="total-box">
+                        <p class="total-text">Total: {{ cart_total }}</p>
                         </div>
-                      </form>
-                    </div>                    
+                        <div class="checkout-btn-container">
+                        <button type="button" class="btn btn-primary" id="finalizarCompraBtn">Finalizar Compra</button>
+                        </div>
+                    </div>
+                </div>                    
             {% endif %}
                 {% comment %} <a href="{% url 'checkout' %}" class="btn btn-success">Proceed to Checkout</a> {% endcomment %}
                 {% else %}

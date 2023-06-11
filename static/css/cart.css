@@ -265,6 +265,7 @@ td {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
+    width: 200%;
 }
 
 .total-box {
@@ -275,7 +276,7 @@ td {
 .bottom-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     flex-wrap: wrap;
 }
 .add-observation-btn-container {
@@ -286,6 +287,7 @@ td {
 
 .checkout-btn-container {
     padding: 10px 0;
+    margin-bottom: 20px;
 }
 
 .total-and-button-container {

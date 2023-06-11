@@ -44,8 +44,10 @@
         <div class="container">
           <div class="card">
             <div class="timeline-container">
-              <div class="order_number_text">
-                Pedido nº: 0000{{ order.id }}</p>
+              <div class="bottom-container">
+                <div class="order_number_text">
+                  Pedido nº: 0000{{ order.id }}</p>
+                </div>
                 <form method="POST" action="{% url 'cancel_order' %}">
                   {% csrf_token %}
                   <input type="hidden" name="order_id" value="{{ order.id }}">
@@ -82,15 +84,15 @@
                   <div>
                     <p>Horário de retirada: {{ order.pickup_time|date:"H:i"}}</p>
                     <p>Tipo de pagamento: {{ order.payment_method }}</p>
-                  </div>
-                  <div>
-                    <p>Detalhe do pedido:</p>
-                    <p>{{order.order}}</p>
                     <form method="POST" action="">
                       {% csrf_token %}
                       <input type="hidden" name="order_id" value="{{ order.id }}">
                       <button type="submit" class="btn btn-primary custom-btn" id="advance" name="finishorder" style="text-decoration:none">Confirme retirada</button>
                     </form>
+                  </div>
+                  <div>
+                    <p>Detalhe do pedido:</p>
+                    <p>{{order.order}}</p>
                   </div>
                   <div class="d-flex flex-column text-sm-right">
                     <p>Observação do pedido:</p>

@@ -198,6 +198,7 @@ hr {
 
 .track-order {
   margin-top: 20px; /* Espaço superior para separar da timeline */
+  width: 100%;
 }
 
 h5{
@@ -358,4 +359,12 @@ p {
 
 .order-number {
   font-weight: bold;
+}
+
+.bottom-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  width: 99%;
 }
