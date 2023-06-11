@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login as auth_login
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import SignUpForm, CartForm, CreditCardForm
-from .models import FoodProduct, Cart, Favorite, Order, CartObs
+from .models import FoodProduct, Cart, Favorite, Order, CartObs, Categoria
 from django.contrib.auth.decorators import login_required
 from pixqrcode import PixQrCode
 from django.db.models import Sum, F
@@ -48,8 +48,14 @@ def login(request):
 @login_required(login_url='login')
 def catalog(request):
     pesquisa = request.GET.get('search', '')
-    food_product = FoodProduct.objects.filter(name__icontains=pesquisa)
-    return render(request, 'catalog.html', {'food_products': food_product})
+    categoria = request.GET.get('categoria', '')
+    if categoria:
+       food_product = FoodProduct.objects.filter(categoria__name=categoria)
+    else:
+        food_product = FoodProduct.objects.filter(name__icontains=pesquisa)
+    
+    todas_categorias = Categoria.objects.all()    
+    return render(request, 'catalog.html', {'food_products': food_product, 'todas_categorias': todas_categorias})
 
 @login_required(login_url='login')
 def add_to_cart(request, product_id):

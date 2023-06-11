@@ -18,6 +18,11 @@ class Ingredients(models.Model):
     def __str__(self):
         return self.name
 
+class Categoria(models.Model):
+    categoria = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return self.categoria
 
 class FoodProduct(models.Model):
     name = models.CharField(max_length=255)
@@ -25,6 +30,7 @@ class FoodProduct(models.Model):
     image = models.ImageField(upload_to='static/food_products/', default="static/food_products/default")
     description = models.TextField()
     ingredients = models.ManyToManyField(Ingredients, blank=True)
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.name
