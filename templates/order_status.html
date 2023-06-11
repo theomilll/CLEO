@@ -127,6 +127,7 @@
   </div>
     <div class="order-history-container">
       {% for order in order_history %}
+      <div class="col-md-4 p-2">
           <div class="cardLower h-100">
               <div class="card-body">
                   <h5 class="order-id">Número do pedido: <span class="order-number">{{ order.id }}</span></h5>
@@ -142,6 +143,7 @@
                   {% endfor %}
               </div>
           </div>
+        </div>
       {% empty %}
           <h5 class="text-center">No orders found.</h5>
       {% endfor %}
