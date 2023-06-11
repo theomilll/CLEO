@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 import time
 from .forms import SignUpForm
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import Select
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--headless")
@@ -45,13 +46,13 @@ class cleo(TestCase):
         backtocatalog1.click()
     def filtrar(self, driver):
         filtrar = driver.find_element(By.NAME,"categoria")
-        filtrar.click()
-        filtrar.select_by_value("Doces")
+        select_object = Select(filtrar)
+        select_object.select_by_value("Doces")
         btn_filtro = driver.find_element(By.ID,"filter-btn")
         btn_filtro.click()
         filtrar = driver.find_element(By.NAME,"categoria")
-        filtrar.click()
-        filtrar.select_by_value("Selecione uma categoria")
+        select_object = Select(filtrar)
+        select_object.select_by_value("Selecione uma categoria")
         btn_filtro = driver.find_element(By.ID,"filter-btn")
         btn_filtro.click()
     def busca_produto_existente(self, driver):
