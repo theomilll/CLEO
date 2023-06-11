@@ -373,3 +373,15 @@ p {
   flex-wrap: wrap;
   width: 99%;
 }
+
+.order-history-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.cardLower {
+  flex-grow: 1;
+  align-items: stretch;
+  margin: 10px; 
+}
