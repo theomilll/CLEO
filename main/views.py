@@ -92,6 +92,7 @@ def remove_from_cart(request, product_id):
     product = get_object_or_404(FoodProduct, id=product_id)
     cart_item = get_object_or_404(Cart, user=request.user, product=product)
     cart_item.delete()
+    messages.success(request, 'Seu produto foi removido com sucesso!')
     return redirect('cart')
 
 @login_required(login_url='login')
@@ -323,3 +324,10 @@ def remove_favorite(request, product_id):
     favorite_item.delete()
     return redirect('list_favorite')
     
+@login_required(login_url='login')
+def add_favorite_to_cart(request, product_id):
+    product = get_object_or_404(FoodProduct, id=product_id)
+    cart_item, created = Cart.objects.get_or_create(user=request.user, product=product)
+    if not created:
+        cart_item.save()
+    return redirect('list_favorite')

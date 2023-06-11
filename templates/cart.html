@@ -13,6 +13,13 @@
         </div>
     </nav>
     <div class="container">
+        {% if messages %}
+        <div class="message">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
         <div class="top-bar">       
             <a href="{% url 'home' %}" class="back-to-home">
                 <i class="fas fa-arrow-left"></i>
