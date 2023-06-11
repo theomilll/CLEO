@@ -39,74 +39,82 @@
             <h1 class="top-bar-title">Status do pedido</h1>
         </div>
     </div>
-    {% if order %}
-    <div class="container">
-      <div class="card">
-        <div class="timeline-container">
-          <div class="order_number_text">
-            Pedido nº: 0000{{ order.id }}</p>
-            <a href="{% url 'cancel_order' %}" class="btn btn-primary custom-btn" id="cancelar_pedido" style="text-decoration:none" name="cancel_order">Cancelar pedido</a>
-          </div>
-          <!-- Add class "active" to progress -->
-          <ul id="progressbar" class="text-center">
-            <li class="step0">
-              <div class="step-container">
-                <p class="status-text">Pedido Realizado</p>
-              </div>
-            </li>
-            <li class="step0">
-              <div class="step-container">
-                <p class="status-text">Aceito</p>
-              </div>
-            </li>
-            <li class="step0">
-              <div class="step-container">
-                <p class="status-text">Em andamento</p>
-              </div>
-            </li>
-            <li class="step0">
-              <div class="step-container">
-                <p class="status-text">Retirado</p>
-              </div>
-            </li>
-          </ul>
-          <br><br><br><br><br>
-          <div class="track-order">
-            <hr>
-            <div class="row d-flex justify-content-between px-3 top">
-              <div>
-                <p>Horário de retirada: {{ order.pickup_time|date:"H:i"}}</p>
-                <p>Tipo de pagamento: {{ order.payment_method }}</p>
-              </div>
-              <div>
-                <p>Detalhe do pedido:</p>
-                <p>{{order.order}}</p>
-                <form method="POST" action="">
+    {% for order in order %}
+      {% if order.order_status == "active" %}
+        <div class="container">
+          <div class="card">
+            <div class="timeline-container">
+              <div class="order_number_text">
+                Pedido nº: 0000{{ order.id }}</p>
+                <form method="POST" action="{% url 'cancel_order' %}">
                   {% csrf_token %}
-                  <button type="submit" class="btn btn-primary custom-btn" id="advance" name="finishorder" style="text-decoration:none">Confirme retirada</button>
+                  <input type="hidden" name="order_id" value="{{ order.id }}">
+                  <button type="submit" class="btn btn-primary custom-btn" id="cancelar pedido" name="cancel_order" style="text-decoration:none">Cancelar pedido</button>
                 </form>
               </div>
-              <div class="d-flex flex-column text-sm-right">
-                <p>Observação do pedido:</p>
-                <p>{{ order.obs }}</p>
-                <p><br><br>Valor Total: R${{order.total}}</p>
+              <!-- Add class "active" to progress -->
+              <ul id="progressbar" class="text-center">
+                <li class="step0">
+                  <div class="step-container">
+                    <p class="status-text">Pedido Realizado</p>
+                  </div>
+                </li>
+                <li class="step0">
+                  <div class="step-container">
+                    <p class="status-text">Aceito</p>
+                  </div>
+                </li>
+                <li class="step0">
+                  <div class="step-container">
+                    <p class="status-text">Em andamento</p>
+                  </div>
+                </li>
+                <li class="step0">
+                  <div class="step-container">
+                    <p class="status-text">Retirado</p>
+                  </div>
+                </li>
+              </ul>
+              <br><br><br><br><br>
+              <div class="track-order">
+                <hr>
+                <div class="row d-flex justify-content-between px-3 top">
+                  <div>
+                    <p>Horário de retirada: {{ order.pickup_time|date:"H:i"}}</p>
+                    <p>Tipo de pagamento: {{ order.payment_method }}</p>
+                  </div>
+                  <div>
+                    <p>Detalhe do pedido:</p>
+                    <p>{{order.order}}</p>
+                    <form method="POST" action="">
+                      {% csrf_token %}
+                      <input type="hidden" name="order_id" value="{{ order.id }}">
+                      <button type="submit" class="btn btn-primary custom-btn" id="advance" name="finishorder" style="text-decoration:none">Confirme retirada</button>
+                    </form>
+                  </div>
+                  <div class="d-flex flex-column text-sm-right">
+                    <p>Observação do pedido:</p>
+                    <p>{{ order.obs }}</p>
+                    <p><br><br>Valor Total: R${{order.total}}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    {% else %}
-    <div class="container px-1 px-md-4 py-5 mx-auto">
-      <div class="card">
-        <div class="timeline-container">
+      {% else %}
+        
+        
+      {% endif %}
+      {% empty %}
+      <div class="container">
+        <div class="card">
           <div class="order_number_text">
             <p>Não há pedidos feitos.</p>
           </div>
         </div>
       </div>
-    </div>
-    {% endif %}
+    {% endfor %}
     <div class="container">
       <div class="top-bar">       
           <a id="arrow" href="{% url 'home' %}" class="back-to-home">

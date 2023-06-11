@@ -231,11 +231,13 @@ def payment(request):
 def order_status(request):
     cart = Cart.objects.filter(user=request.user)
     cart_obs = CartObs.objects.filter(user=request.user).last()
-    order = Order.objects.filter(user=request.user).last()
+    order = Order.objects.filter(user=request.user, order_status='active')
     order_history = Order.objects.filter(user=request.user).order_by('-order_datetime')
 
     if request.method == 'POST':
         if 'finishorder' in request.POST:
+            order_id = request.POST.get('order_id')
+            order = get_object_or_404(Order, id=order_id)
             order.order_status = "finished"
             order.save()
             messages.success(request, 'Pedido retirado! Bom apetite!')
@@ -273,19 +275,22 @@ def credit_card(request):
     return render(request, 'credit_card.html', {'form': form})
 
 def cancel_order(request):
-    last_order = Order.objects.filter(user=request.user).last()
+    last_order = Order.objects.filter(user=request.user,  order_status="active")
 
-    if last_order is None:
+    if not last_order:
         return render(request, 'error.html', {'message': 'Não há pedidos para cancelar.'})
     
     if request.method == 'POST':
+        order_id = request.POST.get('order_id')
+        last_order = get_object_or_404(Order, id=order_id)
         last_order.order_status = 'cancelled'
         last_order.save()
         messages.success(request, 'Pedido cancelado com sucesso.')
         return redirect('order_status')
 
     order_detail = {
-        'pickup_time': last_order.pickup_time,
+        'order_id': last_order.id,
+        'pickup_time': last_order.pickup_time, 
         'payment_type': last_order.get_payment_method_display(),
         'order_detail': last_order.order,
         'order_note': last_order.obs,
@@ -293,17 +298,7 @@ def cancel_order(request):
         'order_id': last_order.id,
     }
 
-    return render(request, 'cancel_order.html', order_detail)
-@login_required(login_url='login')
-def finish_order(request):
-    order = Order.objects.filter(user=request.user).last()
-    if request.method == 'POST':
-        order.order_status = "finished"
-        order.save()
-        messages.success(request, 'Pedido retirado, bom apetite')
-    
-    return redirect('order_status')
-     
+    return render(request, 'cancel_order.html', order_detail)     
 
 def list_favorite(request):
     favorite_item = Favorite.objects.filter(user=request.user)
