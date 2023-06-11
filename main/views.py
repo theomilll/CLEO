@@ -48,16 +48,25 @@ def login(request):
 @login_required(login_url='login')
 def catalog(request):
     pesquisa = request.GET.get('search', '')
-    categoria = request.GET.get('categoria', '')
-    if pesquisa:
-        food_product = FoodProduct.objects.filter(name__icontains=pesquisa)
-    elif categoria:
-        food_product = FoodProduct.objects.filter(categoria__categoria=categoria)
-    else:
-        food_product = FoodProduct.objects.all()
+    categoria_selecionada = request.GET.get('categoria', '')
     
     todas_categorias = Categoria.objects.all()
-    return render(request, 'catalog.html', {'food_products': food_product, 'todas_categorias': todas_categorias})
+
+    produtos_por_categoria = {}
+    for categoria in todas_categorias:
+        if pesquisa:
+            produtos = FoodProduct.objects.filter(categoria=categoria, name__icontains=pesquisa)
+        elif categoria_selecionada:
+            if str(categoria.categoria) == categoria_selecionada:
+                produtos = FoodProduct.objects.filter(categoria=categoria)
+            else:
+                produtos = []
+        else:
+            produtos = FoodProduct.objects.filter(categoria=categoria)
+
+        produtos_por_categoria[categoria] = produtos
+
+    return render(request, 'catalog.html', {'todas_categorias': todas_categorias, 'produtos_por_categoria': produtos_por_categoria})
 
 
 

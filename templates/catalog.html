@@ -34,39 +34,43 @@
             </div>
         {% endfor %}
         <div class="top-bar">    
-        <h1 class="text-center my-5">Catálogo de Comidas</h1>
+            <h1 class="text-center my-5">Catálogo de Comidas</h1>
         </div>
         <div class="container_catalog">
             <div class="row_searchbar mb-4">
                 <div class="col-md-4">
                     <div class="search-container">
                         <form method="get" action="{% url 'home' %}">
-                                <select id="category-select" name="categoria">
-                                  <option  value="">Selecione uma categoria</option>
-                                  {% for categoria in todas_categorias %}
-                                  <option value="{{ categoria.categoria }}">{{ categoria.categoria }}</option>
-                                  {% endfor %}
-                                </select>
-                                <input type="submit" id="filter-btn" value="FILTRAR">    
-                                <br>                       
-                            <input class="search-input"  type="search" name="search" placeholder="Buscar produto" value="{{ request.GET.search }}">
+                            <select id="category-select" name="categoria">
+                                <option value="">Selecione uma categoria</option>
+                                {% for categoria in todas_categorias %}
+                                    <option value="{{ categoria.categoria }}">{{ categoria.categoria }}</option>
+                                {% endfor %}
+                            </select>
+                            <input type="submit" id="filter-btn" value="FILTRAR">    
+                            <br>                       
+                            <input class="search-input" type="search" name="search" placeholder="Buscar produto" value="{{ request.GET.search }}">
                             <button id="btn-busca" type="submit">BUSCAR</button>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                {% for product in food_products %}
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100">
-                            <a href="{% url 'product_detail' product_id=product.id %}" style="text-decoration:none" name="product-link">
-                                <div class="card-body">
-                                    <div class="card-split">
-                                        <div class="card-img">
-                                            <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">                                    </div>
-                                        <div class="card-content">
-                                                <h5 class="card-title product-link">{{ product.name }}</h5>
-                                                <p class="card-text">R${{ product.price }}</p>
+            {% for categoria, product in produtos_por_categoria.items %}
+                <h2>{{ categoria.categoria }}</h2>
+                <div class="row">
+                    {% for product in product %}
+                        {% if product.categoria == categoria %}
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100">
+                                    <a href="{% url 'product_detail' product_id=product.id %}" style="text-decoration:none" name="product-link">
+                                        <div class="card-body">
+                                            <div class="card-split">
+                                                <div class="card-img">
+                                                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                                                </div>
+                                                <div class="card-content">
+                                                    <h5 class="card-title product-link">{{ product.name }}</h5>
+                                                    <p class="card-text">R${{ product.price }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -77,10 +81,12 @@
                                     </div>
                                 </div>
                             </div>
-                        {%empty%}
-                    <h5 class="text-center">Esse produto não existe.</h5>
-                {% endfor %}
-            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% empty %}
+                <h5 class="text-center">Nenhum produto disponível nesta categoria.</h5>
+            {% endfor %}
         </div>
     </div>
 </body>
