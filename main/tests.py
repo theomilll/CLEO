@@ -52,7 +52,7 @@ class cleo(TestCase):
         btn_filtro.click()
         filtrar = driver.find_element(By.NAME,"categoria")
         select_object = Select(filtrar)
-        select_object.select_by_value('Selecione uma categoria')
+        select_object.select_by_value("Selecione uma categoria")
         btn_filtro = driver.find_element(By.ID,"filter-btn")
         btn_filtro.click()
     def busca_produto_existente(self, driver):
