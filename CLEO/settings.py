@@ -24,10 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@%s+$_%%dccu9@%y(5rm&ex4d5%r&t_hjyv&2gfa6_5r)8#)fv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["Cleo-V2-env.eba-qr2tnipv.sa-east-1.elasticbeanstalk.com", "127.0.0.1"]
 
 # Application definition
 
@@ -75,11 +74,11 @@ WSGI_APPLICATION = 'CLEO.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+DATABASES = { 
+		'default': {
+		 'ENGINE': 'utils.db.backends.sqlite3', 
+		'NAME': BASE_DIR / 'db.sqlite3', 
+		}
 }
 
 
