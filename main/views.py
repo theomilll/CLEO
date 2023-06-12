@@ -63,10 +63,11 @@ def catalog(request):
                 produtos = []
         else:
             produtos = FoodProduct.objects.filter(categoria=categoria)
-
-        produtos_por_categoria[categoria] = produtos
+        if produtos:
+            produtos_por_categoria[categoria] = produtos
 
     return render(request, 'catalog.html', {'todas_categorias': todas_categorias, 'produtos_por_categoria': produtos_por_categoria})
+
 
 
 
