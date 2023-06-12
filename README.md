@@ -1,6 +1,6 @@
 # CLEO — Central Listing for Easy Ordering
 - Esse repositório contém o código fonte completo do nosso Software.
->- Versão 2.0 já disponível: <a href="http://cleo-v2-env.eba-qr2tnipv.sa-east-1.elasticbeanstalk.com/">CLEO — Central Listing for Easy Ordering</a>
+>- Versão 3.0 já disponível: <a href="http://cleo-v2-env.eba-qr2tnipv.sa-east-1.elasticbeanstalk.com/">CLEO — Central Listing for Easy Ordering</a>
 
 ## Objetivo do Projeto
 - CLEO é uma aplicação web para desburocratizar, agilizar e tornar mais eficiente o acesso aos produtos da Cantina da CESAR School BRUM. A solução busca reduzir o desconforto das filas de espera sob o calor do sol e trazer mais comodidade aos clientes da cantina. Junto à CLEO, a cantina irá registrar seus produtos para que os alunos e funcionários da CESAR possam fazer seus pedidos, assim como realizar o pagamento dos mesmos, de forma antecipada, por meio da aplicação web. Quando o pedido estiver pronto ou separado o cliente apenas terá que se locomover ao balcão para realizar a retirada.
@@ -39,10 +39,13 @@
   <img src="https://user-images.githubusercontent.com/108446826/232560661-522de845-7aa1-425b-93cd-7526af1a3bcb.png" title="Visão do Terminal" alt="Visão do Terminal" width="500px"/>
  </div>
 
-7.Teste de Sistema (E2E) Automatizados:
-
-Para a instalação do selenium, digite no seu terminal pip install selenium, após isso faça a verificação de qual versão é o seu google chrome, feita a verificação acesse o link: https://sites.google.com/chromium.org/driver/downloads?authuser=0
-e faça o download que condiz a versão do seu google chrome. Feito isso agora vamos ao vscode, onde na nossa pasta main criaremos a pasta com o nome de: “selPath.py”, feito isso, dentro dela criaremos a variavel SELENIUM_DIRS e passaremos a nossa url do chrome drive para essa variável.
+7. **Teste de Sistema (E2E) Automatizados**
+> Para a instalação do selenium:
+>- Digite no seu terminal ‘pip install selenium’;
+>- Faça a verificação de qual versão é o seu google chrome;
+>- Feita a verificação, faça o download que condiz a versão do seu google chrome, através do link: https://sites.google.com/chromium.org/driver/downloads?authuser=0
+>- No VsCode (ou IDE utilizada), na pasta ‘main’, crie uma pasta com o nome de ‘selPath.py’;
+>- Dentro da pasta criada, crie a variável ‘SELENIUM_DIRS’, passando a url do chrome drive instalado para essa variável.
 
 ## Link do Jira
 - Acompanhe o desenvolvimento: <a href="https://mffbm.atlassian.net/jira/software/projects/FDS/boards/1">CLEO Jira Board</a>
@@ -51,9 +54,9 @@ e faça o download que condiz a versão do seu google chrome. Feito isso agora v
 - Acompanhe os protótipos: <a href="https://www.figma.com/file/gsZa5WDhVrfWIilATY4K0P/LO-FI-CLEO?node-id=0%3A1&t=VpvNaYuTkpGkrmfp-1">Protótipo Lo-Fi CLEO</a>
 
 ## Diagrama de atividades
-><a href="https://drive.google.com/file/d/1ozhgCaCZVpp_gTuk8OMR06hZ4CobVGuH/view?usp=share_link">*Acesse aqui o Diagrama de Atividades CLEO em .pdf.*</a>
+><a href="https://drive.google.com/file/d/1FabeMVBPQQIfxzVGJYi8imu3IjyhV-j2/view?usp=sharing">*Acesse aqui o Diagrama de Atividades CLEO em .pdf.*</a>
 <div align="center">
-<img src="https://github.com/theomilll/CLEO/assets/108446826/333b0ed6-b30f-4bb2-8da6-5c41f7c8f267" title="Diagrama de Atividades CLEO" alt="Diagrama de Atividades CLEO" width="900px"/>
+<img src="https://github.com/theomilll/CLEO/assets/108446826/d78ab9af-ff45-41af-ba5a-21aaf704779a" title="Diagrama de Atividades CLEO" alt="Diagrama de Atividades CLEO" width="900px"/>
 </div>
 
 ## Relato Programação em Pares (Pair Programming)
@@ -62,6 +65,8 @@ e faça o download que condiz a versão do seu google chrome. Feito isso agora v
 - *"Indubitavelmente a prática do Pair Programming é um dos motivos pela satisfação da equipe e pelos bons resultados vistos ao final da Sprint 1. Por meio dela, foi possível distribuir o conhecimento a respeito dos recursos utilizados e do produto desenvolvido, de forma que todos se mantivessem à parte e compreendendo o todo ao realizar suas tarefas, o que resultou em um produto desenvolvido de forma mais eficiente, com menos erros, mais consciência e melhores experiências."*
 ### Sprint 2
 - *"Acreditamos que, mesmo levantando dificuldades, a experiência da programação em pares nesta Sprint 2 revelou muitos pontos de melhoria, o que aumentou, está aumentando e certamente aumentará a qualidade do nosso projeto, assim como reforçou a comunicação e o sentimento de equipe entre os integrantes."*
+### Sprint 3
+- *" "*
 
 ## Integrantes da Equipe
 - <a href="mailto:abxa@cesar.school">Ana Beatriz Alves</a>
