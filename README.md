@@ -9,6 +9,7 @@
 - Back-end: Python (Django)
 - Front-end: HTML, CSS e Javascript
 
+
 ## Instalação
 1. **Criar Ambiente Virutal**
 >- MacOS/Linux: `python3 -m venv venv`
