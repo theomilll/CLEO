@@ -41,7 +41,7 @@
 
 7. **Teste de Sistema (E2E) Automatizados**
 > Para a instalação do selenium:
->- Digite no seu terminal ‘pip install selenium’;
+>- Digite no seu terminal `pip install selenium`;
 >- Faça a verificação de qual versão é o seu google chrome;
 >- Feita a verificação, faça o download que condiz a versão do seu google chrome, através do link: https://sites.google.com/chromium.org/driver/downloads?authuser=0
 >- No VsCode (ou IDE utilizada), na pasta ‘main’, crie uma pasta com o nome de ‘selPath.py’;
@@ -60,13 +60,13 @@
 </div>
 
 ## Relato Programação em Pares (Pair Programming)
-><a href="https://docs.google.com/document/d/19kMGlKWTtmS4_a0b0ogvFF-unXA4oes1-lSFioI59Ns/edit?usp=sharing">*Acesse aqui o relato completo.*</a>
+><a href="https://docs.google.com/document/d/19kMGlKWTtmS4_a0b0ogvFF-unXA4oes1-lSFioI59Ns/edit?usp=sharing">*Acesse aqui os relatos completos.*</a>
 ### Sprint 1
 - *"Indubitavelmente a prática do Pair Programming é um dos motivos pela satisfação da equipe e pelos bons resultados vistos ao final da Sprint 1. Por meio dela, foi possível distribuir o conhecimento a respeito dos recursos utilizados e do produto desenvolvido, de forma que todos se mantivessem à parte e compreendendo o todo ao realizar suas tarefas, o que resultou em um produto desenvolvido de forma mais eficiente, com menos erros, mais consciência e melhores experiências."*
 ### Sprint 2
 - *"Acreditamos que, mesmo levantando dificuldades, a experiência da programação em pares nesta Sprint 2 revelou muitos pontos de melhoria, o que aumentou, está aumentando e certamente aumentará a qualidade do nosso projeto, assim como reforçou a comunicação e o sentimento de equipe entre os integrantes."*
 ### Sprint 3
-- *" "*
+- *"Encerramos a terceira e última sprint de forma positiva, com a equipe mais sincronizada e unida do que nunca. Foi uma ótima experiência trabalhar como equipe, aprendendo um com os outros, desenvolvendo um projeto de qualidade e fomentando amizades, experiência essa que certamente foi influenciada pela utilização da programação em pares."*
 
 ## Integrantes da Equipe
 - <a href="mailto:abxa@cesar.school">Ana Beatriz Alves</a>
